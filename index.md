@@ -46,7 +46,6 @@ Fraser Noble Building<br>
 Aberdeen </a>AB24 3UE<br>
 <a href="http://sco.wikipedia.org/wiki/Scotland">
 Scotland</a>
-</a>
 <br>
 <br>
 kedra&#9760;abdn.ac.uk
