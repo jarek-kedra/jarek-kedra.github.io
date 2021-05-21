@@ -18,19 +18,19 @@ Jarek Kędra</a>
 <br><br>
 <br>
 
-<a href="HTML/coauthors.html">
+<a href="/HTML/coauthors.html">
 Coauthors</a>
 <br>
-<a href="HTML/papers.html">
+<a href="/HTML/papers.html">
 Papers</a>
 <br>
-<a href="HTML/students.html">
+<a href="/HTML/students.html">
 Students</a>
 <br>
-<a href="HTML/talks.html">
+<a href="/HTML/talks.html">
 Talks</a>
 <br>
-<a href="HTML/teaching/geometry/">
+<a href="/HTML/teaching/geometry/">
 Teaching</a>
 
 <br>
