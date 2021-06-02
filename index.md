@@ -30,10 +30,6 @@ Students</a>
 <a href="/HTML/talks.html">
 Talks</a>
 <br>
-<!--
-<a href="/HTML/teaching/geometry/">
-Teaching</a>
->
 
 <br>
 <br>
