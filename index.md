@@ -31,7 +31,7 @@ Students</a>
 Talks</a>
 <br>
 <!--
->a href="/HTML/teaching/geometry/">
+<a href="/HTML/teaching/geometry/">
 Teaching</a>
 >
 
