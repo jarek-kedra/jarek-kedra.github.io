@@ -3,11 +3,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-<link rel="stylesheet" type="text/css" href="global.css" media="screen">
+<link rel="stylesheet" type="text/css" media="screen">
 </head>
 
 
-<body style="background-image:url('/HTML/ja-monk.jpg');
+<body style="background-image:url('/HTML/ja-glasses.jpeg');
 background-repeat:no-repeat;
 background-position:120px -50px">
 
