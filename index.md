@@ -13,7 +13,7 @@ background-position:160px -10px">
 
 <p style="color:blue;">
 <b>
-<a style="color:blue;" href="http://www.abdn.ac.uk/ncs/profiles/kedra">
+<a style="color:blue;" title="Путин, иди нахуй!" href="http://www.abdn.ac.uk/ncs/profiles/kedra">
 Jarek Kędra</a>
 </b>
 <br><br>
