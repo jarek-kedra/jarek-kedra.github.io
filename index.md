@@ -19,16 +19,16 @@ Jarek Kędra</a>
 <br><br>
 <br>
 
-<a href="/HTML/coauthors.html">
+<a style="color:blue;" href="/HTML/coauthors.html">
 Coauthors</a>
 <br>
-<a href="/HTML/papers.html">
+<a style="color:blue;" href="/HTML/papers.html">
 Papers</a>
 <br>
-<a href="/HTML/students.html">
+<a style="color:blue;" href="/HTML/students.html">
 Students</a>
 <br>
-<a href="/HTML/talks.html">
+<a style="color:blue;" href="/HTML/talks.html">
 Talks</a>
 <br>
   </p>
@@ -38,14 +38,14 @@ Talks</a>
 <br>
 <br>
 <p style="color:yellow;">
-<a href="http://www.abdn.ac.uk/ncs/departments/mathematics/index.php">
+<a style="color:yellow;" href="http://www.abdn.ac.uk/ncs/departments/mathematics/index.php">
 Department of Mathematics</a><br>
-<a href="http://www.abdn.ac.uk">
+<a style="color:yellow;" href="http://www.abdn.ac.uk">
 University of Aberdeen</a><br>
 Fraser Noble Building<br>
-<a href="http://sco.wikipedia.org/wiki/Aberdeen">
+<a style="color:yellow;" href="http://sco.wikipedia.org/wiki/Aberdeen">
 Aberdeen </a>AB24 3UE<br>
-<a href="http://sco.wikipedia.org/wiki/Scotland">
+<a style="color:yellow;" href="http://sco.wikipedia.org/wiki/Scotland">
 Scotland</a>
 <br>
 <br>
