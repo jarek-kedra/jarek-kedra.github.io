@@ -13,7 +13,7 @@ background-position:120px -50px">
 
 <p style="color:blue;">
 <b>
-<a href="http://www.abdn.ac.uk/ncs/profiles/kedra">
+<a style="color:blue;" href="http://www.abdn.ac.uk/ncs/profiles/kedra">
 Jarek Kędra</a>
 </b>
 <br><br>
