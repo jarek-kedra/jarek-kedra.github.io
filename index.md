@@ -9,7 +9,7 @@
 
 <body style="background-image:url('/HTML/ja-eye.jpg');
 background-repeat:no-repeat;
-background-position:120px -50px">
+background-position:160px -10px">
 
 <p style="color:blue;">
 <b>
