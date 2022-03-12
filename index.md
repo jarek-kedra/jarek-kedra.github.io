@@ -7,7 +7,7 @@
 </head>
 
 
-<body style="background-image:url('/HTML/ja-glasses.jpeg');
+<body style="background-image:url('/HTML/ja-monk.jpg');
 background-repeat:no-repeat;
 background-position:120px -50px">
 
