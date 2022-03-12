@@ -35,8 +35,6 @@ Talks</a>
   
 <br>
 <br>
-<br>
-<br>
 <p style="color:yellow;">
 <a style="color:yellow;" href="http://www.abdn.ac.uk/ncs/departments/mathematics/index.php">
 Department of Mathematics</a><br>
