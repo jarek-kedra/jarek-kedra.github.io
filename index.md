@@ -11,6 +11,7 @@
 background-repeat:no-repeat;
 background-position:120px -50px">
 
+<p style="color:blue;">
 <b>
 <a href="http://www.abdn.ac.uk/ncs/profiles/kedra">
 Jarek Kędra</a>
@@ -30,7 +31,8 @@ Students</a>
 <a href="/HTML/talks.html">
 Talks</a>
 <br>
-
+  </p>
+  
 <br>
 <br>
 <br>
