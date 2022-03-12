@@ -1,7 +1,9 @@
+<!--
 a:link    {COLOR:#FFFFCC;}
 a:visited {COLOR:#FFFFCC;}
-a:hover   {COLOR:#CCCC00; text-decoration:underline;}
 a:active  {COLOR: #CCCC00;}
+-->
+a:hover   {COLOR:#CCCC00; text-decoration:underline;}
 a         {text-decoration:none;}
 table     {color:#CCCC99;}
 body      {margin:0;
@@ -9,6 +11,8 @@ body      {margin:0;
            background:black;
            font-family:monospace, sans-serif;
            font-size:120%;
+           <!-- 
            color:#FFFFCC;
-}
+           -->
+ }
 ol        {margin:20px 50px 5px 20px;}
