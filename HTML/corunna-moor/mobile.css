@@ -1,0 +1,52 @@
+a:link    {COLOR:#770000;}
+a:visited {COLOR:#880000;}
+a:hover   {COLOR:#CCCC00; text-decoration:underline;}
+a:active  {COLOR: #CCCC00;}
+a	{text-decoration:none;}
+table	{color:#CCCC99;}
+body	{margin:20px;
+	 max-width:400px;
+	 padding:20px;
+	 background:white;
+	 font-family:monospace, sans-serif;
+	 font-size:120%;
+	 color:#000000;
+}
+ol        {margin:20px 50px 5px 20px;}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: -16px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
