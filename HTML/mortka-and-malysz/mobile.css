@@ -6,7 +6,7 @@ a	{text-decoration:none;}
 table	
 {
 	color:black; 
-	font-size:200%; 
+	font-size:100%; 
 	counter-reset: rowNumber;
 }
 
@@ -18,11 +18,11 @@ table tr::before {
 }
 
 body	{margin:20px;
-	 max-width:1000px;
+	 max-width:800px;
 	 padding:20px;
 	 background:#DCDCDC;
 	 font-family:monospace, sans-serif;
-	 font-size:120%;
+	 font-size:300%;
 	 color:#000000;
 }
 
@@ -37,16 +37,13 @@ img {
   border-radius: 5%;
  }
 
-img.rounded-corners {
-  border-radius: 20px;
-}
 
 #rcorners1 {
   border-radius: 25px;
   border: 5px solid #6495ED;
   background: #B0E0E6;
   padding: 20px; 
-  width: 90%;
+  width: 100%;
 }
 
 #rcorners2 {
@@ -54,7 +51,7 @@ img.rounded-corners {
   border: 5px solid #73AD21;
   background: #90EE90;
   padding: 20px; 
-  width: 90%;  
+  width: 100%;  
 }
 
 #rcorners3 {
