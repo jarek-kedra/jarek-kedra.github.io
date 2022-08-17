@@ -13,6 +13,18 @@ body	{margin:20px;
 	 color:#000000;
 }
 
+.columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  flex: 50%;
+}
+
+
 img {
   border-radius: 5%;
  }
