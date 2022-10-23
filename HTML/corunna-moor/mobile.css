@@ -3,7 +3,20 @@ a:visited {COLOR:#880000;}
 a:hover   {COLOR:#CCCC00; text-decoration:underline;}
 a:active  {COLOR: #CCCC00;}
 a	{text-decoration:none;}
-table	{color:#CCCC99;}
+table	
+{
+	color:black; 
+	font-size:120%; 
+	counter-reset: rowNumber;
+}
+
+table tr::before {
+  display: table-cell;
+  counter-increment: rowNumber;
+  content: counter(rowNumber) ".";
+  text-align: left;
+}
+
 body	{margin:20px;
 	 max-width:900px;
 	 padding:20px;
