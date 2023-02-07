@@ -31,6 +31,9 @@ Students</a>
 <a style="color:blue;" href="/HTML/talks.html">
 Talks</a>
 <br>
+  <a style="color:blue;" href="HTML/non-maths.html">
+    Non-maths</a>
+<br>
   </p>
   
 <br>
