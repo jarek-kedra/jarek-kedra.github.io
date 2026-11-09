@@ -1,0 +1,62 @@
+a:link    {COLOR:#080;}
+a:visited {COLOR:#080;}
+a:hover   {COLOR:#080; text-decoration:underline;}
+a:active  {COLOR:#080;}
+a         {text-decoration:none;}
+table     {color:#000;}
+body{
+	font-family:sans-serif;
+	font-size:100%;
+	margin-top:0;
+	margin-left:14%;
+	margin-right:10%;
+	margin-bottom:5%;
+	padding:20px;
+	text-align:justify;
+	width:750px;
+}
+
+ul{
+	padding-left:1.2em;
+}
+
+ol{
+	padding-left:2em;
+}
+
+#home {
+	position:fixed;
+	top:140px;
+	left:5px;
+}
+
+#logo {
+	position:fixed;
+	top:5px;
+	left:5px;
+}
+
+
+#read-less {
+  overflow: hidden;
+  height: 0;
+  line-height: 1.2em;
+}
+
+#read-more:checked + div {
+  height: auto;
+}
+
+#leverhulme-logo {
+        position:fixed;
+        bottom:50px;
+	left:5px
+}
+
+#signature {
+        position:fixed;
+        bottom:10px;
+	left:5px;
+	font-size:smaller;
+}
+

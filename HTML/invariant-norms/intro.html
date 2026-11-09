@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>
+Invariant norms on groups
+</title>
+<p><link rel="stylesheet" type="text/css" href="global.css" media="screen"></p>
+<!-- MATHJAX -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async 
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<!-- LEFT PANEL -->
+<div id="logo">
+<svg height="140" width="140">
+<polyline points="30,40 70,10 110,40" stroke="black" stroke-width="2" fill="none"/> <polyline points="40,30 10,70 40,110" stroke="black" stroke-width="2" fill="none"/> <polyline points="30,100 70,130 110,100" stroke="black" stroke-width="2" fill="none"/> <polyline points="100,30 130,70 100,110" stroke="black" stroke-width="2" fill="none"/> <polyline points="120,50 130,70 120,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="20,50 10,70 20,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,20 70,10 90,20" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,120 70,130 90,120" stroke="green" stroke-width="2" fill="none"/> <polyline points="40,50 100,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,40 90,100" stroke="green" stroke-width="2" fill="none"/> <polyline points="100,50 40,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,100 90,40" stroke="green" stroke-width="2" fill="none"/> <polyline points="10,60 70,30 130,60" stroke="blue" stroke-width="2" fill="none"/> <polyline points="10,80 70,110 130,80" stroke="blue" stroke-width="2" fill="none"/> <polyline points="60,10 30,70 60,130" stroke="blue" stroke-width="2" fill="none"/> <polyline points="80,10 110,70 80,130" stroke="blue" stroke-width="2" fill="none"/> <polyline points="70,0 70,140" stroke="red" stroke-width="3" fill="none"/> <polyline points="0,70 140,70" stroke="red" stroke-width="3" fill="none"/> <polyline points="30,40 30,100" stroke="red" stroke-width="3" fill="none"/> <polyline points="110,40 110,100" stroke="red" stroke-width="3" fill="none"/> <polyline points="10,60 10,80" stroke="red" stroke-width="3" fill="none"/> <polyline points="130,60 130,80" stroke="red" stroke-width="3" fill="none"/> <polyline points="50,20 50,40" stroke="red" stroke-width="3" fill="none"/> <polyline points="90,20 90,40" stroke="red" stroke-width="3" fill="none"/> <polyline points="50,100 50,120" stroke="red" stroke-width="3" fill="none"/> <polyline points="90,100 90,120" stroke="red" stroke-width="3" fill="none"/> <polyline points="40,30 100,30" stroke="red" stroke-width="3" fill="none"/> <polyline points="40,110 100,110" stroke="red" stroke-width="3" fill="none"/> <polyline points="60,10 80,10" stroke="red" stroke-width="3" fill="none"/> <polyline points="60,130 80,130" stroke="red" stroke-width="3" fill="none"/> <polyline points="20,50 40,50" stroke="red" stroke-width="3" fill="none"/> <polyline points="20,90 40,90" stroke="red" stroke-width="3" fill="none"/> <polyline points="100,50 120,50" stroke="red" stroke-width="3" fill="none"/> <polyline points="100,90 120,90" stroke="red" stroke-width="3" fill="none"/>
+</svg>
+</div>
+<div id="home" style="font-size:smaller">
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="intro.html">Introduction</a></li>
+<li><a href="definitions.html">Definitions</a></li>
+<li><a href="examples.html">Examples</a></li>
+<li><a href="basic-facts.html">Basic facts</a></li>
+<li><a href="groups.html">Groups</a></li>
+<li><a href="open-problems.html">Open Problems</a></li>
+<li><a href="index.html">Index</a></li>
+</ul>
+</div>
+<div id="signature">
+<p>kedra☠abdn.ac.uk</p>
+</div>
+<!-- EDITION IN MARKDOWN -->
+<h2 id="introduction">Introduction</h2>
+<p>An <a href="definitions.html#norm"><em>invariant norm</em></a> on a group <span class="math inline"><em>G</em></span> is a nonnegative function which is symmetric, satisfies the triangle inequality and is invariant with respect to certain automorphisms of <span class="math inline"><em>G</em></span>. The most important class consists of norm invariant under conjugation. Although such norms have been studied - often under different names - for a long time, the first systematic treatment was done by Burago, Ivanov and Polterovich in <a href="https://arxiv.org/abs/0710.1412">[arxiv:0710.1412]</a>, where the basic notions were abstracted and a number of stimulating open problems asked.</p>
+<p>Most of the invariant norms are word norms with a few notable exceptions. Let us discuss some areas of mathematics where invariant norms are present.</p>
+<ul>
+<li><p><strong>Symplectic geometry.</strong> The group <span class="math inline">${\rm Ham}(M,\omega)$</span> of compactly supported Hamiltonian diffeomorphisms of a symplectic manifold <span class="math inline">(<em>M</em>, <em>ω</em>)</span> admits a natural conjugation invariant norm called the <em>Hofer norm</em>. This norm is induces a nondiscrete and separable topology. This is highly unusual and it is one of the <em>wonders of symplectic topology</em>, according to [<a href="https://sites.google.com/site/polterov/miscellaneoustexts/function-theory-on-symplectic-manifolds">Polterovich-Rosen-2014</a>].</p></li>
+<li><p><strong>Dynamics.</strong> Groups of diffeomorphisms of manifolds have geometrically meaningful generators; e.g., elements included in flows of vector fields, conjugacy classes with prescribed dynamical features, elements supported in sets with prescribed properties. The associated word norms for such generating sets are conjugation invariant.</p></li>
+<li><p><strong>Finite groups.</strong> Finite simple groups admit interesting conjugation invariant generatings sets; e.g., single conjugacy class, sets of elements of a given order. The associated (conjugation invariant) word norms have been extensively studied. Of course, every norm on a finite group has finite diameter. However, it is interesting to study norms suitably defined on infinte families of finite groups adnd to obtain uniform bounds. For example, there exists a constant <span class="math inline"><em>c</em> &gt; 0</span> such that any element in any finite simple group is a product of at most <span class="math inline"><em>c</em></span> involutions [<a href="http://www.jstor.org/stable/3062101?seq=1#page_scan_tab_contents">Liebeck-Shalev-2001</a>].</p></li>
+<li><p><strong>Metric geometry.</strong> The fundamental group of a metric space is its homotopy invariant. However, it can be equipped with a geometrically defined conjugation invariant generating set and hence the associated word norm will reflect the metric structure of the space.</p></li>
+</ul>
+<!-- END OF MARKDOWN -->
+</body>
+</html>
+</body>
+</html>

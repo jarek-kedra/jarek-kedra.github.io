@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>
+Invariant norms on groups
+</title>
+<p><link rel="stylesheet" type="text/css" href="global.css" media="screen"></p>
+<!-- MATHJAX -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async 
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<!-- LEFT PANEL -->
+<div id="logo">
+<svg height="140" width="140">
+<polyline points="30,40 70,10 110,40" stroke="black" stroke-width="2" fill="none"/> <polyline points="40,30 10,70 40,110" stroke="black" stroke-width="2" fill="none"/> <polyline points="30,100 70,130 110,100" stroke="black" stroke-width="2" fill="none"/> <polyline points="100,30 130,70 100,110" stroke="black" stroke-width="2" fill="none"/> <polyline points="120,50 130,70 120,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="20,50 10,70 20,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,20 70,10 90,20" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,120 70,130 90,120" stroke="green" stroke-width="2" fill="none"/> <polyline points="40,50 100,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,40 90,100" stroke="green" stroke-width="2" fill="none"/> <polyline points="100,50 40,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,100 90,40" stroke="green" stroke-width="2" fill="none"/> <polyline points="10,60 70,30 130,60" stroke="blue" stroke-width="2" fill="none"/> <polyline points="10,80 70,110 130,80" stroke="blue" stroke-width="2" fill="none"/> <polyline points="60,10 30,70 60,130" stroke="blue" stroke-width="2" fill="none"/> <polyline points="80,10 110,70 80,130" stroke="blue" stroke-width="2" fill="none"/> <polyline points="70,0 70,140" stroke="red" stroke-width="3" fill="none"/> <polyline points="0,70 140,70" stroke="red" stroke-width="3" fill="none"/> <polyline points="30,40 30,100" stroke="red" stroke-width="3" fill="none"/> <polyline points="110,40 110,100" stroke="red" stroke-width="3" fill="none"/> <polyline points="10,60 10,80" stroke="red" stroke-width="3" fill="none"/> <polyline points="130,60 130,80" stroke="red" stroke-width="3" fill="none"/> <polyline points="50,20 50,40" stroke="red" stroke-width="3" fill="none"/> <polyline points="90,20 90,40" stroke="red" stroke-width="3" fill="none"/> <polyline points="50,100 50,120" stroke="red" stroke-width="3" fill="none"/> <polyline points="90,100 90,120" stroke="red" stroke-width="3" fill="none"/> <polyline points="40,30 100,30" stroke="red" stroke-width="3" fill="none"/> <polyline points="40,110 100,110" stroke="red" stroke-width="3" fill="none"/> <polyline points="60,10 80,10" stroke="red" stroke-width="3" fill="none"/> <polyline points="60,130 80,130" stroke="red" stroke-width="3" fill="none"/> <polyline points="20,50 40,50" stroke="red" stroke-width="3" fill="none"/> <polyline points="20,90 40,90" stroke="red" stroke-width="3" fill="none"/> <polyline points="100,50 120,50" stroke="red" stroke-width="3" fill="none"/> <polyline points="100,90 120,90" stroke="red" stroke-width="3" fill="none"/>
+</svg>
+</div>
+<div id="home" style="font-size:smaller">
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="intro.html">Introduction</a></li>
+<li><a href="definitions.html">Definitions</a></li>
+<li><a href="examples.html">Examples</a></li>
+<li><a href="basic-facts.html">Basic facts</a></li>
+<li><a href="groups.html">Groups</a></li>
+<li><a href="open-problems.html">Open Problems</a></li>
+<li><a href="index.html">Index</a></li>
+</ul>
+</div>
+<div id="signature">
+<p>kedra☠abdn.ac.uk</p>
+</div>
+<!-- EDITION IN MARKDOWN -->
+<h2 id="invariant-norms-on-groups">Invariant norms on groups</h2>
+<p>Given a group we investigate whether it has the following properties:</p>
+<ul>
+<li>Bounded.
+<ul>
+<li>Strongly bounded.</li>
+<li>Uniformly bounded.</li>
+</ul></li>
+<li>Unbounded.
+<ul>
+<li>Stably unbounded.</li>
+<li>Admits an unbounded quasimorphism.</li>
+</ul></li>
+</ul>
+<p>Click on the name of a group to expand.</p>
+<!--
+<label>
+  <input id="read-more" type="checkbox"> 
+  <div id="read-less">
+
+-----
+
+-----
+
+</div>
+</label>
+-->
+<label> <input id="read-more" type="checkbox"> Baumslag-Solitar groups.
+<div id="read-less">
+<hr />
+<p>Let <span class="math inline">${\rm BS}(p,q)=\left&lt; x,t | t x^p t^{-1} = x^q \right&gt;$</span> be a Baumslag-Solitar group, where <span class="math inline">$p,q\in \mathbf N$</span> are relatively prime positive integers. It admits a surjective homomorphism <span class="math inline">$BS(p,q)\to \mathbf Z$</span> defined by <span class="math inline"><em>x</em> ↦ 0</span> and <span class="math inline"><em>t</em> ↦ 1</span>. It is therefore a stably unbounded group.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Braid groups and their commutator subgroups.
+<div id="read-less">
+<hr />
+<p>Let <span class="math inline">$\mathbf B_n$</span> be the braid group on <span class="math inline"><em>n</em></span>-strings. Its abelianisation is infinite cyclic and hence the group is stably unbouned. It is interesting to consider the commutator subgroup of a braid group. Since <span class="math inline"><em>B</em><sub>2</sub></span> is infinite cyclic its commutator is trivial. The group <span class="math inline">[<em>B</em><sub>3</sub>, <em>B</em><sub>3</sub>]</span> is free of rank two so it is stably unbounded. Next, the group <span class="math inline">[<em>B</em><sub>4</sub>, <em>B</em><sub>4</sub>]</span> is a semidirect product of two nonabelian free groups, so it is stably unbounded as well.</p>
+<p>If <span class="math inline"><em>n</em> &gt; 4</span> then the commutator subgroup <span class="math inline">[<em>B</em><sub><em>n</em></sub>, <em>B</em><sub><em>n</em></sub>]</span> is perfect. In particular, it does not admit nontrivial homomorphims to abelian groups. However, it admits unbounded quasimorphisms defined by the signature of the link obtained by closing braids. In particular, the commutator length of <span class="math inline">[<em>B</em><sub><em>n</em></sub>, <em>B</em><sub><em>n</em></sub>]</span> for <span class="math inline"><em>n</em> ≥ 5</span> is infinite.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Braid group (infinite).
+<div id="read-less">
+<hr />
+<p>Let <span class="math inline">$\mathbf B = \mathbf B_{\infty_{}}$</span> be the braid group on infinitely many strings. More precisely, it is the ascending union of braid groups <span class="math inline"><em>B</em><sub>2</sub> ⊂ <em>B</em><sub>3</sub> ⊂ ...</span>, with the obvious inclusions. As in the previous example the abelianisation of <span class="math inline">$\mathbf B$</span> is infinite cyclic, so the group is stably unbounded and it is interesting to consider its commutator subgroup.</p>
+<p>In contrast to the finite case, the group <span class="math inline">$[\mathbf B,\mathbf B]$</span> does not admit unbounded quasimorphisms. More precisely, its commutator length is bounded by <span class="math inline">2</span>.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Compact simple Lie groups.
+<div id="read-less">
+<hr />
+<p>Let <span class="math inline">$G={\rm SO}(3)$</span>. This is a simple but not uniformly simple group. To see this let <span class="math inline"><em>f</em> ∈ <em>G</em></span> be a rotation through an angle <span class="math inline"><em>ϵ</em> &gt; 0</span> and let <span class="math inline"><em>g</em> ∈ <em>G</em></span> be a rotation through angle <span class="math inline"><em>α</em></span>. If <span class="math inline"><em>g</em></span> is expressed as a product of conjugates of <span class="math inline"><em>f</em></span> then the number of factors is at least <span class="math inline"><em>α</em>/<em>ϵ</em></span>. Thus taking <span class="math inline"><em>ϵ</em></span> arbitrarily small shows that <span class="math inline"><em>G</em></span> is not unifromly simple. Equivalently, <span class="math inline"><em>G</em></span> is not strongly bounded.</p>
+<p>This argument works for other compact simple Lie groups.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Diffeomorphisms of a manifold.
+<div id="read-less">
+<hr />
+<p><span class="math inline">${\rm Diff}_0(M)_{}$</span>. Let <span class="math inline"><em>M</em></span> be a smooth manifold and let <span class="math inline">$G={\rm Diff}_0^c(M)_{}$</span> be the group of compactly supported <span class="math inline"><em>C</em><sup><em>r</em></sup></span>-diffeomorphisms of <span class="math inline"><em>M</em></span> isotopic to the identity through a compactly supported isotopy. Assume that <span class="math inline"><em>r</em> ≠ dim<em>M</em> + 1</span>.</p>
+<p><strong>Theorem</strong> (Herman-Mather-Thurston-1974). <em>The group <span class="math inline"><em>G</em></span> is <strong>perfect</strong>.</em></p>
+<p>Haller, Rybicki and Teichmann proposed a simpler proof <a href="https://arxiv.org/abs/math/0409605">arxiv:0409605</a> for <span class="math inline"><em>M</em></span> of dimension at least <span class="math inline">2</span> which still relies on one nontrivial result by Herman. A slightly more simplified version of their argument was written by Mann <a href="https://math.berkeley.edu/~kpmann/perfectness2.pdf">Mann-2016</a>.</p>
+<p><em>Remark</em> If <span class="math inline"><em>r</em> = dim<em>M</em> + 1</span> then the perfectness of diffeomorphism is unknown, see a <a href="https://www.youtube.com/watch?v=WmqISMJMq44">lecture by Etienne Ghys</a>.</p>
+<p><strong>Theorem.</strong> <em>The group <span class="math inline"><em>G</em></span> is <strong>simple</strong>.</em></p>
+<p>Let <span class="math inline">1 ≠ <em>f</em> ∈ <em>G</em></span> be a nontrivial element. The aim is to express any element <span class="math inline"><em>g</em> ∈ <em>G</em></span> as a product of conugates of <span class="math inline"><em>f</em></span>. This is equivalent to simplicity. Since <span class="math inline"><em>f</em></span> is nontrivial, there exists a ball <span class="math inline"><em>B</em> ⊂ <em>M</em></span> such that <span class="math inline"><em>f</em>(<em>B</em>)∩<em>B</em> = ∅</span>. By a ball we mean a subset of <span class="math inline"><em>M</em></span> diffeomorphic to a Euclidean ball. The proof has the following steps.</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline"><em>G</em></span> has the <em>fragmentation property</em>. This means that every diffeomorphism <span class="math inline"><em>g</em> ∈ <em>G</em></span> can be expressed as a product of diffeomorphisms supported in balls.</p></li>
+<li><p>Suppose that <span class="math inline"><em>g</em> ∈ <em>G</em></span> is supported in the ball <span class="math inline"><em>B</em></span> and isotopic to the identity through an isotopy supported in <span class="math inline"><em>B</em></span>. Since <span class="math inline">${\rm Diff}_0^c(B)_{}$</span> is perfect <span class="math inline"><em>g</em> = [<em>a</em><sub>1</sub>, <em>b</em><sub>1</sub>]⋯[<em>a</em><sub><em>m</em></sub>, <em>b</em><sub><em>m</em></sub>]</span> where <span class="math inline">$a_i,b_i\in {\rm Diff}_0^c(B)_{}$</span>.</p></li>
+</ol>
+<ul>
+<li><p>Let <span class="math inline">$a,b \in {\rm Diff}_0^c(B)_{}$</span>. Since <span class="math inline"><em>f</em></span> displaces the ball <span class="math inline"><em>B</em></span>, we get that <span class="math inline">[<em>a</em>, <em>b</em>]=[[<em>a</em>, <em>f</em>],<em>b</em>]</span> and hence <span class="math inline">[<em>a</em>, <em>b</em>]</span> is a product of four conjugates of <span class="math inline"><em>f</em></span>.</p></li>
+<li><p>It follows that <span class="math inline"><em>g</em> = [<em>a</em><sub>1</sub>, <em>b</em><sub>1</sub>]⋯[<em>a</em><sub><em>m</em></sub>, <em>b</em><sub><em>m</em></sub>]</span> is a product of <span class="math inline">4<em>m</em></span> conjugates of <span class="math inline"><em>f</em></span>.</p></li>
+<li><p>Let <span class="math inline"><em>B</em>′⊂<em>M</em></span> be a ball. There exists <span class="math inline"><em>h</em> ∈ <em>G</em></span> such that <span class="math inline"><em>h</em>(<em>B</em>′) = <em>B</em></span>. If <span class="math inline"><em>g</em> = [<em>a</em><sub>1</sub>, <em>b</em><sub>1</sub>]⋯[<em>a</em><sub><em>m</em></sub>, <em>b</em><sub><em>m</em></sub>]</span>, where <span class="math inline"><em>a</em><sub><em>i</em></sub>, <em>b</em><sub><em>i</em></sub></span> are supported in <span class="math inline"><em>B</em>′</span> then <span class="math inline"><em>g</em></span> is a product of <span class="math inline">4<em>m</em></span> conjugates of <span class="math inline"><em>h</em><sup>−1</sup><em>f</em><em>h</em></span> which themselves are conjugates of <span class="math inline"><em>f</em></span>.</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>We conclude that <span class="math inline"><em>g</em></span> can be expressed as a product of <span class="math inline">4<em>k</em></span> conjugates of <span class="math inline"><em>f</em></span>, where <span class="math inline"><em>k</em> = Frag(<em>g</em>)</span> is the fragmentation norm of <span class="math inline"><em>g</em></span>. In particular, <span class="math inline"><em>G</em></span> is simple. Moreover, the uniform simplicity is equivalent to boundedness of the fragmentation norm.</li>
+</ol>
+<p><strong>Theorem</strong> (Tsuboi). <em>Let <span class="math inline"><em>M</em></span> be the interior of a compact manifold. If <span class="math inline">dim<em>M</em> ≥ 5</span> or <span class="math inline"><em>M</em></span> has no handles in middle dimension then the group <span class="math inline"><em>G</em></span> is <strong>uniformly simple</strong>.</em></p>
+<p>Let <span class="math inline"><em>f</em>, <em>g</em> ∈ <em>G</em></span> be nontrivial diffeomorphisms. The aim is to express <span class="math inline"><em>g</em></span> as a product of uniformly bounded number of conjugates of <span class="math inline"><em>f</em></span> The proof has the following steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>If <span class="math inline"><em>M</em></span> has only handles of indices smaller than <span class="math inline">$\frac{1}{2}\dim M$</span> then <span class="math inline"><em>g</em></span> is a product of <span class="math inline">4<em>c</em> + 1</span> commutators supported in balls. Here <span class="math inline"><em>c</em></span> is the number of indices of the handle decomposition of <span class="math inline"><em>M</em></span>. Consequently, <span class="math inline"><em>g</em></span> is a product of <span class="math inline">4(4<em>c</em> + 1)</span> conjugates of <span class="math inline"><em>f</em></span></p></li>
+<li><p>Assume that <span class="math inline"><em>M</em></span> has no handles in middle index. Decompose <span class="math inline"><em>M</em></span> into a union of open submanifolds <span class="math inline"><em>M</em><sub>1</sub> ∪ <em>M</em><sub>2</sub></span> as in (1) and prove that <span class="math inline"><em>g</em></span> can be decomposed as a product <span class="math inline"><em>g</em> = <em>g</em><sub>1</sub><em>g</em><sub>2</sub></span>, where <span class="math inline">$g_i\in {\rm Diff}_0^c(M_i)$</span>. Thus <span class="math inline"><em>g</em></span> is a product of <span class="math inline">8(4<em>c</em> + 1)</span> conjugates of <span class="math inline"><em>f</em></span>.</p></li>
+<li><p>If <span class="math inline"><em>M</em></span> has handles in middle dimension then a more sofisticated version of the argument in (2) can be done provided <span class="math inline">dim<em>M</em> ≥ 6</span>.</p></li>
+</ol>
+<p><em>Remark.</em> Some parts of the proof given by Tsuboi have been independently done by Burago-Ivanov-Polterovich. Combining the two approaches can slightly simplify the original Tsuboi's proof.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Free groups.
+<div id="read-less">
+<hr />
+<p>Let <span class="math inline">$\mathbf F_n$</span> be a nonabelian free group generated by <span class="math inline"><em>n</em></span> elements. Since it admits unbounded quasimorphisms (e.g., counting ones) it is stably unbounded.</p>
+<p><strong>Theorem.</strong> The <span class="math inline">${\sf Aut}$</span>-invariant word norm on the group <span class="math inline">$\mathbf F_n$</span> is stably unbounded.</p>
+<p><em>Proof.</em> The generating set of the <span class="math inline">${\sf Aut}$</span>-invariant word norm consits of the orbit of a single generator. Such an element is called <em>primitive</em>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Case of <span class="math inline">$\mathbf F_2=\langle x,y \rangle$</span>:</p>
+<ul>
+<li>Observe that every primitive element is a product of up to two palindromes.</li>
+<li>Let <span class="math inline">$\xi\colon \mathbf F_2\to \mathbf R$</span> be a quasimorphism defined as follows. Every reduced word <span class="math inline">$w(x,y)=\mathbf F_2$</span> defines a piecewise horizontal/vertical path on <span class="math inline">$\mathbf R^2$</span>. The path starts at the origin and it is a concatenation of horizontal oriented unit intervals (corresponding to <span class="math inline"><em>x</em><sup>±1</sup></span> and vertical oriented unit intervals (corresponding to <span class="math inline"><em>y</em><sup>±1</sup></span>. Then <span class="math inline"><em>ξ</em>(<em>w</em>(<em>x</em>, <em>y</em>))</span> is defined to be the difference between the right and left turns made by the path corresponding to <span class="math inline"><em>w</em>(<em>x</em>, <em>y</em>)</span>. It is called the <strong>snake</strong> quasimorphism.</li>
+<li>The snake quasimorphism is unbounded and vanishes on palindromes. Consequently it is bounded on primitive elements which proves that the <span class="math inline">${\sf Aut}$</span>-word norm is stably unbounded.</li>
+</ul></li>
+<li>The general case:
+<ul>
+<li>An element <span class="math inline">$w\in \mathbf F_n$</span> defines a graph called the Whitehead graph. If the Whitehead graph of <span class="math inline"><em>w</em></span> has a cut vertex then <span class="math inline"><em>w</em></span> is primitive.</li>
+<li>Then</li>
+</ul></li>
+</ol>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Hamiltonian diffeomorphisms of a symplectic manifold.
+<div id="read-less">
+<hr />
+<p>Let <span class="math inline">(<em>M</em>, <em>ω</em>)</span> be a symplectic manifold. Let <span class="math inline">Ham(<em>M</em>, <em>ω</em>)</span> be the group of compactly supported Hamiltonian diffeomorphisms. This is is a Frechet-Lie group with the Lie algebra isomorphic to the space of compactly supported functions on <span class="math inline"><em>M</em></span> modulo constant functions. It may be equipped with several different norms like the Hofer norm, the autonomous norm and the maximal word norm.</p>
+<p><strong>Facts:</strong></p>
+<ul>
+<li><p>If <span class="math inline"><em>M</em></span> is closed then the group <span class="math inline">Ham(<em>M</em>, <em>ω</em>)</span> is simple. If <span class="math inline"><em>M</em></span> is noncompact then the kernel of the Calabi homomorphism <span class="math inline">${\sf CAL}\colon {\rm Ham}(M,\omega)\to \mathbf R$</span> is simple.</p></li>
+<li><p>The topology induced by the Hofer norm is <em>nondiscrete <strong>and</strong> separable</em>. The occurence of these two properties at the same time is unusual for a group of diffeomorphisms. For example, groups of all diffeomorphisms do not admit nondiscrete norms at all. The group of volume preserving diffeomorphisms admits a nondiscrete norm (<span class="math inline">vol-supp</span>) but its topology is not separable.</p></li>
+<li><p>The existence of the nondiscrete norm implies that <span class="math inline">${\rm Ham}(M,\omega)$</span> is not strongly bounded.</p></li>
+</ul>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Heisenberg group.
+<div id="read-less">
+<hr />
+<p>Let <span class="math inline">$H = {\rm N}(3,\mathbf Z)$</span> be the Heisenberg group of uppertriangular matrices with integer coefficients.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Hyperbolic groups.
+<div id="read-less">
+<hr />
+<p>If <span class="math inline"><em>H</em></span> is a nonelementary (not virtually cyclic) word hyperbolic group then it admits an unboounded quasimorphisms <a href="http://www.math.tohoku.ac.jp/~fujiwara/epstein.ps">Epstein-Fujiwara-1994</a>. Consequently, <span class="math inline"><em>H</em></span> is stably unbounded.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Noncompact simple Lie groups.
+<div id="read-less">
+<hr />
+<p>Let <span class="math inline"><em>G</em></span> be a noncompact simple Lie group.</p>
+<p><strong>Theorem.</strong> <em><span class="math inline"><em>G</em></span> is uniformly simple.</em></p>
+<hr />
+</div>
+</label> <label> <input id="read-more"type="checkbox"> SL(2,Z).
+<div id="read-less">
+<hr />
+<p><span class="math inline">${\rm SL}(2,\mathbf Z)$</span>. This group is <strong><em>stably unbounded</em></strong>, which follows from the existence of unbounded quasimorphisms. Indeed, consider its quotient group <span class="math inline">${\rm PSL}(2,\mathbf Z) = \langle a,b\ |\ a^2 = b^3 =1 \rangle$</span>. This means that every element <span class="math inline">$g\in {\rm PSL}(2,\mathbf Z)$</span> can be expressed uniquely as a product of <span class="math inline"><em>a</em></span>'s and <span class="math inline"><em>b</em><sup>±1</sup></span>'s. Let <span class="math inline">$\psi\colon {\rm PSL}(2,\mathbf Z)\to \mathbf R$</span> be a function such that <span class="math inline"><em>ψ</em>(<em>g</em>)</span> is the sum of the exponents of <span class="math inline"><em>b</em></span>'s. It is straighforward to check that it is a quasimorphism and that it is unbounded. Thus <span class="math inline">${\rm PSL}(2,\mathbf Z)$</span> is stably unbounded and so is <span class="math inline">${\rm SL}(2,\mathbf Z)$</span>.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> SL(n,Z) and Chevalley groups.
+<div id="read-less">
+<hr />
+<p><span class="math inline">${\rm SL}(n,\mathbf Z)$</span> <strong>for</strong> <span class="math inline"><em>n</em> ≥ 3</span>.</p>
+<p><strong>Theorem.</strong> The group <span class="math inline">${\rm SL}(n,\mathbf Z)$</span> is bounded.</p>
+<p>The proof has the following steps:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">${\rm SL}(n,\mathbf Z)$</span> is conjugation generated by elementary matrices and the associated word norm is bounded. This follows from a stronger property of being boundedly generated by elementary matrices which was proven by Carter-Keller.</p></li>
+<li><p><span class="math inline">${\rm SL}(n,\mathbf Z)$</span> is generated by unit elementary matrices of <span class="math inline"><em>E</em><sub><em>i</em><em>j</em></sub>(±1)<sub></sub></span>. Let <span class="math inline"><em>S</em></span> be the set of all conjugates of the above elementary matrices. We shall show that the word metric associated with <span class="math inline"><em>S</em></span> is bounded. The following identity on the commutators are known as <em>Steinberg's relation</em>: <br /><span class="math display">[<em>E</em><sub><em>i</em><em>j</em></sub>(<em>s</em>),<em>E</em><sub><em>j</em><em>k</em></sub>(<em>t</em>)] = <em>E</em><sub><em>i</em><em>k</em></sub>(<em>s</em><em>t</em>)<sub></sub>.</span><br /> In particular, <span class="math inline"><em>E</em><sub><em>i</em><em>k</em></sub>(<em>s</em>)=[<em>E</em><sub><em>i</em><em>j</em></sub>(1),<em>E</em><sub><em>j</em><em>k</em></sub>(<em>s</em>)]<sub></sub></span> which means that an elementary matrix is a product ot two generators. Combining this observation with (1) shows that the word norm associated with <span class="math inline"><em>S</em></span> is bounded which proves boundedness of <span class="math inline">${\rm SL}(n,\mathbf Z)$</span>.</p></li>
+</ol>
+<p><em>Remark.</em> This argument works for a general S-arithmetic Chevalley group. The elementary bounded generation is a result of Tavgen' and the second part of the argument is similar [<a href="http://arxiv.org/abs/1102.0423">Gal-Kędra arxiv:1102.0423</a>].</p>
+<p><em>Remark.</em> Bounded generation is inherited by finite index subgroups and a suitable generalisation of the above argument proves boundedness for finite index subgroups of S-arithmetics Chevalley groups. In particular, finite index subgroups of <span class="math inline">${\rm SL}(n,\mathbf Z)$</span>, <span class="math inline"><em>n</em> ≥ 3</span> are bounded.</p>
+<p><strong>Theorem.</strong> <span class="math inline">${\rm SL}(n,\mathbf Z)$</span> is not uniformly bounded.</p>
+<p><strong>Theorem.</strong> <span class="math inline">${\rm SL}(n,\mathbf Z)$</span> is strongly bounded.</p>
+<hr />
+</div>
+<p></label></p>
+<label> <input id="read-more" type="checkbox">
+<div id="read-less">
+
+</div>
+<p></label></p>
+<!-- END OF MARKDOWN -->
+</body>
+</html>
+</body>
+</html>

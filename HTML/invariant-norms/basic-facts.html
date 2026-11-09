@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>
+Invariant norms on groups
+</title>
+<p><link rel="stylesheet" type="text/css" href="global.css" media="screen"></p>
+<!-- MATHJAX -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async 
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<!-- LEFT PANEL -->
+<div id="logo">
+<svg height="140" width="140">
+<polyline points="30,40 70,10 110,40" stroke="black" stroke-width="2" fill="none"/> <polyline points="40,30 10,70 40,110" stroke="black" stroke-width="2" fill="none"/> <polyline points="30,100 70,130 110,100" stroke="black" stroke-width="2" fill="none"/> <polyline points="100,30 130,70 100,110" stroke="black" stroke-width="2" fill="none"/> <polyline points="120,50 130,70 120,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="20,50 10,70 20,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,20 70,10 90,20" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,120 70,130 90,120" stroke="green" stroke-width="2" fill="none"/> <polyline points="40,50 100,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,40 90,100" stroke="green" stroke-width="2" fill="none"/> <polyline points="100,50 40,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,100 90,40" stroke="green" stroke-width="2" fill="none"/> <polyline points="10,60 70,30 130,60" stroke="blue" stroke-width="2" fill="none"/> <polyline points="10,80 70,110 130,80" stroke="blue" stroke-width="2" fill="none"/> <polyline points="60,10 30,70 60,130" stroke="blue" stroke-width="2" fill="none"/> <polyline points="80,10 110,70 80,130" stroke="blue" stroke-width="2" fill="none"/> <polyline points="70,0 70,140" stroke="red" stroke-width="3" fill="none"/> <polyline points="0,70 140,70" stroke="red" stroke-width="3" fill="none"/> <polyline points="30,40 30,100" stroke="red" stroke-width="3" fill="none"/> <polyline points="110,40 110,100" stroke="red" stroke-width="3" fill="none"/> <polyline points="10,60 10,80" stroke="red" stroke-width="3" fill="none"/> <polyline points="130,60 130,80" stroke="red" stroke-width="3" fill="none"/> <polyline points="50,20 50,40" stroke="red" stroke-width="3" fill="none"/> <polyline points="90,20 90,40" stroke="red" stroke-width="3" fill="none"/> <polyline points="50,100 50,120" stroke="red" stroke-width="3" fill="none"/> <polyline points="90,100 90,120" stroke="red" stroke-width="3" fill="none"/> <polyline points="40,30 100,30" stroke="red" stroke-width="3" fill="none"/> <polyline points="40,110 100,110" stroke="red" stroke-width="3" fill="none"/> <polyline points="60,10 80,10" stroke="red" stroke-width="3" fill="none"/> <polyline points="60,130 80,130" stroke="red" stroke-width="3" fill="none"/> <polyline points="20,50 40,50" stroke="red" stroke-width="3" fill="none"/> <polyline points="20,90 40,90" stroke="red" stroke-width="3" fill="none"/> <polyline points="100,50 120,50" stroke="red" stroke-width="3" fill="none"/> <polyline points="100,90 120,90" stroke="red" stroke-width="3" fill="none"/>
+</svg>
+</div>
+<div id="home" style="font-size:smaller">
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="intro.html">Introduction</a></li>
+<li><a href="definitions.html">Definitions</a></li>
+<li><a href="examples.html">Examples</a></li>
+<li><a href="basic-facts.html">Basic facts</a></li>
+<li><a href="groups.html">Groups</a></li>
+<li><a href="open-problems.html">Open Problems</a></li>
+<li><a href="index.html">Index</a></li>
+</ul>
+</div>
+<div id="signature">
+<p>kedra☠abdn.ac.uk</p>
+</div>
+<!-- EDITION IN MARKDOWN -->
+<h3 id="basic-facts">Basic facts</h3>
+<label> <input id="read-more" type="checkbox"> Burago-Ivanov-Polterovich commutator trick.
+<div id="read-less">
+<hr />
+<a name="bip-commutator-trick"> </a> <em>Let <span class="math inline"><em>g</em><sub>1<sub></sub></sub>, …, <em>g</em><sub><em>m</em><sub></sub></sub> ∈ <em>G</em></span>. Suppose that there exists <span class="math inline"><em>f</em> ∈ <em>G</em></span> such that the conjugates <span class="math inline"><em>f</em><sup><em>i</em></sup>(<em>g</em><sub><em>i</em><sub></sub></sub>)</span> pairwise commute for <span class="math inline"><em>i</em> = 0, 1, …, <em>m</em></span>. Then there exists <span class="math inline"><em>h</em> ∈ <em>G</em></span> such that</em>
+<center>
+<span class="math inline"><em>g</em><sub><em>m</em><sub></sub></sub>⋯ <em>g</em><sub>2<sub></sub></sub> <em>g</em><sub>1<sub></sub></sub> = [<em>f</em>, <em>h</em>] <em>f</em><sup><em>m</em></sup>(<em>g</em><sub><em>m</em><sub></sub></sub>) ⋯ <em>f</em><sup>2</sup>(<em>g</em><sub>2<sub></sub></sub>) <em>f</em><sup>1</sup>(<em>g</em><sub>1<sub></sub></sub>).</span>
+</center>
+<p>See Lemma 2.5 and 2.6 in <a href="https://arxiv.org/abs/0710.1412">[arxiv:0710.1412]</a> for a proof.</p>
+<p>In order to visualise the proof assume that <span class="math inline"><em>G</em></span> is a group of diffeomorphisms of a manifold. In the picture below the diffeomorphisms <span class="math inline"><em>r</em>, <em>g</em>, <em>b</em> ∈ <em>G</em></span> are supported in the suitably coloured oriented circles and the diffeomorphism <span class="math inline"><em>f</em></span> is a shift to the right displacing the supports.</p>
+<p>Single commutator <span class="math inline">[<em>r</em>, <em>f</em>]</span>:</p>
+<svg height="100" width="800">
+<circle cx="50" cy="50" r="40" stroke="red" stroke-width="3" fill="none" /> <polyline points="58,6 45,10 58,16" stroke="red" stroke-width="3" fill="none"/> <circle cx="250" cy="50" r="40" stroke="red" stroke-width="3" fill="none" /> <polyline points="245,6 258,11 245,16" stroke="red" stroke-width="3" fill="none"/>
+</svg>
+<p>The left hand side red circle is <span class="math inline"><em>r</em></span> and the right hand side circle if <span class="math inline"><em>f</em><em>r</em><sup>−1</sup><em>f</em><sup>−1</sup></span>.</p>
+<p>Diffeomorphism <span class="math inline"><em>h</em> = <em>r</em><em>g</em><em>b</em> ⋅ <em>f</em>(<em>g</em><em>b</em>)⋅<em>f</em><sup>2</sup>(<em>b</em>)</span>:</p>
+<svg height="150" width="800">
+<circle cx="50" cy="50" r="40" stroke="red" stroke-width="3" fill="none" /> <polyline points="58,6 45,10 58,16" stroke="red" stroke-width="3" fill="none"/> <circle cx="80" cy="50" r="40" stroke="green" stroke-width="3" fill="none" /> <polyline points="88,6 75,10 88,16" stroke="green" stroke-width="3" fill="none"/> <circle cx="65" cy="80" r="40" stroke="blue" stroke-width="3" fill="none" /> <polyline points="73,36 60,40 73,46" stroke="blue" stroke-width="3" fill="none"/> <circle cx="280" cy="50" r="40" stroke="green" stroke-width="3" fill="none" /> <polyline points="288,6 275,10 288,16" stroke="green" stroke-width="3" fill="none"/> <circle cx="265" cy="80" r="40" stroke="blue" stroke-width="3" fill="none" /> <polyline points="273,36 260,40 273,46" stroke="blue" stroke-width="3" fill="none"/> <circle cx="465" cy="80" r="40" stroke="blue" stroke-width="3" fill="none" /> <polyline points="473,36 460,40 473,46" stroke="blue" stroke-width="3" fill="none"/>
+</svg>
+<p>Its conjugate <span class="math inline"><em>f</em>(<em>h</em>)</span>:</p>
+<svg height="150" width="800">
+<circle cx="250" cy="50" r="40" stroke="red" stroke-width="3" fill="none" /> <polyline points="245,6 258,11 245,16" stroke="red" stroke-width="3" fill="none"/> <circle cx="280" cy="50" r="40" stroke="green" stroke-width="3" fill="none" /> <polyline points="275,6 288,11 275,16" stroke="green" stroke-width="3" fill="none"/> <circle cx="265" cy="80" r="40" stroke="blue" stroke-width="3" fill="none" /> <polyline points="260,36 273,41 260,46" stroke="blue" stroke-width="3" fill="none"/> <circle cx="480" cy="50" r="40" stroke="green" stroke-width="3" fill="none" /> <polyline points="475,6 488,11 475,16" stroke="green" stroke-width="3" fill="none"/> <circle cx="465" cy="80" r="40" stroke="blue" stroke-width="3" fill="none" /> <polyline points="460,36 473,41 460,46" stroke="blue" stroke-width="3" fill="none"/> <circle cx="665" cy="80" r="40" stroke="blue" stroke-width="3" fill="none" /> <polyline points="660,36 673,41 660,46" stroke="blue" stroke-width="3" fill="none"/>
+</svg>
+<p>The commutator <span class="math inline">[<em>h</em>, <em>f</em>]=<em>h</em> ⋅ <em>f</em>(<em>h</em><sup>−1</sup>)=<em>r</em><em>g</em><em>b</em> ⋅ <em>f</em>(<em>r</em><sup>−1</sup>)⋅<em>f</em><sup>2</sup>(<em>g</em><sup>−1</sup>)⋅<em>f</em><sup>3</sup>(<em>b</em><sup>−1</sup>)</span>:</p>
+<svg height="150" width="800">
+<circle cx="50" cy="50" r="40" stroke="red" stroke-width="3" fill="none" /> <polyline points="58,6 45,10 58,16" stroke="red" stroke-width="3" fill="none"/> <circle cx="80" cy="50" r="40" stroke="green" stroke-width="3" fill="none" /> <polyline points="88,6 75,10 88,16" stroke="green" stroke-width="3" fill="none"/> <circle cx="65" cy="80" r="40" stroke="blue" stroke-width="3" fill="none" /> <polyline points="73,36 60,40 73,46" stroke="blue" stroke-width="3" fill="none"/> <circle cx="250" cy="50" r="40" stroke="red" stroke-width="3" fill="none" /> <polyline points="258,6 245,10 258,16" stroke="red" stroke-width="3" fill="none"/> <circle cx="480" cy="50" r="40" stroke="green" stroke-width="3" fill="none" /> <polyline points="488,6 475,10 488,16" stroke="green" stroke-width="3" fill="none"/> <circle cx="665" cy="80" r="40" stroke="blue" stroke-width="3" fill="none" /> <polyline points="673,36 660,40 673,46" stroke="blue" stroke-width="3" fill="none"/>
+</svg>
+<p>It follows that <span class="math inline"><em>r</em><em>g</em><em>b</em> = [<em>h</em>, <em>f</em>]⋅<em>f</em>(<em>r</em>)⋅<em>f</em><sup>2</sup>(<em>g</em>)⋅<em>f</em><sup>3</sup>(<em>b</em>)</span>.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Bounded cyclic subgroup trick.
+<div id="read-less">
+<hr />
+<p><em>Let <span class="math inline"><em>g</em>, <em>h</em> ∈ <em>G</em></span> be elements such that <span class="math inline"><em>g</em></span> commutes with the conjugate <span class="math inline"><em></em><sup><em>h</em></sup><em>g</em></span>. Then the cyclic subgroup generated by the commutator <span class="math inline">[<em>g</em>, <em>h</em>]</span> is bounded in <span class="math inline"><em>G</em></span>.</em></p>
+<p><em>Proof.</em> Observe (by induction) that <span class="math inline">[<em>g</em>, <em>h</em>]<sup><em>n</em></sup> = [<em>g</em><sup><em>n</em></sup>, <em>h</em>]</span> for any integer <span class="math inline">$n\in \mathbf Z$</span>. It implies that <span class="math inline">[<em>g</em>, <em>h</em>]<sup><em>n</em></sup></span> is a product of <span class="math inline"><em>g</em><sup><em>n</em></sup><em>h</em><em>g</em><sup>−<em>n</em></sup></span> and <span class="math inline"><em>h</em><sup>−1</sup></span> and hence the cyclic subgroup generated by <span class="math inline">[<em>g</em>, <em>h</em>]</span> is bounded by <span class="math inline">2∥<em>h</em>∥</span>. <span class="math inline">▫</span></p>
+<p>This trick can be applied to Baumslag-Solitar groups, nilpotent groups and others. For example, in the group <span class="math inline"><em>G</em> = ⟨<em>g</em>, <em>h</em> | [<em>g</em>,<sup><em>h</em></sup><em>g</em>]=1⟩</span> the cyclic subgroup generated by <span class="math inline">[<em>g</em>, <em>h</em>]</span> is bounded. On the other hand this is a CAT(0)-group.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Lipschitz maximality.
+<div id="read-less">
+<hr />
+<em>Let <span class="math inline"><em>G</em></span> be a finitely conjugation generated group and let <span class="math inline">(<em>H</em>, <em>ν</em>)</span> be any group equipped with a conjugation invariant norm. Then every homomorphism <span class="math inline"><em>ψ</em>: <em>G</em> → <em>H</em></span> is Lipschitz with respect to the conjugation invariant word norm <span class="math inline">∥ ∥</span> on <span class="math inline"><em>G</em></span>. More precisely, there exists a constant <span class="math inline"><em>C</em> &gt; 0</span> such that</em>
+<center>
+<span class="math inline"><em>ν</em>(<em>ψ</em>(<em>g</em>)) ≤ <em>C</em>∥<em>g</em>∥,</span>
+</center>
+<p><em>for any <span class="math inline"><em>g</em> ∈ <em>G</em></span>.</em></p>
+<p><em>Proof.</em> Let <span class="math inline"><em>S</em> ⊂ <em>G</em></span> be a symmetric conjugation generating set and let <span class="math inline"><em>C</em> = max{<em>ν</em>(<em>s</em>) | <em>s</em> ∈ <em>S</em>}</span>. Let <span class="math inline"><em>g</em> ∈ <em>G</em></span>. Then <span class="math inline"><em>g</em> = <em>s</em><sub>1</sub>⋯<em>s</em><sub><em>n</em></sub></span> for <span class="math inline"><em>s</em><sub><em>i</em></sub> ∈ <em>S</em></span> and we have</p>
+<center>
+<span class="math inline"><em>ν</em>(<em>ψ</em>(<em>g</em>)) = <em>ν</em>(<em>ψ</em>(<em>s</em><sub>1</sub>⋯<em>s</em><sub><em>n</em></sub>)) ≤ ∑<em>ν</em>(<em>ψ</em>(<em>s</em><sub><em>i</em></sub>)) ≤ <em>C</em> ∥<em>g</em>∥</span>
+</center>
+<p>which proves the statement. <span class="math inline">▫</span></p>
+<p>In particular, by applying the above fact to the identity <span class="math inline">${\rm Id}\colon G\to G$</span> we obtain that the Lipschitz class of the conjugation invariant word norm is maximal among all conjugation invariant word norms on <span class="math inline"><em>G</em></span>.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Quasimorphisms are Lipschitz.
+<div id="read-less">
+<hr />
+<p><em>Let <span class="math inline">$\psi\colon G\to \mathbf R$</span> be a homogeneous quasimorphism. If <span class="math inline"><em>ψ</em></span> is bounded on a generating set <span class="math inline"><em>S</em> ⊂ <em>G</em></span> then there exists a constant <span class="math inline"><em>C</em> &gt; 0</span> such that <span class="math inline">|<em>ψ</em>(<em>g</em>)| ≤ <em>C</em>∥<em>g</em>∥<sub><em>S</em></sub></span> for all <span class="math inline"><em>g</em> ∈ <em>G</em></span>.</em></p>
+<p><em>Proof.</em> Let <span class="math inline">max = max<sub><em>s</em> ∈ <em>S</em></sub>|<em>ψ</em>(<em>s</em>)|</span> and let <span class="math inline"><em>n</em> = ∥<em>g</em>∥</span>. <br /><span class="math display">$$
+\begin{align}
+|\psi(g)| &amp;= |\psi(s_1 \cdots s_n )| \\
+&amp;\leq \sum |\psi(s_i)| + (n-1)D\\
+&amp;\leq (D + \max) \|g\|_S. 
+\end{align}
+$$</span><br /> <span class="math inline">▫</span></p>
+<p>In particular, if <span class="math inline"><em>G</em></span> is finitely conjugation generated then every quasimorphism is Lipschitz with respect to the conjugation invariant word norm.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Kotschick's trick.
+<div id="read-less">
+<hr />
+<p><em>Let <span class="math inline"><em>H</em> ⊆ <em>G</em></span> be a subgroup. Suppose that for any <span class="math inline">$n\in \mathbf N$</span> there exist <span class="math inline"><em>g</em><sub>1</sub>, …, <em>g</em><sub><em>n</em></sub></span> such that the subgroups <span class="math inline"><em>g</em><sub><em>i</em></sub><em>H</em><em>g</em><sub><em>i</em></sub><sup>−1</sup></span> pairwise commute. Then every homogeneuos quasimorphism <span class="math inline">$\psi\colon G\to \mathbf R$</span> restricted to <span class="math inline"><em>H</em></span> is a homomorphism.</em></p>
+<p><em>Proof.</em> First observe that if a homogeneous quasimorphism <span class="math inline">$\psi\colon H\to \mathbf R$</span> vanishes on single commutators then it is a homomorphism. Indeed, <br /><span class="math display">$$
+\begin{align}
+D &amp;= \sup_{g,h} |\psi(g)+\psi(h)-\psi(gh)|\\
+&amp;= \sup_{g,h} \frac{1}{n}| \psi(g^n) + \psi(h^n) - \psi((gh)^n)|\\
+&amp;= \sup_{g,h} \frac{1}{n}\big | \psi\left(g^nh^{n}(gh)^{-n}\right)\big |\\
+&amp;= \sup_{g,h}\frac{1}{n} \frac{nD}{2} = \frac{1}{2}D
+\end{align}
+$$</span><br /></p>
+<hr />
+</div>
+<p></label></p>
+<!-- END OF MARKDOWN -->
+</body>
+</html>
+</body>
+</html>

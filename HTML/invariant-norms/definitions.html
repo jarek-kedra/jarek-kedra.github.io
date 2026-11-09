@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>
+Invariant norms on groups - definitions.
+</title>
+<p><link rel="stylesheet" type="text/css" href="global.css" media="screen"></p>
+<!-- MATHJAX -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async 
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<!-- LEFT PANEL -->
+<div id="logo">
+<svg height="140" width="140">
+<polyline points="30,40 70,10 110,40" stroke="black" stroke-width="2" fill="none"/> <polyline points="40,30 10,70 40,110" stroke="black" stroke-width="2" fill="none"/> <polyline points="30,100 70,130 110,100" stroke="black" stroke-width="2" fill="none"/> <polyline points="100,30 130,70 100,110" stroke="black" stroke-width="2" fill="none"/> <polyline points="120,50 130,70 120,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="20,50 10,70 20,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,20 70,10 90,20" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,120 70,130 90,120" stroke="green" stroke-width="2" fill="none"/> <polyline points="40,50 100,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,40 90,100" stroke="green" stroke-width="2" fill="none"/> <polyline points="100,50 40,90" stroke="green" stroke-width="2" fill="none"/> <polyline points="50,100 90,40" stroke="green" stroke-width="2" fill="none"/> <polyline points="10,60 70,30 130,60" stroke="blue" stroke-width="2" fill="none"/> <polyline points="10,80 70,110 130,80" stroke="blue" stroke-width="2" fill="none"/> <polyline points="60,10 30,70 60,130" stroke="blue" stroke-width="2" fill="none"/> <polyline points="80,10 110,70 80,130" stroke="blue" stroke-width="2" fill="none"/> <polyline points="70,0 70,140" stroke="red" stroke-width="3" fill="none"/> <polyline points="0,70 140,70" stroke="red" stroke-width="3" fill="none"/> <polyline points="30,40 30,100" stroke="red" stroke-width="3" fill="none"/> <polyline points="110,40 110,100" stroke="red" stroke-width="3" fill="none"/> <polyline points="10,60 10,80" stroke="red" stroke-width="3" fill="none"/> <polyline points="130,60 130,80" stroke="red" stroke-width="3" fill="none"/> <polyline points="50,20 50,40" stroke="red" stroke-width="3" fill="none"/> <polyline points="90,20 90,40" stroke="red" stroke-width="3" fill="none"/> <polyline points="50,100 50,120" stroke="red" stroke-width="3" fill="none"/> <polyline points="90,100 90,120" stroke="red" stroke-width="3" fill="none"/> <polyline points="40,30 100,30" stroke="red" stroke-width="3" fill="none"/> <polyline points="40,110 100,110" stroke="red" stroke-width="3" fill="none"/> <polyline points="60,10 80,10" stroke="red" stroke-width="3" fill="none"/> <polyline points="60,130 80,130" stroke="red" stroke-width="3" fill="none"/> <polyline points="20,50 40,50" stroke="red" stroke-width="3" fill="none"/> <polyline points="20,90 40,90" stroke="red" stroke-width="3" fill="none"/> <polyline points="100,50 120,50" stroke="red" stroke-width="3" fill="none"/> <polyline points="100,90 120,90" stroke="red" stroke-width="3" fill="none"/>
+</svg>
+</div>
+<div id="home" style="font-size:smaller">
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="intro.html">Introduction</a></li>
+<li><a href="definitions.html">Definitions</a></li>
+<li><a href="examples.html">Examples</a></li>
+<li><a href="basic-facts.html">Basic facts</a></li>
+<li><a href="groups.html">Groups</a></li>
+<li><a href="open-problems.html">Open Problems</a></li>
+<li><a href="index.html">Index</a></li>
+</ul>
+</div>
+<div id="signature">
+<p>kedra☠abdn.ac.uk</p>
+</div>
+<!-- EDITION IN MARKDOWN -->
+<h2 id="definitions.">Definitions.</h2>
+<h3 id="notation">Notation:</h3>
+<ul>
+<li>The neutral element of any group is denoted by <span class="math inline">1</span>.</li>
+<li>If <span class="math inline"><em>G</em> ⊴ <em>H</em></span> is a normal subgrup then the conjugation action of <span class="math inline"><em>H</em></span> on <span class="math inline"><em>G</em></span> is denoted by <span class="math inline"><em>h</em><em>g</em><em>h</em><sup>−1</sup></span> or <span class="math inline"><em></em><sup><em>h</em></sup><em>g</em></span> or <span class="math inline"><em>h</em>(<em>g</em>)</span>; it is a left action.</li>
+<li><span class="math inline"><em>H</em> → Aut(<em>G</em>)</span> - a left action of a group <span class="math inline"><em>H</em></span> on <span class="math inline"><em>G</em></span>; the action of <span class="math inline"><em>h</em> ∈ <em>H</em></span> on <span class="math inline"><em>G</em></span> is denoted by <span class="math inline"><em>h</em>(<em>g</em>)</span>.</li>
+</ul>
+<h3 id="main-concepts">Main concepts:</h3>
+<label> <input id="read-more" type="checkbox"> Norm.
+<div id="read-less">
+<hr />
+<p><a name="norm"> </a> <strong>Norm.</strong> A nonnegative function <span class="math inline">$\nu\colon G\to \mathbf R$</span> is called a norm if it satisfies the following axioms for all <span class="math inline"><em>g</em>, <em>h</em> ∈ <em>G</em></span>:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline"><em>ν</em>(<em>g</em>)=0</span> if and only if <span class="math inline"><em>g</em> = 1</span>.</li>
+<li><span class="math inline"><em>ν</em>(<em>g</em><sup>−1</sup>)=<em>ν</em>(<em>g</em>)</span>.</li>
+<li><span class="math inline"><em>ν</em>(<em>f</em><em>g</em>)≤<em>ν</em>(<em>f</em>)+<em>ν</em>(<em>g</em>)</span>.</li>
+</ol>
+<p>If in addition:</p>
+<ol start="4" style="list-style-type: decimal">
+<li><span class="math inline"><em>ν</em>(<em>h</em>(<em>g</em>)))=<em>ν</em>(<em>g</em>)</span>.</li>
+</ol>
+<p>for every <span class="math inline"><em>h</em> ∈ <em>H</em> → Aut(<em>G</em>)</span> then the norm is called <span class="math inline"><em>H</em></span>-invariant; it is assumed that the action is understood. A norm <span class="math inline"><em>ν</em></span> defines a metric by <span class="math inline"><em>d</em><sub><em>ν</em></sub>(<em>f</em>, <em>g</em>)<sub></sub> = <em>ν</em>(<em>f</em><em>g</em><sup>−1</sup>)</span>.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Bounded/unbounded group.
+<div id="read-less">
+<hr />
+<p><a name="bounded"> </a> <strong>Bounded.</strong> The group <span class="math inline"><em>G</em></span> is bounded if every conjugation invariant norm on <span class="math inline"><em>G</em></span> has finite diameter; it is <em>unbounded</em> otherwise.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Stably unbounded group.
+<div id="read-less">
+<hr />
+<p><a name="stably-unbounded"> </a> <strong>Stably unbounded.</strong> A group <span class="math inline"><em>G</em></span> is called <em>stably unbounded</em> if there exists a norm <span class="math inline"><em>ν</em></span> on <span class="math inline"><em>G</em></span> and an element <span class="math inline"><em>g</em> ∈ <em>G</em></span> such that <br /><span class="math display">$$
+\lim_{n_{}\to \infty} \frac{\nu(g^n)}{n}&gt;0.
+$$</span><br /></p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Strongly bounded group.
+<div id="read-less">
+<hr />
+<p>A bounded group <span class="math inline"><em>G</em></span> is called <em><span class="math inline"><em>k</em></span>-strongly bounded</em> if there exists a number <span class="math inline"><em>Δ</em><sub><em>k</em></sub>(<em>G</em>)</span> such that the diameter of the word norm associated with a union of at most <span class="math inline"><em>k</em></span> conjugacy classes is bounded above by <span class="math inline"><em>Δ</em><sub><em>k</em></sub>(<em>G</em>)</span>.</p>
+<hr />
+</div>
+</label> </label> <label> <input id="read-more" type="checkbox"> Uniformly bounded group.
+<div id="read-less">
+<hr />
+<p>A bounded group <span class="math inline"><em>G</em></span> is called <em>uniformly bounded</em> if there exists a number <span class="math inline"><em>Δ</em>(<em>G</em>)</span> such that the diameter of the word norm associated with a union of finitely many conjugacy classes is bounded above by <span class="math inline"><em>Δ</em>(<em>G</em>)</span>.</p>
+<hr />
+</div>
+<p></label></p>
+<h3 id="all-definitions-in-alphabetical-order">All definitions in alphabetical order:</h3>
+<label> <input id="read-more" type="checkbox"> Conjugation generation.
+<div id="read-less">
+<hr />
+<p><a name="conjugation-generation"> </a> <strong>Conjugation generation.</strong> A group <span class="math inline"><em>G</em></span> is conjugation-generated by a set <span class="math inline"><em>S</em> ⊂ <em>G</em></span> if it is generated by the set of conjugates <span class="math inline"><em>g</em><sup>−1</sup><em>s</em><em>g</em></span>, where <span class="math inline"><em>g</em> ∈ <em>G</em></span> and <span class="math inline"><em>s</em> ∈ <em>S</em> ∪ <em>S</em><sup>−1</sup></span>.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Conjugation generation: finite.
+<div id="read-less">
+<hr />
+<p><a name="finite-conjugation-generation"> </a> <strong>Finite conjugation generation.</strong> A group <span class="math inline"><em>G</em></span> is finitely conjugation-generated if it is conjugation-generated by a finite set <span class="math inline"><em>S</em></span>.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Group: bounded.
+<div id="read-less">
+<hr />
+<p><a name="bounded"> </a> <strong>Bounded.</strong> The group <span class="math inline"><em>G</em></span> is bounded if every conjugation invariant norm on <span class="math inline"><em>G</em></span> has finite diameter; it is <em>unbounded</em> otherwise.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Group: stably unbounded.
+<div id="read-less">
+<hr />
+<p><a name="stably-unbounded"> </a> <strong>Stably unbounded.</strong> A group <span class="math inline"><em>G</em></span> is called <em>stably unbounded</em> if there exists a norm <span class="math inline"><em>ν</em></span> on <span class="math inline"><em>G</em></span> and an element <span class="math inline"><em>g</em> ∈ <em>G</em></span> with positive stable length.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Norm.
+<div id="read-less">
+<hr />
+<p><a name="norm"> </a> <strong>Norm.</strong> A nonnegative function <span class="math inline">$\nu\colon G\to \mathbf R$</span> is called a norm if it satisfies the following axioms for all <span class="math inline"><em>g</em>, <em>h</em> ∈ <em>G</em></span>:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline"><em>ν</em>(<em>g</em>)=0</span> if and only if <span class="math inline"><em>g</em> = 1</span>.</li>
+<li><span class="math inline"><em>ν</em>(<em>g</em><sup>−1</sup>)=<em>ν</em>(<em>g</em>)</span>.</li>
+<li><span class="math inline"><em>ν</em>(<em>f</em><em>g</em>)≤<em>ν</em>(<em>f</em>)+<em>ν</em>(<em>g</em>)</span>.</li>
+</ol>
+<p>If in addition:</p>
+<ol start="4" style="list-style-type: decimal">
+<li><span class="math inline"><em>ν</em>(<em>h</em>(<em>g</em>)))=<em>ν</em>(<em>g</em>)</span>.</li>
+</ol>
+<p>for every <span class="math inline"><em>h</em> ∈ <em>H</em> → Aut(<em>G</em>)</span> then the norm is called <span class="math inline"><em>H</em></span>-invariant; it is assumed that the action is understood. A norm <span class="math inline"><em>ν</em></span> defines a metric by <span class="math inline"><em>d</em><sub><em>ν</em></sub>(<em>f</em>, <em>g</em>)<sub></sub> = <em>ν</em>(<em>f</em><em>g</em><sup>−1</sup>)</span>.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Norm: stable.
+<div id="read-less">
+<hr />
+<p><a name="stable-length"> </a> <strong>Stable length.</strong> If <span class="math inline"><em>ν</em></span> is a norm on <span class="math inline"><em>G</em></span> then the <em>stable length</em> of an element <span class="math inline"><em>g</em> ∈ <em>G</em></span> with respect to <span class="math inline"><em>ν</em></span> is defined by <span class="math inline">$s\nu(g) = \lim_{n\to \infty} \frac{\nu(g^n)}{n}_{}$</span>. It is also called the <em>translation length</em>.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Norm: diameter.
+<div id="read-less">
+<hr />
+<p><a name="diamterer"> </a> <strong>Diameter.</strong> The diameter of the norm <span class="math inline"><em>ν</em></span> on <span class="math inline"><em>G</em></span> is defined and denoted by <span class="math inline">${\rm diam}(\nu)=\nu(G)=\sup\{ \nu(g)\ | \ g\in G\}$</span>.</p>
+<hr />
+</div>
+</label> <label> <input id="read-more" type="checkbox"> Quasimorphism.
+<div id="read-less">
+<hr />
+<p><a name="quasimorphisms"> </a> <strong>Quasimorphism.</strong> A function <span class="math inline">$\psi\colon G\to \mathbf R$</span> is called a <em>quasimorphism</em> if there exists a constant <span class="math inline"><em>D</em> ≥ 0</span> such that <br /><span class="math display">|<em>ψ</em>(<em>g</em>)−<em>ψ</em>(<em>g</em><em>h</em>)+<em>ψ</em>(<em>h</em>)| ≤ <em>D</em></span><br /> for all <span class="math inline"><em>g</em>, <em>h</em> ∈ <em>G</em></span>. If in addition <span class="math inline"><em>ψ</em>(<em>g</em><sup><em>n</em></sup>)=<em>n</em><em>ψ</em>(<em>g</em>)</span> then <span class="math inline"><em>ψ</em></span> is called <em>homogeneous</em>. The number <span class="math inline"><em>D</em></span> is called the <em>defect</em> of <span class="math inline"><em>ψ</em></span>.</p>
+<hr />
+</div>
+<p></label> <!-- END OF MARKDOWN --></p>
+<!--
+<div id="box"> 
+<p id="date"></p>
+<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = d + "." + m + "." + y;
+</script>
+kedra&#9760;abdn.ac.uk
+</div>
+-->
+</body>
+</html>
+</body>
+</html>
