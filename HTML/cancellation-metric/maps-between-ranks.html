@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Maps between ranks — Cancellation geometry</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="assets/mathjax-config.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+        <script defer src="assets/site.js"></script>
+
+    </head>
+    <body>
+        <a class="skip-link" href="#content">Skip to content</a>
+        <aside class="sidebar">
+            <a class="logo" href="home.html" aria-label="Cancellation geometry home">
+            <img src="assets/cayley-graph.svg" width="140" height="140" alt="A subgraph of the cancellation Cayley graph of F₂">
+            </a>
+            <nav aria-label="Topics">
+                <ul>
+                    <li><a href="home.html">Home</a>
+                    </li>
+                    <li><a href="definitions.html">Definitions</a>
+                    </li>
+                    <li><a href="basic-facts.html">Basic facts</a>
+                    </li>
+                    <li><a href="stable-length.html">Stable length</a>
+                    </li>
+                    <li><a href="maps-between-ranks.html" aria-current="page">Maps between ranks</a>
+                        <ul class="page-sections">
+                            <li><a href="#rigidity">Algebraic rigidity</a></li>
+                            <li><a href="#flexibility">Quasi-algebraic flexibility</a></li>
+                            <li><a href="#recoding">An explicit construction</a></li>
+                            <li><a href="#transducers">Transducers and the ordinary word metric</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="quasi-automorphisms.html">Quasi-automorphisms</a>
+                    </li>
+                    <li><a href="asymptotic-cones.html">Asymptotic cones</a>
+                    </li>
+                    <li><a href="embeddings.html">Embeddings</a>
+                    </li>
+                    <li><a href="open-problems.html">Open problems</a>
+                    </li>
+                    <li><a href="references.html">References</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="content">
+            <h1 id="between-ranks">Maps between ranks</h1>
+            <p class="lead">Homomorphisms are rigid, but maps with bounded <a href="definitions.html#alphabetical-quasi-definitions">multiplicative defect</a> can behave differently. This page separates the published rigidity theorem from the proposed flexibility construction.</p>
+
+
+            <ul class="entry-list">
+                <li>
+                    <details class="entry" id="rigidity">
+                        <summary>Algebraic rigidity</summary>
+                        <div class="entry-body">
+                            <div class="result published">
+                                <p>
+                                    <strong id="result-iii-3">Theorem III.3 (Kędra–Libman).</strong> A homomorphism <span class="math math-inline">\(F_m\to F_n\)</span> between finite-rank nonabelian free groups, with
+                                    their basis cancellation metrics, is a <a href="definitions.html#alphabetical-quasi-isometry">quasi-isometry</a> if and only if it is an
+                                    isomorphism. <span class="source">Published: <a href="references.html#ref-kl">[KL1]</a>, Theorem
+                                    1.1.</span>
+                                </p>
+
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    An isomorphism and its inverse are Lipschitz by the homomorphism estimate. A
+                                    noninjective homomorphism kills a nontrivial cyclic subgroup, unbounded by <a href="stable-length.html#result-iii-1">III.1</a>, so
+                                    cannot be a <a href="definitions.html#alphabetical-quasi-isometric-embedding">quasi-isometric embedding</a>. The remaining, nontrivial part of the
+                                    published proof shows that a proper image of a homomorphism from a finite-rank free
+                                    group is not coarsely dense in the nonabelian target; see <a href="references.html#ref-kl">[KL1]</a>,
+                                    Propositions 3.4 and 3.6. This excludes injective nonsurjective homomorphisms as
+                                    well.
+                                </p>
+
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="flexibility">
+                        <summary>Quasi-algebraic flexibility</summary>
+                        <div class="entry-body">
+                            <div class="result ai">
+                                <strong id="result-iii-4">Theorem III.4 (proposed finite-rank flexibility).</strong>
+                                For
+                                every finite
+                                <span class="math math-inline">\(m,n\ge2\)</span>
+                                there is an <a href="definitions.html#alphabetical-inverse-preserving">inverse-preserving bijection</a>
+                                <span class="math math-inline">\(f\colon F_m\to F_n\)</span>
+                                ,
+                                fixing
+                                <span class="math math-inline">\(1\)</span>
+                                ,
+                                such that
+                                <span class="math math-inline">\(f\)</span>
+                                and
+                                <span class="math math-inline">\(f^{-1}\)</span>
+                                are Lipschitz <a href="definitions.html#alphabetical-quasi-definitions">quasi-homomorphisms</a> for cancellation metrics.
+                                <span class="source">
+                                AI-generated research draft <a href="references.html#ref-r">[R]</a>, main theorem and bijective
+                                form. No journal publication or arXiv record for this draft was identified.
+                                </span>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    The next subsection constructs exact inverse maps <span class="math math-inline">\(\Psi\colon F_3\to F_2\)</span> and <span class="math math-inline">\(\Phi\colon F_2\to F_3\)</span>. The junction estimates below give defects at
+                                    most <span class="math math-inline">\(3\)</span> and <span class="math math-inline">\(30\)</span>. Their values on basis letters have norms at most <span class="math math-inline">\(2\)</span> and <span class="math math-inline">\(1\)</span>, respectively, so <a href="basic-facts.html#result-ii-3">II.3</a> gives <a href="definitions.html#alphabetical-lipschitz-map">Lipschitz constants</a> <span class="math math-inline">\(11\)</span> and <span class="math math-inline">\(91\)</span>.
+                                </p>
+
+                                <p>
+                                    Extend either map to <span class="math math-inline">\(F_3*F_r\leftrightarrow
+                                    F_2*F_r\)</span> by applying it to syllables in the first factor and fixing the other
+                                    factor. This remains an <a href="definitions.html#alphabetical-inverse-preserving">inverse-preserving bijection</a>. In a product of two
+                                    free-product normal forms, first remove the maximal inverse syllable pairs. Their
+                                    images cancel exactly. There is then at most one nontrivial syllable merger, whose
+                                    defect is bounded by the defect of the original map; a merger in the fixed factor has
+                                    zero error. Thus the extended map and its inverse have finite defect. Their basis
+                                    images are bounded, so they are Lipschitz. Finite composition changes rank one step
+                                    at a time and proves the theorem. This argument makes no claim of constants
+                                    independent of the ranks.
+                                </p>
+
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="recoding">
+                        <summary>An explicit construction</summary>
+                        <div class="entry-body">
+                            <p>
+                                Read each maximal <span class="math math-inline">\(x\)</span>-run as one atom, and each
+                                individual <span class="math math-inline">\(z\)</span>-letter as one atom. A reduced word
+                                with atoms has unique form
+                                <span class="math math-display">
+                                \[
+                                w=y^{r_0}U_1y^{r_1}\cdots U_ky^{r_k},\qquad U_i\in\{x^p:p\ne0\}\cup\{z,z^{-1}\}.
+                                \]
+                                </span>
+                                A gap between two <span class="math math-inline">\(x\)</span>-atoms, or inverse <span class="math math-inline">\(z\)</span>-atoms, must be nonzero. Every other internal gap may be zero
+                                and has sign <span class="math math-inline">\(\varepsilon\)</span>, the sign of its <span class="math math-inline">\(z\)</span>-atom or common sign of its two <span class="math math-inline">\(z\)</span>-atoms.
+                            </p>
+
+                            <p>
+                                Set
+                                <span class="math math-display" id="eq-atom-encoding">
+                                \[
+                                \theta(x^p)=a^{p+\operatorname{sgn}(p)},\qquad\theta(z^\varepsilon)=a^\varepsilon,
+                                \tag{III.4}
+                                \]
+                                </span>
+
+                                <span class="math math-display" id="eq-gap-encoding">
+                                \[
+                                \mu_\varepsilon(r)=\begin{cases}r+\varepsilon&amp;\varepsilon r\ge0,\\r&amp;\varepsilon r&lt;0.\end{cases}
+                                \tag{III.5}
+                                \]
+                                </span>
+                                For zero-forbidden gaps let <span class="math math-inline">\(\gamma_{U,V}\)</span> be the identity; for signed zero-allowed gaps let it
+                                be <span class="math math-inline">\(\mu_\varepsilon\)</span>. Leave both endpoint gaps
+                                unchanged. Define
+                                <span class="math math-display" id="eq-rank-map">
+                                \[
+                                \Psi(w)=b^{r_0}\theta(U_1)b^{\gamma_{U_1,U_2}(r_1)}\cdots\theta(U_k)b^{r_k},\qquad\Psi(y^r)=b^r.
+                                \tag{III.6}
+                                \]
+                                </span>
+                                The internal output gaps are nonzero. Decode a nonzero <span class="math math-inline">\(a\)</span>-run using
+                                <span class="math math-display" id="eq-atom-decoding">
+                                \[
+                                \beta(p)=\begin{cases}z^p&amp;|p|=1,\\x^{p-\operatorname{sgn}(p)}&amp;|p|\ge2,\end{cases}
+                                \tag{III.7}
+                                \]
+                                </span>
+                                and a signed internal <span class="math math-inline">\(b\)</span>-gap using
+
+                                <span class="math math-display" id="eq-gap-decoding">
+                                \[
+                                \nu_\varepsilon(q)=\begin{cases}q-\varepsilon&amp;\varepsilon q&gt;0,\\q&amp;\varepsilon q&lt;0.\end{cases}
+                                \tag{III.8}
+                                \]
+                                </span>
+                                The other gaps remain unchanged. This defines <span class="math math-inline">\(\Phi\)</span>.
+                            </p>
+
+                            <table>
+                                <thead>
+                                    <tr class="header">
+                                        <th>Input</th> <th>Output under <span class="math math-inline">\(\Psi\)</span></th> <th>Reason</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd">
+                                        <td><span class="math math-inline">\(x\)</span></td> <td><span class="math math-inline">\(a^2\)</span></td> <td>one <span class="math math-inline">\(x\)</span>-atom</td>
+                                    </tr>
+                                    <tr class="even">
+                                        <td><span class="math math-inline">\(z^2\)</span></td> <td><span class="math math-inline">\(aba\)</span></td> <td>two <span class="math math-inline">\(z\)</span>-atoms and a corrected zero gap</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td><span class="math math-inline">\(xz\)</span></td> <td><span class="math math-inline">\(a^2ba\)</span></td> <td>positive signed zero gap</td>
+                                    </tr>
+                                    <tr class="even">
+                                        <td><span class="math math-inline">\(xy^{-1}z\)</span></td> <td><span class="math math-inline">\(a^2b^{-1}a\)</span></td> <td>negative gap unchanged</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td><span class="math math-inline">\(xyx\)</span></td> <td><span class="math math-inline">\(a^2ba^2\)</span></td> <td>gap between two <span class="math math-inline">\(x\)</span>-atoms unchanged</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="result ai">
+                                <strong id="result-iii-5">Proposition III.5 (exact inverse and defect estimates).</strong>
+                                The displayed maps fix
+                                <span class="math math-inline">\(1\)</span>
+                                ,
+                                preserve inverses, are mutually inverse, and satisfy
+                                <span class="math math-display" id="eq-rank-map-bounds">
+                                \[ D_\Psi\le3,\quad
+                                D_\Phi\le30,\quad\operatorname{Lip}_{\mathrm{c}}(\Psi)\le11,\quad\operatorname{Lip}_{\mathrm{c}}(\Phi)\le91.
+                                \tag{III.9}
+                                \]
+                                </span>
+                                <span class="source">AI-generated argument from <a href="references.html#ref-r">[R]</a>, §§4–6.</span>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    The maps <span class="math math-inline">\(\theta\)</span> and <span class="math math-inline">\(\beta\)</span> are inverse atom lookups by <a class="equation-reference" href="#eq-atom-encoding">(III.4)</a> and <a class="equation-reference" href="#eq-atom-decoding">(III.7)</a>; <span class="math math-inline">\(\mu_\varepsilon\colon \mathbb Z\to\mathbb Z\setminus\{0\}\)</span> and <span class="math math-inline">\(\nu_\varepsilon\)</span> are inverse bijections by <a class="equation-reference" href="#eq-gap-encoding">(III.5)</a> and <a class="equation-reference" href="#eq-gap-decoding">(III.8)</a>. Decoding
+                                    therefore recovers exactly the admissible atomic data. Since <span class="math math-inline">\(\mu_{-\varepsilon}(-r)=-\mu_\varepsilon(r)\)</span> and the same
+                                    identity holds for <span class="math math-inline">\(\nu\)</span>, reversing and
+                                    inverting the data commutes with both maps.
+                                </p>
+
+                                <p>
+                                    For a reduced concatenation <span class="math math-inline">\(uv\)</span>, the forward
+                                    map changes only the junction. If two <span class="math math-inline">\(x\)</span>-runs merge, their signs agree and their encoded exponent
+                                    sums differ by one. Otherwise, only the new internal gap can require a correction,
+                                    also of size at most one. Neighboring signed gap types remain unchanged in the merger
+                                    case because the merged atom is still an <span class="math math-inline">\(x\)</span>-atom. Hence the forward junction cost is at most one.
+                                </p>
+
+                                <p>
+                                    For the inverse map, a reduced concatenation either creates one internal gap (cost at
+                                    most one) or merges two same-sign <span class="math math-inline">\(a\)</span>-runs.
+                                    In the latter case replace <span class="math math-inline">\(\beta(p)\beta(q)\)</span>
+                                    by <span class="math math-inline">\(\beta(p+q)\)</span>. Each <span class="math math-inline">\(\beta(t)\)</span> lies within cancellation distance two of <span class="math math-inline">\(x^t\)</span>, so the product estimate <a class="equation-reference" href="basic-facts.html#eq-product">(II.2)</a> bounds this
+                                    replacement by six. Only the gaps directly before and after the merged atom can
+                                    change type. Each decoding rule differs from the original exponent by at most one, so
+                                    changing the rule costs at most two on each side. The total junction cost is at most
+                                    <span class="math math-inline">\(2+6+2=10\)</span>.
+                                </p>
+
+                                <p>
+                                    Finally write arbitrary reduced inputs as <span class="math math-inline">\(g=pc\)</span>, <span class="math math-inline">\(h=c^{-1}r\)</span>,
+                                    with <span class="math math-inline">\(pr\)</span> reduced, choosing maximal
+                                    cancellation. Three reduced-junction comparisons, on <span class="math math-inline">\(pc,c^{-1}r,pr\)</span>, cost at most three times the local bound; the
+                                    middle images of <span class="math math-inline">\(c,c^{-1}\)</span> cancel exactly.
+                                    Thus the global defects are at most <span class="math math-inline">\(3\)</span> and
+                                    <span class="math math-inline">\(30\)</span>. Apply <a href="basic-facts.html#result-ii-3">II.3</a> with the stated basis-image
+                                    bounds for the Lipschitz estimates in <a class="equation-reference" href="#eq-rank-map-bounds">(III.9)</a>.
+                                </p>
+
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="transducers">
+                        <summary>Transducers and the ordinary word metric</summary>
+                        <div class="entry-body">
+                            <div class="result ai">
+                                <strong id="result-iii-6">Proposition III.6.</strong>
+                                On freely reduced inputs
+                                <span class="math math-inline">\(\Psi\)</span>
+                                is realized by a thirteen-state <a href="definitions.html#alphabetical-sequential-transducer">sequential transducer</a>. Its inverse is a
+                                <a href="definitions.html#alphabetical-rational-transduction">rational transduction</a>. Both
+                                <span class="math math-inline">\(\Psi\)</span>
+                                and
+                                <span class="math math-inline">\(\Phi\)</span>
+                                are
+                                <span class="math math-inline">\(3\)</span>
+                                -Lipschitz
+                                for
+                                <span class="math math-inline">\(d_{\mathrm{w}}\)</span>
+                                .
+                                <span class="source">
+                                <a href="references.html#ref-t">[T]</a>, explicit sequential realization; <a href="references.html#ref-q">[Q]</a>,
+                                proposition labelled “recoding-word”.
+                                </span>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    Use an initial state <span class="math math-inline">\(I\)</span> and states <span class="math math-inline">\((T,s)\)</span>, where <span class="math math-inline">\(T\in\{X_+,X_-,Z_+,Z_-\}\)</span> records the last atom type and sign
+                                    and <span class="math math-inline">\(s\in\{0,+,-\}\)</span> records the sign of the
+                                    following <span class="math math-inline">\(y\)</span>-gap. Copy every <span class="math math-inline">\(y^{\pm1}\)</span> immediately to <span class="math math-inline">\(b^{\pm1}\)</span>. The first letter of an <span class="math math-inline">\(x\)</span>-run emits <span class="math math-inline">\(a^{\pm2}\)</span>; each continuation emits <span class="math math-inline">\(a^{\pm1}\)</span>; a <span class="math math-inline">\(z\)</span>-letter emits <span class="math math-inline">\(a^{\pm1}\)</span>. Just before a new atom, emit an extra <span class="math math-inline">\(b^\varepsilon\)</span> exactly when its gap is signed
+                                    <span class="math math-inline">\(\varepsilon\)</span> and <span class="math math-inline">\(s\)</span> is <span class="math math-inline">\(0\)</span> or <span class="math math-inline">\(\varepsilon\)</span>. No terminal output is needed. These
+                                    rules give the defining atom-and-gap formula. Restriction to the regular language of
+                                    reduced words gives a rational graph. Swapping input and output labels gives a
+                                    rational relation which is the graph of the inverse because the function is
+                                    bijective. This does not assert that the inverse is sequential without delay.
+                                </p>
+
+                                <p>
+                                    For the ordinary metric check right multiplication by a basis letter. In <span class="math math-inline">\(\Psi\)</span> a surviving terminal <span class="math math-inline">\(x\)</span>-run changes encoded length by one. Creating or deleting a
+                                    terminal atom costs at most two letters, and converting its adjacent gap between
+                                    endpoint and internal status costs at most one. A terminal <span class="math math-inline">\(y\)</span>-change costs one. In <span class="math math-inline">\(\Phi\)</span> most terminal changes cost at most two. The remaining
+                                    transition changes an <span class="math math-inline">\(a\)</span>-run between
+                                    exponent <span class="math math-inline">\(\varepsilon\)</span> and <span class="math math-inline">\(2\varepsilon\)</span>, so the decoded atom changes between <span class="math math-inline">\(z^\varepsilon\)</span> and <span class="math math-inline">\(x^\varepsilon\)</span> (cost two), and its preceding gap rule changes
+                                    by at most one. Hence every edge has output distance at most three in either
+                                    direction. Sum along word-metric geodesics.
+                                </p>
+
+                            </details>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+
+            <footer>
+                <p>Related topics: <a href="quasi-automorphisms.html">Quasi-automorphisms</a> · <a href="asymptotic-cones.html">Asymptotic cones</a>.</p>
+                <p><a href="#content">Back to top</a> · <button type="button" id="close-proofs">Close proofs</button> · <button type="button" id="print">Print this page</button></p>
+                <p class="source" id="math-status">Mathematics uses MathJax. An internet connection is needed on first loading.</p>
+            </footer>
+        </main>
+    </body>
+</html>

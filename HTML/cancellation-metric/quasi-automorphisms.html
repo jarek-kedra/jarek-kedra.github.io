@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Quasi-automorphisms — Cancellation geometry</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="assets/mathjax-config.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+        <script defer src="assets/site.js"></script>
+
+    </head>
+    <body>
+        <a class="skip-link" href="#content">Skip to content</a>
+        <aside class="sidebar">
+            <a class="logo" href="home.html" aria-label="Cancellation geometry home">
+            <img src="assets/cayley-graph.svg" width="140" height="140" alt="A subgraph of the cancellation Cayley graph of F₂">
+            </a>
+            <nav aria-label="Topics">
+                <ul>
+                    <li><a href="home.html">Home</a>
+                    </li>
+                    <li><a href="definitions.html">Definitions</a>
+                    </li>
+                    <li><a href="basic-facts.html">Basic facts</a>
+                    </li>
+                    <li><a href="stable-length.html">Stable length</a>
+                    </li>
+                    <li><a href="maps-between-ranks.html">Maps between ranks</a>
+                    </li>
+                    <li><a href="quasi-automorphisms.html" aria-current="page">Quasi-automorphisms</a>
+                        <ul class="page-sections">
+                            <li><a href="#outer-definitions">Definitions</a></li>
+                            <li><a href="#outer-basic">Representatives, cardinality and torsion</a></li>
+                            <li><a href="#cardinality">Cardinality and involutions</a></li>
+                            <li><a href="#subgroups">Subgroups and relations</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="asymptotic-cones.html">Asymptotic cones</a>
+                    </li>
+                    <li><a href="embeddings.html">Embeddings</a>
+                    </li>
+                    <li><a href="open-problems.html">Open problems</a>
+                    </li>
+                    <li><a href="references.html">References</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="content">
+            <h1 id="outer">Quasi-automorphisms</h1>
+            <p class="lead">Explore inverse-preserving representatives, the outer quotient, and its subgroups. The research statements on this page retain their verification records.</p>
+
+
+            <ul class="entry-list">
+                <li>
+                    <details class="entry" id="outer-definitions">
+                        <summary>Definitions</summary>
+                        <div class="entry-body">
+                            <p>
+                                Let <span class="math math-inline">\(\operatorname{qAut}(F_n)\)</span> be the group of
+                                <a href="definitions.html#alphabetical-inverse-preserving">inverse-preserving bijections</a> whose maps and inverses are <a href="definitions.html#alphabetical-quasi-definitions">quasi-homomorphisms</a>. Put <span class="math math-display">\[
+                                N_n=\{f\in\operatorname{qAut}(F_n):\sup_gd_{\mathrm{c}}(f(g),g)&lt;\infty\},\qquad
+                                \operatorname{qOut}(F_n)=\operatorname{qAut}(F_n)/N_n. \]</span> Composition respects
+                                bounded equivalence by <a href="basic-facts.html#result-ii-3">II.3</a>; in particular <span class="math math-inline">\(N_n\)</span>
+                                is normal. Explicitly, if <span class="math math-inline">\(f\)</span> moves points by at
+                                most <span class="math math-inline">\(A\)</span>, then <span class="math math-inline">\(hfh^{-1}\)</span> moves them by at most <span class="math math-inline">\(\operatorname{Lip}_{\mathrm{c}}(h)A\)</span>.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="outer-basic">
+                        <summary>Representatives, cardinality and torsion</summary>
+                        <div class="entry-body">
+                            <div id="representatives" class="result ai">
+                                <strong id="result-iii-7">Theorem III.7 (bijective representatives).</strong>
+                                Every
+                                <a href="definitions.html#alphabetical-quasi-isomorphism">quasi-isomorphism</a> between countable nonabelian free groups with
+                                <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metrics</a> is equivalent to an <a href="definitions.html#alphabetical-inverse-preserving">inverse-preserving bijection</a>
+                                fixing
+                                <span class="math math-inline">\(1\)</span>
+                                ,
+                                with its inverse equivalent to the specified quasi-inverse.
+                                <span class="source">
+                                <a href="references.html#ref-q">[Q]</a>, theorem “Bijective and inverse-preserving representatives”,
+                                specialized to free groups.
+                                </span>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    Write <span class="math math-inline">\(q\colon H\to G\)</span> and <span class="math math-inline">\(r\colon G\to H\)</span> with <span class="math math-inline">\(d(rq(x),x)\le
+                                    C_H\)</span> and <span class="math math-inline">\(d(qr(y),y)\le C_G\)</span>. Choose
+                                    infinite conjugacy classes <span class="math math-inline">\(A\subset H\)</span>,
+                                    <span class="math math-inline">\(B\subset G\)</span>. Their norms are bounded, say by
+                                    <span class="math math-inline">\(u,v\)</span>; the images under <span class="math math-inline">\(q,r\)</span> are bounded, say by <span class="math math-inline">\(M_q,M_r\)</span>, by the conjugacy estimate in the proof of <a href="basic-facts.html#result-ii-3">II.3</a>
+                                    (which does not need a finite basis).
+                                </p>
+
+                                <p>
+                                    Declare <span class="math math-inline">\((x,y)\)</span> admissible if <span class="math math-inline">\(d(q(x),y)\le R\)</span> and <span class="math math-inline">\(d(x,r(y))\le S\)</span>, where
+                                    <span class="math math-display">
+                                    \[
+                                    R=\max\{v,C_G+D_q+M_q\},\qquad S=\max\{u,C_H+D_r+M_r\}.
+                                    \]
+                                    </span>
+                                    For fixed <span class="math math-inline">\(x\)</span>, the infinitely many <span class="math math-inline">\(y=q(x)c\)</span>, <span class="math math-inline">\(c\in B\)</span>,
+                                    are admissible. For fixed <span class="math math-inline">\(y\)</span>, the infinitely
+                                    many <span class="math math-inline">\(x=r(y)a\)</span>, <span class="math math-inline">\(a\in A\)</span>, are admissible. Enumerate both groups. Starting with
+                                    <span class="math math-inline">\((1,1)\)</span>, alternately match the first unused
+                                    element on either side to an unused admissible partner, and match their inverses at
+                                    the same step. Free groups have no nonidentity <a href="definitions.html#alphabetical-torsion">involutions</a>, so these assignments do
+                                    not conflict. Only finitely many choices are excluded at each step.
+                                </p>
+
+                                <p>
+                                    Inverse pairs obey enlarged uniform bounds because <span class="math math-inline">\(d(q(x^{-1}),q(x)^{-1})\le D_q+\|q(1)\|\)</span>, and likewise for
+                                    <span class="math math-inline">\(r\)</span>. The resulting perfect matching defines
+                                    <span class="math math-inline">\(b\)</span> with <span class="math math-inline">\(b\sim q\)</span> and <span class="math math-inline">\(b^{-1}\sim
+                                    r\)</span>. The bounded-perturbation estimate makes both maps <a href="definitions.html#alphabetical-quasi-definitions">quasi-homomorphisms</a>.
+                                </p>
+
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="cardinality">
+                        <summary>Cardinality and involutions</summary>
+                        <div class="entry-body">
+                            <div id="continuum" class="result ai">
+                                <strong id="result-iii-8">Theorem III.8.</strong>
+                                There is an injection
+                                <span class="math math-inline">
+                                \(\prod_{k\ge1}C_2\hookrightarrow\operatorname{qOut}(F_n)\)
+                                </span>
+                                .
+                                Consequently
+                                <span class="math math-inline">\(\operatorname{qOut}(F_n)\)</span>
+                                has cardinality continuum and contains continuum many <a href="definitions.html#alphabetical-torsion">involutions</a>.
+                                <span class="source">
+                                <a href="references.html#ref-q">[Q]</a>, syllable substitutions and cardinality.
+                                </span>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    Write <span class="math math-inline">\(F_n=\langle a\rangle*K\)</span>, choosing
+                                    <span class="math math-inline">\(b\in K\)</span> from the basis. For <span class="math math-inline">\(E\subseteq\mathbb N_{\ge1}\)</span>, let <span class="math math-inline">\(p_E\)</span> interchange <span class="math math-inline">\(2k\)</span>
+                                    and <span class="math math-inline">\(2k+1\)</span> when <span class="math math-inline">\(k\in E\)</span>, extend oddly to negative integers, and fix all other
+                                    integers. Replace every maximal <span class="math math-inline">\(a\)</span>-syllable
+                                    <span class="math math-inline">\(a^r\)</span> by <span class="math math-inline">\(a^{p_E(r)}\)</span>, leaving <span class="math math-inline">\(K\)</span>-syllables unchanged; call the map <span class="math math-inline">\(B_E\)</span>.
+                                </p>
+
+                                <p>
+                                    The substitutions preserve inverse pairs and are <a href="definitions.html#alphabetical-torsion">involutions</a>. After maximal syllable
+                                    cancellation in a product, at most one merger remains. Its exponent discrepancy is at
+                                    most three because <span class="math math-inline">\(|p_E(r)-r|\le1\)</span>. Hence
+                                    <span class="math math-inline">\(D_{B_E}\le3\)</span>. Moreover <span class="math math-inline">\(B_EB_F=B_{E\triangle F}\)</span>.
+                                </p>
+
+                                <p>
+                                    If <span class="math math-inline">\(k\in E\triangle F\)</span>, evaluate at <span class="math math-inline">\(w_N=(a^{2k}b)^N\)</span>. The <span class="math math-inline">\(a\)</span>-exponent sums of its two images differ by <span class="math math-inline">\(N\)</span>. Since exponent sum is <span class="math math-inline">\(1\)</span>-Lipschitz, their distance is at least <span class="math math-inline">\(N\)</span>, so the classes differ. This proves injectivity. The upper
+                                    cardinality bound follows because there are only continuum many maps from a countable
+                                    set to itself.
+                                </p>
+
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="subgroups">
+                        <summary>Subgroups and relations</summary>
+                        <div class="entry-body">
+                            <p>
+                                Let <span class="math math-inline">\(R_n\)</span> consist of classes with a
+                                <strong><a href="definitions.html#alphabetical-rational-representative">rational representative</a></strong>: the graph on reduced input and reduced output
+                                words is recognized by a <a href="definitions.html#alphabetical-finite-transducer">finite transducer</a>. Let <span class="math math-inline">\(Q_n^{\mathrm{w}}\le\operatorname{qAut}(F_n)\)</span> consist of maps which
+                                are also <a href="definitions.html#alphabetical-quasi-isometry">quasi-isometries</a> for the <a href="definitions.html#alphabetical-word-metrics">ordinary word metric</a>, and let <span class="math math-inline">\(\overline Q_n^{\mathrm{w}}\)</span> be its image in <span class="math math-inline">\(\operatorname{qOut}(F_n)\)</span>.
+                            </p>
+
+                            <div class="result ai">
+                                <p><strong id="result-iii-9">Theorem III.9 (subgroup picture).</strong> In the terminology above:</p>
+
+                                <ul>
+                                    <li>
+                                        <span class="math math-inline">\(R_n\)</span> is countably infinite and not
+                                        normal in <span class="math math-inline">\(\operatorname{qOut}(F_n)\)</span>.
+                                    </li>
+                                    <li>
+                                        <span class="math math-inline">\(\operatorname{Out}(F_n)\)</span> injects into
+                                        <span class="math math-inline">\(R_n\)</span>.
+                                    </li>
+                                    <li>
+                                        Assuming <a href="maps-between-ranks.html#result-iii-4">III.4</a>, the groups <span class="math math-inline">\(\operatorname{qOut}(F_m)\)</span> and <span class="math math-inline">\(\operatorname{qOut}(F_n)\)</span> are isomorphic for finite <span class="math math-inline">\(m,n\ge2\)</span>; hence every <span class="math math-inline">\(\operatorname{Out}(F_m)\)</span> embeds in <span class="math math-inline">\(\operatorname{qOut}(F_2)\)</span>.
+                                    </li>
+                                    <li>
+                                        <span class="math math-inline">\(Q_n^{\mathrm{w}}\)</span> and <span class="math math-inline">\(\overline Q_n^{\mathrm{w}}\)</span> have cardinality continuum;
+                                        the latter contains the product in <a href="quasi-automorphisms.html#result-iii-8">III.8</a>.
+                                    </li>
+                                    <li>
+                                        <span class="math math-inline">\(R_n\cap\overline Q_n^{\mathrm{w}}\)</span> is
+                                        countably infinite and contains <span class="math math-inline">\(\operatorname{Out}(F_n)\)</span> and <span class="math math-inline">\(\bigoplus_{k\ge1}C_2\)</span>.
+                                    </li>
+                                    <li>
+                                        <span class="math math-inline">\([\operatorname{qAut}(F_n):Q_n^{\mathrm{w}}]=2^{\aleph_0}\)</span>.
+                                    </li>
+                                </ul>
+                                <span class="source">
+                                AI-generated results from <a href="references.html#ref-q">[Q]</a>, finite-state representatives,
+                                outer automorphisms, and simultaneous quasi-isometries.
+                                </span>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    <strong><a href="definitions.html#alphabetical-rational-representative">Rational representatives</a>.</strong> <a href="definitions.html#alphabetical-finite-transducer">Finite transducers</a> have finite
+                                    descriptions, so there are only countably many. Rational relations are closed under
+                                    composition and converse; restricting to reduced words preserves rationality. Thus
+                                    the eligible classes form a subgroup. Finite-support exponent permutations from <a href="quasi-automorphisms.html#result-iii-8">III.8</a>
+                                    can be implemented by a finite buffer on <span class="math math-inline">\(a\)</span>-runs, giving an embedded direct sum and infinitude.
+                                </p>
+
+                                <p>
+                                    <strong>Non-normality.</strong> Let <span class="math math-inline">\(\sigma\)</span>
+                                    swap <span class="math math-inline">\(a,b\)</span>. The conjugates <span class="math math-inline">\(C_E=B_E\sigma B_E\)</span> satisfy
+                                    <span class="math math-display">
+                                    \[
+                                    C_E((a^{2k}b)^N)=(b^{p_E(2k)}a)^N.
+                                    \]
+                                    </span>
+                                    Distinct <span class="math math-inline">\(E,F\)</span> therefore give inequivalent conjugates, detected by <span class="math math-inline">\(b\)</span>-exponent sums. A countable subgroup containing
+                                    <span class="math math-inline">\([\sigma]\)</span> cannot contain this
+                                    continuum-sized conjugacy class.
+                                </p>
+
+                                <p>
+                                    <strong>Outer automorphisms.</strong> Automorphisms and inverses are Lipschitz for
+                                    both metrics. Inner automorphisms have displacement at most <span class="math math-inline">\(2\|u\|\)</span>. Conversely, if <span class="math math-inline">\(\alpha\)</span> has bounded cancellation displacement, apply any
+                                    homogeneous real <a href="definitions.html#alphabetical-quasimorphism">quasimorphism</a> <span class="math math-inline">\(q\)</span> to <span class="math math-inline">\(\alpha(g^k)\)</span> and <span class="math math-inline">\(g^k\)</span>. Lipschitz continuity gives <span class="math math-inline">\(k|q(\alpha(g))-q(g)|=O(1)\)</span>, so <span class="math math-inline">\(q(\alpha(g))=q(g)\)</span>. The separation of conjugacy classes by
+                                    <a href="definitions.html#alphabetical-homogeneous-quasimorphism">homogeneous quasimorphisms</a> in free groups (using <a href="references.html#ref-kl">[KL1]</a>, Lemma
+                                    3.3) makes <span class="math math-inline">\(\alpha\)</span> class-preserving.
+                                    Grossman’s Property A <a href="references.html#ref-g">[G]</a> makes it inner. Automorphisms have
+                                    rational reduced-word graphs: the bounded-cancellation lemma permits a finite
+                                    terminal buffer when reading basis letters; see <a href="references.html#ref-c">[C]</a>, p. 454, and
+                                    the detailed argument in <a href="references.html#ref-q">[Q]</a>. This last step uses the classical
+                                    bounded-cancellation lemma as an external input.
+                                </p>
+
+                                <p>
+                                    <strong>Ordinary metric.</strong> The maps <span class="math math-inline">\(B_E\)</span> are <span class="math math-inline">\(3\)</span>-bi-Lipschitz for <span class="math math-inline">\(d_{\mathrm{w}}\)</span>: appending a basis letter changes a terminal
+                                    exponent by at most three, or adds or deletes one fixed non-<span class="math math-inline">\(a\)</span> letter. This proves continuum cardinality in both groups
+                                    and the stated direct-product inclusion. Countability and the finite-support maps
+                                    give the intersection assertion.
+                                </p>
+
+                                <p>
+                                    <strong>Index before quotienting.</strong> For <span class="math math-inline">\(E\subseteq\mathbb N_{\ge1}\)</span>, interchange <span class="math math-inline">\(b^{\pm k}\)</span> with <span class="math math-inline">\(ab^{\pm
+                                    k}a^{-1}\)</span> for <span class="math math-inline">\(k\in E\)</span>, fixing
+                                    everything else; call this <a href="definitions.html#alphabetical-torsion">involution</a> <span class="math math-inline">\(T_E\)</span>.
+                                    It moves points by at most two in cancellation distance, so lies in <span class="math math-inline">\(N_n\)</span>. If <span class="math math-inline">\(E\)</span> is finite
+                                    it is a word-metric <a href="definitions.html#alphabetical-quasi-isometry">quasi-isometry</a>. If <span class="math math-inline">\(E\)</span> is
+                                    infinite, the adjacent pair <span class="math math-inline">\(b^k,b^ka\)</span> has
+                                    image distance <span class="math math-inline">\(2k+3\)</span> for arbitrarily large
+                                    <span class="math math-inline">\(k\in E\)</span>, so it is not. As <span class="math math-inline">\(T_ET_F=T_{E\triangle F}\)</span>, cosets agree exactly when <span class="math math-inline">\(E\triangle F\)</span> is finite. There are continuum many
+                                    such equivalence classes.
+                                </p>
+
+                            </details>
+
+                            <p>
+                                The index assertion is <strong>before</strong> taking the quotient by bounded
+                                cancellation distance. It does not prove that <span class="math math-inline">\(\overline
+                                Q_n^{\mathrm{w}}\)</span> is proper in <span class="math math-inline">\(\operatorname{qOut}(F_n)\)</span>. Nor does a rational representative that
+                                fails to be a word-metric quasi-isometry show that its class has no better
+                                representative. Whether <span class="math math-inline">\(R_n\subseteq\overline
+                                Q_n^{\mathrm{w}}\)</span> is left unresolved in <a href="references.html#ref-q">[Q]</a>. Simplicity of
+                                <span class="math math-inline">\(\operatorname{qOut}(F_n)\)</span> is not settled here.
+                            </p>
+
+                            <!-- III.4. Asymptotic cones. Keep these IDs stable for incoming links. -->
+                        </div>
+                    </details>
+                </li>
+            </ul>
+
+            <footer>
+                <p>Related topics: <a href="maps-between-ranks.html">Maps between ranks</a> · <a href="open-problems.html">Open problems</a>.</p>
+                <p><a href="#content">Back to top</a> · <button type="button" id="close-proofs">Close proofs</button> · <button type="button" id="print">Print this page</button></p>
+                <p class="source" id="math-status">Mathematics uses MathJax. An internet connection is needed on first loading.</p>
+            </footer>
+        </main>
+    </body>
+</html>

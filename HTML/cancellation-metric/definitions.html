@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Definitions — Cancellation geometry</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="assets/mathjax-config.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+        <script defer src="assets/site.js"></script>
+        <script defer src="assets/calculator.js"></script>
+        <style>
+            /* Definition lists are local to this page. */
+            .definition-list { list-style: none; padding: 0; }
+            .definition-list > li { margin: 7px 0; }
+            .definition > summary { color: var(--link); }
+            .definition-body {
+                margin: 10px 0 18px 18px;
+                padding: 3px 0 8px;
+                border-top: 1px solid var(--line);
+                border-bottom: 1px solid var(--line);
+            }
+            .definition-tool { margin: 12px 0; }
+        </style>
+    </head>
+    <body>
+        <a class="skip-link" href="#content">Skip to content</a>
+        <aside class="sidebar">
+            <a class="logo" href="home.html" aria-label="Cancellation geometry home">
+            <img src="assets/cayley-graph.svg" width="140" height="140" alt="A subgraph of the cancellation Cayley graph of F₂">
+            </a>
+            <nav aria-label="Topics">
+                <ul>
+                    <li><a href="home.html">Home</a>
+                    </li>
+                    <li><a href="definitions.html" aria-current="page">Definitions</a>
+                        <ul class="page-sections">
+<li><a href="#notation">Notation</a></li>
+<li><a href="#main-concepts">Main concepts</a></li>
+<li><a href="#alphabetical">All definitions</a></li>
+</ul>
+                    </li>
+                    <li><a href="basic-facts.html">Basic facts</a>
+                    </li>
+                    <li><a href="stable-length.html">Stable length</a>
+                    </li>
+                    <li><a href="maps-between-ranks.html">Maps between ranks</a>
+                    </li>
+                    <li><a href="quasi-automorphisms.html">Quasi-automorphisms</a>
+                    </li>
+                    <li><a href="asymptotic-cones.html">Asymptotic cones</a>
+                    </li>
+                    <li><a href="embeddings.html">Embeddings</a>
+                    </li>
+                    <li><a href="open-problems.html">Open problems</a>
+                    </li>
+                    <li><a href="references.html">References</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="content">
+            <h1 id="definitions">Definitions</h1>
+            <details id="notation" class="definition" open>
+                <summary>Notation</summary>
+                <div class="definition-body">
+                    <p>Let \(G\) and \(H\) be groups, with identity denoted by \(1\). Put \(\mathbb N_0=\{0,1,2,\ldots\}\). Let \(S\) be a set and \(F(S)\) the free group with basis \(S\). Write \(S^{\pm1}=S\cup S^{-1}\). For a word \(w\) in \(S^{\pm1}\), denote by \([w]\) its value in \(F(S)\).</p>
+                </div>
+            </details>
+            
+            <h2 id="main-concepts">Main concepts</h2>
+            <ul class="definition-list">
+                
+                <li>
+                    <details id="norms" class="definition">
+                        <summary>Norm</summary>
+                        <div class="definition-body">
+                            <p>A <em>norm</em> on \(G\) is a function \(\nu\colon G\to[0,\infty)\) satisfying, for all \(g,h\in G\),</p>
+                            <ol>
+                                <li>\(\nu(g)=0\) if and only if \(g=1\);</li>
+                                <li>\(\nu(g^{-1})=\nu(g)\);</li>
+                                <li>\(\nu(gh)\le\nu(g)+\nu(h)\).</li>
+                            </ol>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="conjugation-invariant-norm" class="definition">
+                        <summary>Conjugation-invariant norm</summary>
+                        <div class="definition-body">
+                            <p>A norm \(\nu\) on \(G\) is <em>conjugation-invariant</em> if</p>
+                            <p class="math math-display">\[\nu(ugu^{-1})=\nu(g)\qquad(u,g\in G).\]</p>
+                            <p>The associated metric is \(d_\nu(g,h)=\nu(g^{-1}h)\).</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="bi-invariant-metric" class="definition">
+                        <summary>Bi-invariant metric</summary>
+                        <div class="definition-body">
+                            <p>A metric \(d\) on \(G\) is <em>bi-invariant</em> if</p>
+                            <p class="math math-display">\[d(ug,uh)=d(gu,hu)=d(g,h)\qquad(u,g,h\in G).\]</p>
+                            <p>The associated norm is \(\nu_d(g)=d(1,g)\).</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="word-metrics" class="definition">
+                        <summary>Word norm and word metric</summary>
+                        <div class="definition-body">
+                            <p>Let \(T\subseteq G\setminus\{1\}\) generate \(G\), and suppose that \(T=T^{-1}\). The <em>word norm</em> associated with \(T\) is</p>
+                            <p class="math math-display">\[|g|_T=\min\{k\in\mathbb N_0:g=t_1\cdots t_k,\ t_i\in T\}.\]</p>
+                            <p>The product with no factors is \(1\). The associated <em>word metric</em> is \(d_T(g,h)=|g^{-1}h|_T\).</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="cayley-graph" class="definition">
+                        <summary>Cayley graph</summary>
+                        <div class="definition-body">
+                            <p>Let \(T\subseteq G\setminus\{1\}\) be a symmetric generating set. The <em>Cayley graph</em> \(\operatorname{Cay}(G,T)\) is the undirected graph with vertex set \(G\) and edge set</p>
+                            <p class="math math-display">\[\bigl\{\{g,gt\}:g\in G,\ t\in T\bigr\}.\]</p>
+                            <p>Each edge has length one. Distances between vertices are measured by the graph metric.</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="normal-word-norm" class="definition">
+                        <summary>Normal word norm</summary>
+                        <div class="definition-body">
+                            <p>Let \(S\) be a basis of \(F(S)\). Put</p>
+                            <p class="math math-display">\[\overline S=\{usu^{-1}:u\in F(S),\ s\in S^{\pm1}\}.\]</p>
+                            <p>The <em>normal word norm</em> associated with \(S\) is \(\|g\|=|g|_{\overline S}\). Its associated metric is \(d_{\mathrm c}(g,h)=\|g^{-1}h\|\). The <a href="#alphabetical-word-metrics">ordinary word metric</a> is the word metric associated with \(S^{\pm1}\).</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="cancellation" class="definition">
+                        <summary>Cancellation length</summary>
+                        <div class="definition-body">
+                            <p>Let \(w=s_1\cdots s_N\) be a word in \(S^{\pm1}\). For \(I\subseteq\{1,\ldots,N\}\), let \(w\setminus I\) denote the word obtained by deleting the letters in positions belonging to \(I\), without changing the order of the remaining letters. The <em>cancellation length</em> of \(w\) is</p>
+                            <p class="math math-display">\[\ell_{\mathrm c}(w)=\min\bigl\{|I|:I\subseteq\{1,\ldots,N\},\ [w\setminus I]=1\bigr\}.\]</p>
+                            <p>The <a href="basic-facts.html#norm-identification">identification with normal word length</a> gives \(\ell_{\mathrm c}(w)=\|[w]\|\).</p>
+                            <details id="calculator" class="definition-tool">
+                                <summary>Cancellation-length calculator</summary>
+                                <p>
+                                    Use lower-case letters for generators and upper-case letters for inverses; for
+                                    example <code>abAB</code> is [a,b]. Spaces are ignored. Up to 120 letters. The
+                                    highlighted deletions give one optimal certificate.
+                                </p>
+                                
+                                <div class="calc">
+                                    <label for="word">Word</label><br><input id="word" value="abAB" maxlength="240" spellcheck="false" autocomplete="off"><button id="calculate">Calculate</button><output id="calc-result" aria-live="polite"></output>
+                                </div>
+                                
+                                <p class="source">
+                                    Interval dynamic programming, following the noncrossing-pairing description in <a href="references.html#ref-bgkm">[BGKM]</a>, §2.I. A finite computation is not a Lean proof or
+                                    independent human verification.
+                                </p>
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="bounded-distance" class="definition">
+                        <summary>Bounded distance between maps</summary>
+                        <div class="definition-body">
+                            <p>Let \(X\) be a set and \((Y,d_Y)\) a metric space. Maps \(p,q\colon X\to Y\) are <em>at bounded distance</em>, written \(p\sim q\), if</p>
+                            <p class="math math-display">\[\sup_{x\in X}d_Y(p(x),q(x))&lt;\infty.\]</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="quasi-definitions" class="definition">
+                        <summary>Quasi-homomorphism</summary>
+                        <div class="definition-body">
+                            <p>Let \(H\) be equipped with a <a href="#alphabetical-bi-invariant-metric">bi-invariant metric</a> \(d_H\). A map \(q\colon G\to H\) is a <em>quasi-homomorphism</em> if its <em>multiplicative defect</em></p>
+                            <p class="math math-display" id="eq-defect">\[D_q=\sup_{g,h\in G}d_H(q(gh),q(g)q(h))\tag{II.1}\]</p>
+                            <p>is finite. The term <em>quasi-representation</em> is used with this meaning in the source manuscripts.</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="quasimorphism" class="definition">
+                        <summary>Quasimorphism</summary>
+                        <div class="definition-body">
+                            <p>A <em>quasimorphism</em> on \(G\) is a function \(q\colon G\to\mathbb R\) such that</p>
+                            <p class="math math-display">\[\sup_{g,h\in G}|q(gh)-q(g)-q(h)|&lt;\infty.\]</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="homogeneous-quasimorphism" class="definition">
+                        <summary>Homogeneous quasimorphism</summary>
+                        <div class="definition-body">
+                            <p>A <a href="#alphabetical-quasimorphism">quasimorphism</a> \(q\colon G\to\mathbb R\) is <em>homogeneous</em> if</p>
+                            <p class="math math-display">\[q(g^k)=kq(g)\qquad(g\in G,\ k\in\mathbb Z).\]</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="quasi-isomorphism" class="definition">
+                        <summary>Quasi-isomorphism</summary>
+                        <div class="definition-body">
+                            <p>Let \(G\) and \(H\) be equipped with <a href="#alphabetical-bi-invariant-metric">bi-invariant metrics</a>. A <em>quasi-isomorphism</em> is a <a href="#alphabetical-quasi-definitions">quasi-homomorphism</a> \(q\colon G\to H\) for which there exists a quasi-homomorphism \(r\colon H\to G\) satisfying</p>
+                            <p class="math math-display">\[r\circ q\sim\operatorname{id}_G,\qquad q\circ r\sim\operatorname{id}_H.\]</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="quasi-automorphism" class="definition">
+                        <summary>Quasi-automorphism</summary>
+                        <div class="definition-body">
+                            <p>Let \(G\) be equipped with a <a href="#alphabetical-bi-invariant-metric">bi-invariant metric</a>. A <em>quasi-automorphism</em> of \(G\) is a <a href="#alphabetical-quasi-isomorphism">quasi-isomorphism</a> \(G\to G\).</p>
+                            <p>The group denoted by \(\operatorname{qAut}(F_n)\) in this website uses bijective inverse-preserving representatives; see the <a href="quasi-automorphisms.html#outer-definitions">definition of that group</a>.</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="quasi-isometry" class="definition">
+                        <summary>Quasi-isometry</summary>
+                        <div class="definition-body">
+                            <p>Let \((X,d_X)\) and \((Y,d_Y)\) be metric spaces. A map \(f\colon X\to Y\) is a <em>quasi-isometry</em> if there exist constants \(L\ge1\), \(C\ge0\), and \(R\ge0\) such that</p>
+                            <ol>
+                                <li>for all \(x,x'\in X\),
+                                    <p class="math math-display">\[L^{-1}d_X(x,x')-C\le d_Y(f(x),f(x'))\le Ld_X(x,x')+C;\]</p>
+                                </li>
+                                <li>for each \(y\in Y\), there exists \(x\in X\) with \(d_Y(y,f(x))\le R\).</li>
+                            </ol>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+            <h2 id="alphabetical">All definitions in alphabetical order</h2>
+            <ul class="definition-list">
+                <li>
+                    <details id="alphabetical-admissible-sequence" class="definition">
+                        <summary>Admissible sequence</summary>
+                        <div class="definition-body">
+                            <p>Let \((X,d,o)\) be a pointed metric space and \(s\) a <a href="#alphabetical-scaling-sequence">scaling sequence</a>. A sequence \((x_j)\) in \(X\) is <em>admissible</em> if \(\sup_j d(o,x_j)/s_j&lt;\infty\).</p>
+                            <p class="source"><a href="asymptotic-cones.html#cone-group">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-asymptotic-cone" class="definition">
+                        <summary>Asymptotic cone</summary>
+                        <div class="definition-body">
+                            <p>Let \((X,d,o)\) be a pointed metric space, \(\omega\) a <a href="#alphabetical-ultrafilter">nonprincipal ultrafilter</a>, and \(s\) a <a href="#alphabetical-scaling-sequence">scaling sequence</a>. On <a href="#alphabetical-admissible-sequence">admissible sequences</a> put</p><p class="math math-display">\[\delta_\omega((x_j),(y_j))=\lim_\omega\frac{d(x_j,y_j)}{s_j}.\]</p><p>The <em>asymptotic cone</em> \(\operatorname{Cone}_\omega(X,d,o;s)\) is the quotient by the relation \(\delta_\omega=0\), equipped with the metric induced by \(\delta_\omega\). For a metric group the basepoint is \(1\) and is omitted from the notation.</p>
+                            <p class="source"><a href="asymptotic-cones.html#cone-group">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-bi-invariant-metric" class="definition">
+                        <summary>Bi-invariant metric</summary>
+                        <div class="definition-body">
+                            <p>A metric \(d\) on \(G\) is <em>bi-invariant</em> if</p>
+                            <p class="math math-display">\[d(ug,uh)=d(gu,hu)=d(g,h)\qquad(u,g,h\in G).\]</p>
+                            <p>The associated norm is \(\nu_d(g)=d(1,g)\).</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-bi-lipschitz-map" class="definition">
+                        <summary>Bi-Lipschitz map</summary>
+                        <div class="definition-body">
+                            <p>A map \(f\colon(X,d_X)\to(Y,d_Y)\) is <em>\(L\)-bi-Lipschitz</em> if \(L\ge1\) and</p><p class="math math-display">\[L^{-1}d_X(x,x')\le d_Y(f(x),f(x'))\le Ld_X(x,x')\qquad(x,x'\in X).\]</p><p>A <em>bi-Lipschitz equivalence</em> is a surjective bi-Lipschitz map. A <em>bi-Lipschitz group isomorphism</em> is a group isomorphism which is bi-Lipschitz for the specified metrics.</p>
+                            <p class="source"><a href="maps-between-ranks.html#flexibility">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-bounded-distance" class="definition">
+                        <summary>Bounded distance between maps</summary>
+                        <div class="definition-body">
+                            <p>Let \(X\) be a set and \((Y,d_Y)\) a metric space. Maps \(p,q\colon X\to Y\) are <em>at bounded distance</em>, written \(p\sim q\), if</p>
+                            <p class="math math-display">\[\sup_{x\in X}d_Y(p(x),q(x))&lt;\infty.\]</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-bounded-displacement" class="definition">
+                        <summary>Bounded-displacement subgroup</summary>
+                        <div class="definition-body">
+                            <p>For the <a href="#alphabetical-cancellation">basis cancellation metric</a> on \(F_n\), put</p><p class="math math-display">\[N_n=\left\{f\in\operatorname{qAut}(F_n):\sup_{g\in F_n}d_{\mathrm c}(f(g),g)&lt;\infty\right\}.\]</p><p>This is the subgroup used in defining \(\operatorname{qOut}(F_n)\).</p>
+                            <p class="source"><a href="quasi-automorphisms.html#outer-definitions">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-bounded-multiplicity" class="definition">
+                        <summary>Bounded-multiplicity word graph</summary>
+                        <div class="definition-body">
+                            <p>For an integer \(M\ge1\), let \(W_M(S)\) consist of the <a href="#alphabetical-positive-word">positive words</a> over \(S\) in which each letter occurs at most \(M\) times. Its <a href="#alphabetical-word-graph">word graph</a> joins two words when one is obtained from the other by a single-letter insertion or deletion. The graph is equipped with its vertex path metric.</p>
+                            <p class="source"><a href="embeddings.html#word-graphs">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-cancellation" class="definition">
+                        <summary>Cancellation length</summary>
+                        <div class="definition-body">
+                            <p>Let \(w=s_1\cdots s_N\) be a word in \(S^{\pm1}\). For \(I\subseteq\{1,\ldots,N\}\), let \(w\setminus I\) denote the word obtained by deleting the letters in positions belonging to \(I\), without changing the order of the remaining letters. The <em>cancellation length</em> of \(w\) is</p>
+                            <p class="math math-display">\[\ell_{\mathrm c}(w)=\min\bigl\{|I|:I\subseteq\{1,\ldots,N\},\ [w\setminus I]=1\bigr\}.\]</p>
+                            <p>The <a href="basic-facts.html#norm-identification">identification with normal word length</a> gives \(\ell_{\mathrm c}(w)=\|[w]\|\).</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-cat0-cube-complex" class="definition">
+                        <summary>CAT(0) cube complex</summary>
+                        <div class="definition-body">
+                            <p>A <em>cube complex</em> is a complex obtained by gluing Euclidean unit cubes along isometric faces. Equip it with the induced Euclidean length metric. It is <em>CAT(0)</em> if it is geodesic and, for every geodesic triangle, the distance between any two points on its sides is at most the distance between the corresponding points on the Euclidean comparison triangle. For vertex embeddings in this survey, the metric used is instead the combinatorial edge metric on the 1-skeleton.</p>
+                            <p class="source"><a href="embeddings.html#cat0">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-cayley-graph" class="definition">
+                        <summary>Cayley graph</summary>
+                        <div class="definition-body">
+                            <p>Let \(T\subseteq G\setminus\{1\}\) be a symmetric generating set. The <em>Cayley graph</em> \(\operatorname{Cay}(G,T)\) is the undirected graph with vertex set \(G\) and edge set</p>
+                            <p class="math math-display">\[\bigl\{\{g,gt\}:g\in G,\ t\in T\bigr\}.\]</p>
+                            <p>Each edge has length one. Distances between vertices are measured by the graph metric.</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-coarse-embedding" class="definition">
+                        <summary>Coarse embedding</summary>
+                        <div class="definition-body">
+                            <p>A map \(f\colon(X,d_X)\to(Y,d_Y)\) is a <em>coarse embedding</em> if there exist nondecreasing functions \(\rho_-,\rho_+\colon[0,\infty)\to[0,\infty)\), with \(\rho_-(t)\to\infty\) as \(t\to\infty\), such that</p><p class="math math-display">\[\rho_-(d_X(x,x'))\le d_Y(f(x),f(x'))\le\rho_+(d_X(x,x'))\qquad(x,x'\in X).\]</p>
+                            <p class="source"><a href="embeddings.html#hilbert">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-commutator-length" class="definition">
+                        <summary>Commutator length</summary>
+                        <div class="definition-body">
+                            <p>Let \(G\) be a group and \(g\in[G,G]\). The <em>commutator length</em> \(\operatorname{cl}_G(g)\) is the least \(k\in\mathbb N_0\) such that \(g\) is a product of \(k\) commutators \([a_i,b_i]\), with \(a_i,b_i\in G\). Here \([a,b]=aba^{-1}b^{-1}\).</p>
+                            <p class="source"><a href="stable-length.html#spectral-gap">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-conjugation-invariant-norm" class="definition">
+                        <summary>Conjugation-invariant norm</summary>
+                        <div class="definition-body">
+                            <p>A norm \(\nu\) on \(G\) is <em>conjugation-invariant</em> if</p>
+                            <p class="math math-display">\[\nu(ugu^{-1})=\nu(g)\qquad(u,g\in G).\]</p>
+                            <p>The associated metric is \(d_\nu(g,h)=\nu(g^{-1}h)\).</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-directional-cone" class="definition">
+                        <summary>Directional asymptotic cone</summary>
+                        <div class="definition-body">
+                            <p>The <em>directional asymptotic cone</em> is the metric-group construction of Kędra–Libman, <a href="references.html#ref-dac">[KL2]</a>, §5. Its full definition is given there. It is distinct from the ultrafilter <a href="#alphabetical-asymptotic-cone">asymptotic cone</a> defined above.</p>
+                            <p class="source"><a href="asymptotic-cones.html#directional-cones">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-finite-transducer" class="definition">
+                        <summary>Finite transducer</summary>
+                        <div class="definition-body">
+                            <p>Let \(A\) and \(B\) be finite alphabets. A <em>finite transducer</em> is a finite directed graph with specified initial and terminal states, whose edges are labelled by pairs \((u,v)\in A^*\times B^*\). A path from an initial state to a terminal state accepts the pair obtained by concatenating its input labels and its output labels. Empty labels are allowed. The accepted pairs form the relation recognized by the transducer.</p>
+                            <p class="source"><a href="maps-between-ranks.html#transducers">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-free-abelian-metric" class="definition">
+                        <summary>Free abelian group with the ℓ¹ metric</summary>
+                        <div class="definition-body">
+                            <p>The countable-rank free abelian group is \(\bigoplus_{i\ge1}\mathbb Z\), the group of finitely supported integer sequences. Its \(\ell^1\) norm is \(\|x\|_1=\sum_i|x_i|\), and its metric is \(d_1(x,y)=\|x-y\|_1\).</p>
+                            <p class="source"><a href="embeddings.html#abelian">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-hamming-cube" class="definition">
+                        <summary>Hamming cube, countable</summary>
+                        <div class="definition-body">
+                            <p>The <em>countable Hamming cube</em> \(\mathcal H\) is the set of finite subsets of \(\mathbb N\), with metric \(d(A,B)=|A\triangle B|\). Equivalently, it is the set of finitely supported sequences in \(\{0,1\}^{\mathbb N}\), with the \(\ell^1\) metric.</p>
+                            <p class="source"><a href="embeddings.html#cube">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-homogeneous-quasimorphism" class="definition">
+                        <summary>Homogeneous quasimorphism</summary>
+                        <div class="definition-body">
+                            <p>A <a href="#alphabetical-quasimorphism">quasimorphism</a> \(q\colon G\to\mathbb R\) is <em>homogeneous</em> if</p>
+                            <p class="math math-display">\[q(g^k)=kq(g)\qquad(g\in G,\ k\in\mathbb Z).\]</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-induced-metric" class="definition">
+                        <summary>Induced metric and intrinsic graph metric</summary>
+                        <div class="definition-body">
+                            <p>For a subset \(A\) of a metric space \((X,d)\), its <em>induced metric</em> is the restriction \(d|_{A\times A}\). For a connected subgraph \(Y\) of a graph with unit edge lengths, its <em>intrinsic graph metric</em> is the minimum length of a path contained in \(Y\) joining the specified vertices.</p>
+                            <p class="source"><a href="embeddings.html#word-graphs">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-injective-word" class="definition">
+                        <summary>Injective word</summary>
+                        <div class="definition-body">
+                            <p>A <a href="#alphabetical-positive-word">positive word</a> is <em>injective</em> if no letter occurs more than once. The empty word is injective.</p>
+                            <p class="source"><a href="embeddings.html#word-graphs">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-edit-distance" class="definition">
+                        <summary>Insertion–deletion distance</summary>
+                        <div class="definition-body">
+                            <p>The <em>insertion–deletion distance</em> \(d_{\mathrm{edit}}(u,v)\) is the least number of single-letter insertions and deletions transforming \(u\) into \(v\). Equivalently,</p><p class="math math-display">\[d_{\mathrm{edit}}(u,v)=|u|+|v|-2\operatorname{LCS}(u,v).\]</p>
+                            <p class="source"><a href="embeddings.html#word-graphs">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-inverse-preserving" class="definition">
+                        <summary>Inverse-preserving map</summary>
+                        <div class="definition-body">
+                            <p>A map \(f\colon G\to H\) between groups is <em>inverse-preserving</em> if \(f(g^{-1})=f(g)^{-1}\) for every \(g\in G\).</p>
+                            <p class="source"><a href="maps-between-ranks.html#flexibility">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-isometric-embedding" class="definition">
+                        <summary>Isometric embedding</summary>
+                        <div class="definition-body">
+                            <p>A map \(f\colon(X,d_X)\to(Y,d_Y)\) is an <em>isometric embedding</em> if \(d_Y(f(x),f(x'))=d_X(x,x')\) for all \(x,x'\in X\).</p>
+                            <p class="source"><a href="embeddings.html#cube">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-lipschitz-map" class="definition">
+                        <summary>Lipschitz map</summary>
+                        <div class="definition-body">
+                            <p>A map \(f\colon(X,d_X)\to(Y,d_Y)\) is <em>\(L\)-Lipschitz</em> if \(L\ge0\) and \(d_Y(f(x),f(x'))\le Ld_X(x,x')\) for all \(x,x'\in X\). It is <em>Lipschitz</em> if such an \(L\) exists. The infimum of these constants is denoted by \(\operatorname{Lip}(f)\).</p>
+                            <p class="source"><a href="basic-facts.html#lipschitz">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-lcs" class="definition">
+                        <summary>Longest common subsequence</summary>
+                        <div class="definition-body">
+                            <p>A <em>subsequence</em> of a word is obtained by deleting zero or more positions and retaining the order of the remaining letters. For words \(u,v\), the integer \(\operatorname{LCS}(u,v)\) is the largest length of a word that is a subsequence of both \(u\) and \(v\).</p>
+                            <p class="source"><a href="embeddings.html#word-graphs">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-noncrossing-pairing" class="definition">
+                        <summary>Noncrossing inverse pairing</summary>
+                        <div class="definition-body">
+                            <p>Let \(w=s_1\cdots s_N\) be a word in \(S^{\pm1}\). A <em>noncrossing inverse pairing</em> is a set of disjoint pairs \(\{i,j\}\) of positions such that \(s_i=s_j^{-1}\), and no two pairs have endpoints \(i&lt;k&lt;j&lt;\ell\). Positions outside the pairs are unpaired. A pairing of all positions witnesses free triviality; in a deletion scheme it is applied to the undeleted positions.</p>
+                            <p class="source"><a href="basic-facts.html#norm-identification">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-ultrafilter" class="definition">
+                        <summary>Nonprincipal ultrafilter</summary>
+                        <div class="definition-body">
+                            <p>An <em>ultrafilter</em> on \(\mathbb N\) is a family \(\omega\) of subsets of \(\mathbb N\) such that \(\varnothing\notin\omega\), \(\mathbb N\in\omega\), the family is closed under finite intersections and passage to supersets, and for every \(A\subseteq\mathbb N\) exactly one of \(A\) and \(\mathbb N\setminus A\) belongs to \(\omega\). It is <em>nonprincipal</em> if it contains no finite set.</p>
+                            <p class="source"><a href="asymptotic-cones.html#cone-group">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-norms" class="definition">
+                        <summary>Norm</summary>
+                        <div class="definition-body">
+                            <p>A <em>norm</em> on \(G\) is a function \(\nu\colon G\to[0,\infty)\) satisfying, for all \(g,h\in G\),</p>
+                            <ol>
+                                <li>\(\nu(g)=0\) if and only if \(g=1\);</li>
+                                <li>\(\nu(g^{-1})=\nu(g)\);</li>
+                                <li>\(\nu(gh)\le\nu(g)+\nu(h)\).</li>
+                            </ol>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-normal-word-norm" class="definition">
+                        <summary>Normal word norm</summary>
+                        <div class="definition-body">
+                            <p>Let \(S\) be a basis of \(F(S)\). Put</p>
+                            <p class="math math-display">\[\overline S=\{usu^{-1}:u\in F(S),\ s\in S^{\pm1}\}.\]</p>
+                            <p>The <em>normal word norm</em> associated with \(S\) is \(\|g\|=|g|_{\overline S}\). Its associated metric is \(d_{\mathrm c}(g,h)=\|g^{-1}h\|\). The <a href="#alphabetical-word-metrics">ordinary word metric</a> is the word metric associated with \(S^{\pm1}\).</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-notation" class="definition">
+                        <summary>Notation</summary>
+                        <div class="definition-body">
+                            <p>Let \(G\) and \(H\) be groups, with identity denoted by \(1\). Put \(\mathbb N_0=\{0,1,2,\ldots\}\). Let \(S\) be a set and \(F(S)\) the free group with basis \(S\). Write \(S^{\pm1}=S\cup S^{-1}\). For a word \(w\) in \(S^{\pm1}\), denote by \([w]\) its value in \(F(S)\).</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-one-parameter-subgroup" class="definition">
+                        <summary>One-parameter subgroup</summary>
+                        <div class="definition-body">
+                            <p>A <em>one-parameter subgroup</em> of a topological group \(G\) is a continuous homomorphism \(\iota\colon(\mathbb R,+)\to G\). The power direction associated with \(g\) in the cone used in this survey is \(\iota_g(t)=[g^{\lfloor ts_j\rfloor}]\).</p>
+                            <p class="source"><a href="asymptotic-cones.html#cone-directions">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-outer-automorphism-group" class="definition">
+                        <summary>Outer automorphism group</summary>
+                        <div class="definition-body">
+                            <p>For a group \(G\), let \(\operatorname{Aut}(G)\) denote its automorphism group and \(\operatorname{Inn}(G)\) the subgroup consisting of maps \(x\mapsto gxg^{-1}\), for \(g\in G\). The <em>outer automorphism group</em> is \(\operatorname{Out}(G)=\operatorname{Aut}(G)/\operatorname{Inn}(G)\).</p>
+                            <p class="source"><a href="quasi-automorphisms.html#subgroups">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-qout" class="definition">
+                        <summary>Outer quasi-automorphism group</summary>
+                        <div class="definition-body">
+                            <p>The <em>outer quasi-automorphism group</em> in this survey is</p><p class="math math-display">\[\operatorname{qOut}(F_n)=\operatorname{qAut}(F_n)/N_n,\]</p><p>where \(N_n\) is the <a href="#alphabetical-bounded-displacement">bounded-displacement subgroup</a>. Its elements are <a href="#alphabetical-bounded-distance">bounded-distance classes</a> of the specified bijective representatives.</p>
+                            <p class="source"><a href="quasi-automorphisms.html#outer-definitions">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-positive-word" class="definition">
+                        <summary>Positive word</summary>
+                        <div class="definition-body">
+                            <p>A <em>positive word</em> over a set \(S\) is a finite sequence of elements of \(S\), including the empty sequence. The set of positive words is denoted by \(W(S)=S^*\). The length \(|w|\) is the number of letters of \(w\).</p>
+                            <p class="source"><a href="embeddings.html#word-graphs">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-quasi-automorphism" class="definition">
+                        <summary>Quasi-automorphism</summary>
+                        <div class="definition-body">
+                            <p>Let \(G\) be equipped with a <a href="#alphabetical-bi-invariant-metric">bi-invariant metric</a>. A <em>quasi-automorphism</em> of \(G\) is a <a href="#alphabetical-quasi-isomorphism">quasi-isomorphism</a> \(G\to G\).</p>
+                            <p>The group denoted by \(\operatorname{qAut}(F_n)\) in this website uses bijective inverse-preserving representatives; see the <a href="quasi-automorphisms.html#outer-definitions">definition of that group</a>.</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-qaut" class="definition">
+                        <summary>Quasi-automorphism group</summary>
+                        <div class="definition-body">
+                            <p>Equip \(F_n\) with its <a href="#alphabetical-cancellation">basis cancellation metric</a>. The group \(\operatorname{qAut}(F_n)\) consists of <a href="#alphabetical-inverse-preserving">inverse-preserving bijections</a> \(f\colon F_n\to F_n\) such that both \(f\) and \(f^{-1}\) are <a href="#alphabetical-quasi-definitions">quasi-homomorphisms</a>. The group operation is composition.</p>
+                            <p class="source"><a href="quasi-automorphisms.html#outer-definitions">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-quasi-definitions" class="definition">
+                        <summary>Quasi-homomorphism</summary>
+                        <div class="definition-body">
+                            <p>Let \(H\) be equipped with a <a href="#alphabetical-bi-invariant-metric">bi-invariant metric</a> \(d_H\). A map \(q\colon G\to H\) is a <em>quasi-homomorphism</em> if its <em>multiplicative defect</em></p>
+                            <p class="math math-display">\[D_q=\sup_{g,h\in G}d_H(q(gh),q(g)q(h))\]</p>
+                            <p>is finite. The term <em>quasi-representation</em> is used with this meaning in the source manuscripts.</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-quasi-isometric-embedding" class="definition">
+                        <summary>Quasi-isometric embedding</summary>
+                        <div class="definition-body">
+                            <p>A map \(f\colon(X,d_X)\to(Y,d_Y)\) is a <em>quasi-isometric embedding</em> if there exist \(L\ge1\) and \(C\ge0\) such that</p><p class="math math-display">\[L^{-1}d_X(x,x')-C\le d_Y(f(x),f(x'))\le Ld_X(x,x')+C\qquad(x,x'\in X).\]</p>
+                            <p class="source"><a href="maps-between-ranks.html#rigidity">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-quasi-isometry" class="definition">
+                        <summary>Quasi-isometry</summary>
+                        <div class="definition-body">
+                            <p>Let \((X,d_X)\) and \((Y,d_Y)\) be metric spaces. A map \(f\colon X\to Y\) is a <em>quasi-isometry</em> if there exist constants \(L\ge1\), \(C\ge0\), and \(R\ge0\) such that</p>
+                            <ol>
+                                <li>for all \(x,x'\in X\),
+                                    <p class="math math-display">\[L^{-1}d_X(x,x')-C\le d_Y(f(x),f(x'))\le Ld_X(x,x')+C;\]</p>
+                                </li>
+                                <li>for each \(y\in Y\), there exists \(x\in X\) with \(d_Y(y,f(x))\le R\).</li>
+                            </ol>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-quasi-isomorphism" class="definition">
+                        <summary>Quasi-isomorphism</summary>
+                        <div class="definition-body">
+                            <p>Let \(G\) and \(H\) be equipped with <a href="#alphabetical-bi-invariant-metric">bi-invariant metrics</a>. A <em>quasi-isomorphism</em> is a <a href="#alphabetical-quasi-definitions">quasi-homomorphism</a> \(q\colon G\to H\) for which there exists a quasi-homomorphism \(r\colon H\to G\) satisfying</p>
+                            <p class="math math-display">\[r\circ q\sim\operatorname{id}_G,\qquad q\circ r\sim\operatorname{id}_H.\]</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-quasimorphism" class="definition">
+                        <summary>Quasimorphism</summary>
+                        <div class="definition-body">
+                            <p>A <em>quasimorphism</em> on \(G\) is a function \(q\colon G\to\mathbb R\) such that</p>
+                            <p class="math math-display">\[\sup_{g,h\in G}|q(gh)-q(g)-q(h)|&lt;\infty.\]</p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-rational-bijection" class="definition">
+                        <summary>Rational bijection</summary>
+                        <div class="definition-body">
+                            <p>A bijection between sets of words over finite alphabets is <em>rational</em> if its graph is a <a href="#alphabetical-rational-transduction">rational transduction</a>. For free groups with specified finite bases, the graph is taken on the unique freely reduced representatives.</p>
+                            <p class="source"><a href="maps-between-ranks.html#transducers">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-rational-representative" class="definition">
+                        <summary>Rational representative</summary>
+                        <div class="definition-body">
+                            <p>Fix a finite free basis of \(F_n\). A representative \(f\in\operatorname{qAut}(F_n)\) is <em>rational</em> if the set of pairs \((u,v)\) of freely reduced words with \([v]=f([u])\) is a <a href="#alphabetical-rational-transduction">rational transduction</a>. The subset of \(\operatorname{qOut}(F_n)\) consisting of classes admitting such a representative is denoted by \(R_n\).</p>
+                            <p class="source"><a href="quasi-automorphisms.html#subgroups">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-rational-transduction" class="definition">
+                        <summary>Rational transduction</summary>
+                        <div class="definition-body">
+                            <p>Let \(A\) and \(B\) be finite alphabets. A relation \(R\subseteq A^*\times B^*\) is a <em>rational transduction</em> if it is recognized by a <a href="#alphabetical-finite-transducer">finite transducer</a>. A function is <em>rational</em> if its graph is a rational transduction.</p>
+                            <p class="source"><a href="maps-between-ranks.html#transducers">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-real-character" class="definition">
+                        <summary>Real character</summary>
+                        <div class="definition-body">
+                            <p>A <em>real character</em> of a topological group \(G\) is a continuous homomorphism \(\chi\colon G\to(\mathbb R,+)\). For a metric group, it is a <em>Lipschitz real character</em> if it is Lipschitz for the given metric.</p>
+                            <p class="source"><a href="asymptotic-cones.html#cone-directions">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-scaling-sequence" class="definition">
+                        <summary>Scaling sequence</summary>
+                        <div class="definition-body">
+                            <p>A <em>scaling sequence</em> is a sequence \(s=(s_j)_{j\ge1}\) of positive real numbers such that \(s_j\to\infty\).</p>
+                            <p class="source"><a href="asymptotic-cones.html#cone-group">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-sequential-transducer" class="definition">
+                        <summary>Sequential transducer</summary>
+                        <div class="definition-body">
+                            <p>A <em>sequential transducer</em> is a <a href="#alphabetical-finite-transducer">finite transducer</a> with one initial state, one input letter on each edge, and at most one outgoing edge with each input letter at a given state. Output labels are finite words. A fixed initial output and a final output at each accepting state may be specified; conventions allowing final outputs are also called subsequential. Such a transducer defines a partial function on input words.</p>
+                            <p class="source"><a href="maps-between-ranks.html#transducers">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-simultaneous-quasi-isometries" class="definition">
+                        <summary>Simultaneous quasi-isometries</summary>
+                        <div class="definition-body">
+                            <p>Let \(Q_n^{\mathrm w}\) be the subgroup of \(\operatorname{qAut}(F_n)\) whose elements are <a href="#alphabetical-quasi-isometry">quasi-isometries</a> for the <a href="#alphabetical-word-metrics">ordinary word metric</a> \(d_{\mathrm w}\). Its image in \(\operatorname{qOut}(F_n)\) is denoted by \(\overline Q_n^{\mathrm w}\).</p>
+                            <p class="source"><a href="quasi-automorphisms.html#subgroups">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-spectral-gap" class="definition">
+                        <summary>Spectral gap at zero</summary>
+                        <div class="definition-body">
+                            <p>A nonnegative function \(\tau\colon G\to[0,\infty)\) has a <em>spectral gap at zero</em> if there exists \(\varepsilon&gt;0\) such that \(\tau(G)\cap(0,\varepsilon)=\varnothing\).</p>
+                            <p class="source"><a href="stable-length.html#spectral-gap">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-stable-length" class="definition">
+                        <summary>Stable length</summary>
+                        <div class="definition-body">
+                            <p>Let \(\nu\) be a norm on a group \(G\). The <em>stable length</em> of \(g\in G\) is</p>
+                            <p class="math math-display">\[\tau_\nu(g)=\lim_{k\to\infty}\frac{\nu(g^k)}{k}=\inf_{k\ge1}\frac{\nu(g^k)}{k}.\]</p>
+                            <p>For the <a href="#alphabetical-cancellation">cancellation norm</a>, write \(\tau(g)\). The term <em>translation length</em> is also used.</p>
+                            <p class="source"><a href="stable-length.html#stable-length">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-torsion" class="definition">
+                        <summary>Torsion element</summary>
+                        <div class="definition-body">
+                            <p>An element \(g\) of a group is a <em>torsion element</em> if \(g^r=1\) for some integer \(r\ge1\). Its order is the least such integer. An element of order two is an <em>involution</em>.</p>
+                            <p class="source"><a href="asymptotic-cones.html#cone-torsion">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-ulam-metric" class="definition">
+                        <summary>Ulam metric</summary>
+                        <div class="definition-body">
+                            <p>Represent \(\sigma\in S_n\) by the word \(\sigma(1)\cdots\sigma(n)\). The <em>Ulam metric</em> on \(S_n\) is</p><p class="math math-display">\[d_U(\sigma,\pi)=n-\operatorname{LCS}(\sigma,\pi).\]</p><p>It counts moves which remove one symbol and reinsert it elsewhere. Each such move is counted once.</p>
+                            <p class="source"><a href="embeddings.html#ulam">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-ultralimit" class="definition">
+                        <summary>Ultralimit of a bounded real sequence</summary>
+                        <div class="definition-body">
+                            <p>Let \(\omega\) be an ultrafilter on \(\mathbb N\), and let \((a_j)\) be a bounded real sequence. Its <em>ultralimit</em> is the unique real number \(a\), denoted by \(\lim_\omega a_j\), such that \(\{j:|a_j-a|&lt;\varepsilon\}\in\omega\) for every \(\varepsilon&gt;0\).</p>
+                            <p class="source"><a href="asymptotic-cones.html#cone-group">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-undistorted" class="definition">
+                        <summary>Undistorted cyclic subgroup</summary>
+                        <div class="definition-body">
+                            <p>Let \(G\) be a group with a left-invariant metric, and let \(g\) have infinite order. The cyclic subgroup generated by \(g\) is <em>undistorted</em> if the map \(\mathbb Z\to G\), \(k\mapsto g^k\), is a <a href="#alphabetical-quasi-isometric-embedding">quasi-isometric embedding</a>, where \(\mathbb Z\) has its usual distance.</p>
+                            <p class="source"><a href="stable-length.html#spectral-gap">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-word-graph" class="definition">
+                        <summary>Word graph</summary>
+                        <div class="definition-body">
+                            <p>The <em>word graph</em> over \(S\) has vertex set \(W(S)\). Two vertices are adjacent if one is obtained from the other by inserting or deleting one letter. Each edge has length one. The injective-word graph is the induced subgraph on <a href="#alphabetical-injective-word">injective words</a>. In the embedding statements of this survey, “word complex” refers to this incidence-graph convention, not to the ordinary 1-skeleton of a cell complex.</p>
+                            <p class="source"><a href="embeddings.html#word-graphs">Related results and references.</a></p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="alphabetical-word-metrics" class="definition">
+                        <summary>Word norm and word metric</summary>
+                        <div class="definition-body">
+                            <p>Let \(T\subseteq G\setminus\{1\}\) generate \(G\), and suppose that \(T=T^{-1}\). The <em>word norm</em> associated with \(T\) is</p>
+                            <p class="math math-display">\[|g|_T=\min\{k\in\mathbb N_0:g=t_1\cdots t_k,\ t_i\in T\}.\]</p>
+                            <p>The product with no factors is \(1\). The associated <em>word metric</em> is \(d_T(g,h)=|g^{-1}h|_T\).</p>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+        </main>
+
+    </body>
+</html>

@@ -1,1 +1,84 @@
-Test
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home — Cancellation geometry</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="assets/mathjax-config.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+        <script defer src="assets/site.js"></script>
+
+    </head>
+    <body>
+        <a class="skip-link" href="#content">Skip to content</a>
+        <aside class="sidebar">
+            <a class="logo" href="home.html" aria-label="Cancellation geometry home">
+            <img src="assets/cayley-graph.svg" width="140" height="140" alt="A subgraph of the cancellation Cayley graph of F₂">
+            </a>
+            <nav aria-label="Topics">
+                <ul>
+                    <li><a href="home.html" aria-current="page">Home</a>
+                        <ul class="page-sections">
+                            <li><a href="#start-here">Start here</a></li>
+                            <li><a href="#explore">Explore the geometry</a></li>
+                            <li><a href="#about">About this version</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="definitions.html">Definitions</a>
+                    </li>
+                    <li><a href="basic-facts.html">Basic facts</a>
+                    </li>
+                    <li><a href="stable-length.html">Stable length</a>
+                    </li>
+                    <li><a href="maps-between-ranks.html">Maps between ranks</a>
+                    </li>
+                    <li><a href="quasi-automorphisms.html">Quasi-automorphisms</a>
+                    </li>
+                    <li><a href="asymptotic-cones.html">Asymptotic cones</a>
+                    </li>
+                    <li><a href="embeddings.html">Embeddings</a>
+                    </li>
+                    <li><a href="open-problems.html">Open problems</a>
+                    </li>
+                    <li><a href="references.html">References</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="content">
+            <h1 id="introduction">Cancellation geometry of free groups</h1>
+            <p class="lead">A reference website about <a href="definitions.html#alphabetical-cancellation">cancellation length</a>, <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metrics</a>, and the large-scale geometry of free groups.</p>
+            <p>The cancellation length of a word is the fewest letters one must delete to leave a word representing the identity. Conjugates of a basis generator have length one, even when they are very long in the <a href="definitions.html#alphabetical-word-metrics">ordinary word metric</a>. This simple observation leads to geometry quite different from the usual Cayley tree.</p>
+            <h2 id="start-here">Start here</h2>
+            <ul class="reading-list">
+                <li><a href="definitions.html#cancellation">What is cancellation length?</a> Definitions, examples, and an <a href="definitions.html#calculator">interactive calculator</a>.</li>
+                <li><a href="basic-facts.html">How do we work with it?</a> Metric identities, <a href="definitions.html#alphabetical-normal-word-norm">normal word length</a>, and Lipschitz estimates.</li>
+                <li><a href="stable-length.html">What happens to powers?</a> <a href="definitions.html#alphabetical-stable-length">Stable length</a>, a <a href="definitions.html#alphabetical-spectral-gap">spectral gap</a>, and rationality.</li>
+            </ul>
+            <h2 id="explore">Explore the geometry</h2>
+            <dl class="topic-list">
+                <dt><a href="maps-between-ranks.html">Maps between ranks</a></dt>
+                <dd>Algebraic rigidity, quasi-algebraic flexibility, and explicit recodings.</dd>
+                <dt><a href="quasi-automorphisms.html">Quasi-automorphisms</a></dt>
+                <dd><a href="definitions.html#alphabetical-inverse-preserving">Inverse-preserving bijections</a>, outer classes, and subgroups.</dd>
+                <dt><a href="asymptotic-cones.html">Asymptotic cones</a></dt>
+                <dd>Complete metric groups, the proposed rank-independence corollary, and <a href="definitions.html#alphabetical-torsion">torsion</a>.</dd>
+                <dt><a href="embeddings.html">Embeddings</a></dt>
+                <dd>Cubes, word spaces, permutation metrics, and the Hilbert-space question.</dd>
+                <dt><a href="open-problems.html">Open problems</a></dt>
+                <dd>Questions and limitations recorded in this survey.</dd>
+            </dl>
+            <h2 id="about">About this version</h2>
+            <p>Unless stated otherwise, free groups have finite rank at least two and a specified free basis. Graph embeddings concern vertices with the graph distance. Definitions and statements are linked across pages; click <strong>Proof</strong> to expand an argument.</p>
+            <p>This is an AI-written working survey. Published results and public preprints are distinguished from AI-generated deductions and research drafts. “Lean verified: no” and “Human verified: no” mean that no corresponding verification has been documented. Bibliographic checks and computer tests do not constitute mathematical verification.</p>
+            <p>See the <a href="references.html">references and source register</a> for precise citations and the <a href="references.html#editorial">editorial notes</a> for remaining review tasks. Links to private source manuscripts require access to those files.</p>
+            <p class="source">The design and the original Cayley-graph logo follow Jarek Kędra’s <a href="https://jarek-kedra.github.io/HTML/invariant-norms/home.html">Invariant norms on groups</a> website. The logo depicts a subgraph of the Cayley graph of \(F_2\) with its basis bi-invariant word metric.</p>
+            <footer>
+                <p>Related topics: <a href="definitions.html">Definitions</a> · <a href="open-problems.html">Open problems</a>.</p>
+                <p><a href="#content">Back to top</a> · <button type="button" id="close-proofs">Close proofs</button> · <button type="button" id="print">Print this page</button></p>
+                <p class="source" id="math-status">Mathematics uses MathJax. An internet connection is needed on first loading.</p>
+            </footer>
+        </main>
+    </body>
+</html>

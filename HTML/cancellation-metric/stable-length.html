@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Stable length — Cancellation geometry</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="assets/mathjax-config.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+        <script defer src="assets/site.js"></script>
+
+    </head>
+    <body>
+        <a class="skip-link" href="#content">Skip to content</a>
+        <aside class="sidebar">
+            <a class="logo" href="home.html" aria-label="Cancellation geometry home">
+            <img src="assets/cayley-graph.svg" width="140" height="140" alt="A subgraph of the cancellation Cayley graph of F₂">
+            </a>
+            <nav aria-label="Topics">
+                <ul>
+                    <li><a href="home.html">Home</a>
+                    </li>
+                    <li><a href="definitions.html">Definitions</a>
+                    </li>
+                    <li><a href="basic-facts.html">Basic facts</a>
+                    </li>
+                    <li><a href="stable-length.html" aria-current="page">Stable length</a>
+                        <ul class="page-sections">
+                            <li><a href="#stable-length-formula">Stable cancellation length</a></li>
+                            <li><a href="#spectral-gap">Non-triviality and spectral gap</a></li>
+                            <li><a href="#rationality">Jaspars’s rationality theorem</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="maps-between-ranks.html">Maps between ranks</a>
+                    </li>
+                    <li><a href="quasi-automorphisms.html">Quasi-automorphisms</a>
+                    </li>
+                    <li><a href="asymptotic-cones.html">Asymptotic cones</a>
+                    </li>
+                    <li><a href="embeddings.html">Embeddings</a>
+                    </li>
+                    <li><a href="open-problems.html">Open problems</a>
+                    </li>
+                    <li><a href="references.html">References</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="content">
+            <h1 id="stable-length">Stable length</h1>
+            <p class="lead"><a href="definitions.html#alphabetical-stable-length">Stable cancellation length</a> measures the growth of powers of a fixed element. The main results here concern its positivity and rationality.</p>
+
+
+            <ul class="entry-list">
+                <li>
+                    <details class="entry" id="stable-length-formula">
+                        <summary>Stable cancellation length</summary>
+                        <div class="entry-body">
+                            <p>
+                                Define
+                                <span class="math math-display" id="eq-stable-length">
+                                \[
+                                \tau(g)=\lim_{k\to\infty}\frac{\|g^k\|}{k}=\inf_{k\ge1}\frac{\|g^k\|}{k}.
+                                \tag{III.1}
+                                \]
+                                </span>
+                                The
+                                limit exists by subadditivity. It is conjugation invariant, satisfies <span class="math math-inline">\(\tau(g^{-1})=\tau(g)\)</span> and <span class="math math-inline">\(\tau(g^m)=|m|\tau(g)\)</span>, and is at most <span class="math math-inline">\(\|g\|\)</span>. These properties alone do not justify calling it a norm: a
+                                triangle inequality for noncommuting elements does not follow by taking powers.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="spectral-gap">
+                        <summary>Non-triviality and spectral gap</summary>
+                        <div class="entry-body">
+                            <div class="result ai">
+                                <strong id="result-iii-1">Theorem III.1 (gap at zero).</strong>
+                                For every nonidentity
+                                <span class="math math-inline">\(g\in F(S)\)</span>
+                                ,
+
+                                <span class="math math-display" id="eq-gap">
+                                \[
+                                \tau(g)\ge1.
+                                \tag{III.2}
+                                \]
+                                </span>
+
+                                The constant is sharp, since
+                                <span class="math math-inline">\(\tau(a)=1\)</span>
+                                for a basis generator. Thus every nontrivial cyclic subgroup is
+                                <a href="definitions.html#alphabetical-undistorted">undistorted</a> for the <a href="definitions.html#alphabetical-cancellation">cancellation metric</a>.
+                                <span class="source">
+                                AI-written deduction below from the classical Duncan–Howie commutator-length bound <a href="references.html#ref-dh">[DH]</a>. This deduction is not attributed to <a href="references.html#ref-dh">[DH]</a> as a statement about cancellation length.
+                                </span>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    Let <span class="math math-inline">\(\operatorname{ab}\colon F(S)\to\mathbb
+                                    Z^{(S)}\)</span> be abelianization with the <span class="math math-inline">\(\ell^1\)</span> norm. It is <span class="math math-inline">\(1\)</span>-Lipschitz for <a href="definitions.html#alphabetical-cancellation">cancellation length</a>. If <span class="math math-inline">\(\operatorname{ab}(g)\ne0\)</span>, then <span class="math math-inline">\(\|g^k\|\ge k\|\operatorname{ab}(g)\|_1\ge k\)</span>.
+                                </p>
+
+                                <p>
+                                    Suppose <span class="math math-inline">\(g\in[F,F]\setminus\{1\}\)</span>. We first
+                                    prove <span class="math math-inline">\(\operatorname{cl}(h)\le\|h\|/2\)</span> for
+                                    every <span class="math math-inline">\(h\in[F,F]\)</span>, where <span class="math math-inline">\(\operatorname{cl}\)</span> denotes the minimum number of commutators
+                                    in a product representing <span class="math math-inline">\(h\)</span>. Take a
+                                    shortest factorization of <span class="math math-inline">\(h\)</span> into <span class="math math-inline">\(N\)</span> conjugates of signed basis generators.
+                                    Abelianization shows that, for each generator, positive and negative occurrences have
+                                    equal counts. Pair them. Realize the factorization by a map of a planar surface with
+                                    <span class="math math-inline">\(N+1\)</span> boundary components to the basis rose:
+                                    one boundary reads <span class="math math-inline">\(h\)</span> and the others read
+                                    the signed generators, with paths to the basepoint recording the conjugators. Glue
+                                    each oppositely oriented pair by an annulus mapping to its generator circle. The
+                                    resulting orientable surface has one boundary, Euler characteristic <span class="math math-inline">\(1-N\)</span>, and genus <span class="math math-inline">\(N/2\)</span>.
+                                    Hence <span class="math math-inline">\(\operatorname{cl}(h)\le N/2\)</span>.
+                                </p>
+
+                                <p>
+                                    Duncan–Howie’s theorem gives <span class="math math-inline">\(k\le2\operatorname{cl}(g^k)-1\)</span> for a nontrivial <span class="math math-inline">\(k\)</span>-th power in a free group. Therefore <span class="math math-inline">\(\|g^k\|\ge2\operatorname{cl}(g^k)\ge k+1\)</span>, and
+                                    division by <span class="math math-inline">\(k\)</span> gives the claim. The
+                                    inequality also gives <span class="math math-inline">\(d_{\mathrm{c}}(g^p,g^q)\ge|p-q|\)</span>, while subadditivity gives
+                                    the upper bound <span class="math math-inline">\(|p-q|\|g\|\)</span>.
+                                </p>
+
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="rationality">
+                        <summary>Jaspars’s rationality theorem</summary>
+                        <div class="entry-body">
+                            <div class="result published">
+                                <p>
+                                    <strong id="result-iii-2">Theorem III.2 (Jaspars).</strong> <a href="definitions.html#alphabetical-stable-length">Stable cancellation length</a> takes rational
+                                    values on free groups. More generally the power-product length sequences in Theorem
+                                    1.1 of <a href="references.html#ref-j">[J]</a> are uniformly semi-arithmetic. <span class="source">Published: <a href="references.html#ref-j">[J]</a>, Theorem 1.1.</span>
+                                </p>
+
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    <strong>Proof outline, not a replacement for the paper.</strong> Encode words and
+                                    deletion certificates by context-free languages. Parikh’s theorem converts the
+                                    relevant counting information into semilinear sets. The resulting integer
+                                    optimization has an eventual periodic arithmetic structure; its asymptotic slope is
+                                    rational. The substantial language construction and semi-arithmetic argument are in
+                                    <a href="references.html#ref-j">[J]</a>, §§2–4.
+                                </p>
+
+                            </details>
+
+                            <p>
+                                For orientation, <a href="references.html#ref-j">[J]</a>, Examples 1.3(2), gives
+                                <span class="math math-display" id="eq-commutator-powers">
+                                \[
+                                \|[a,b]^k\|=2\lfloor k/2\rfloor+2\quad(k\ge1),\qquad \tau([a,b])=1.
+                                \tag{III.3}
+                                \]
+                                </span>
+                                Rationality is a statement about each fixed element. It does not give a global
+                                <a href="definitions.html#alphabetical-coarse-embedding">coarse embedding</a> or a classification of the entire metric space.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+
+            <footer>
+                <p>Related topics: <a href="asymptotic-cones.html">Asymptotic cones</a> · <a href="open-problems.html">Open problems</a>.</p>
+                <p><a href="#content">Back to top</a> · <button type="button" id="close-proofs">Close proofs</button> · <button type="button" id="print">Print this page</button></p>
+                <p class="source" id="math-status">Mathematics uses MathJax. An internet connection is needed on first loading.</p>
+            </footer>
+        </main>
+    </body>
+</html>

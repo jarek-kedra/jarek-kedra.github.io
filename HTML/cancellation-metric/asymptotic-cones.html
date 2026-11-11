@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Asymptotic cones — Cancellation geometry</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="assets/mathjax-config.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+        <script defer src="assets/site.js"></script>
+
+    </head>
+    <body>
+        <a class="skip-link" href="#content">Skip to content</a>
+        <aside class="sidebar">
+            <a class="logo" href="home.html" aria-label="Cancellation geometry home">
+            <img src="assets/cayley-graph.svg" width="140" height="140" alt="A subgraph of the cancellation Cayley graph of F₂">
+            </a>
+            <nav aria-label="Topics">
+                <ul>
+                    <li><a href="home.html">Home</a>
+                    </li>
+                    <li><a href="definitions.html">Definitions</a>
+                    </li>
+                    <li><a href="basic-facts.html">Basic facts</a>
+                    </li>
+                    <li><a href="stable-length.html">Stable length</a>
+                    </li>
+                    <li><a href="maps-between-ranks.html">Maps between ranks</a>
+                    </li>
+                    <li><a href="quasi-automorphisms.html">Quasi-automorphisms</a>
+                    </li>
+                    <li><a href="asymptotic-cones.html" aria-current="page">Asymptotic cones</a>
+                        <ul class="page-sections">
+                            <li><a href="#cone-group">Complete metric groups</a></li>
+                            <li><a href="#cone-flexibility">Independence of finite rank</a></li>
+                            <li><a href="#rank-independence">Bi-Lipschitz isomorphism of free-group cones</a></li>
+                            <li><a href="#cone-torsion">Torsion</a></li>
+                            <li><a href="#cone-directions">Stable length and real characters</a></li>
+                            <li><a href="#cone-characters">Real characters from quasimorphisms</a></li>
+                            <li><a href="#directional-cones">Directional cones</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="embeddings.html">Embeddings</a>
+                    </li>
+                    <li><a href="open-problems.html">Open problems</a>
+                    </li>
+                    <li><a href="references.html">References</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="content">
+            <h1 id="cones">Asymptotic cones</h1>
+            <p class="lead">Rescaling a <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metric</a> produces a complete metric group. This page connects that construction with rank flexibility, <a href="definitions.html#alphabetical-torsion">torsion</a>, and <a href="definitions.html#alphabetical-stable-length">stable length</a>.</p>
+
+
+            <ul class="entry-list">
+                <li>
+                    <details class="entry" id="cone-group">
+                        <summary>Complete metric groups</summary>
+                        <div class="entry-body">
+                            <p>
+                                Fix a <a href="definitions.html#alphabetical-ultrafilter">nonprincipal ultrafilter</a> <span class="math math-inline">\(\omega\)</span>
+                                on the positive integers and a sequence of positive real numbers
+                                <span class="math math-inline">\(s=(s_j)\)</span> with
+                                <span class="math math-inline">\(s_j\to\infty\)</span>. For a group with a
+                                <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metric</a>, write <span class="math math-inline">\(\|g\|=d(1,g)\)</span>.
+                                An <a href="definitions.html#alphabetical-admissible-sequence">admissible sequence</a> satisfies
+                                <span class="math math-inline">\(\sup_j\|g_j\|/s_j&lt;\infty\)</span>.
+                                The <a href="definitions.html#alphabetical-asymptotic-cone">asymptotic cone</a>, based at the identity, is
+                                <span class="math math-inline">\(\operatorname{Cone}_{\omega}(G,d;s)\)</span>,
+                                the set of admissible sequences modulo zero pseudodistance, where
+                            </p>
+
+                            <p class="math math-display" id="eq-cone-distance">
+                                \[
+                                d_{\omega}([g_j],[h_j])
+                                =\lim_{\omega}\frac{d(g_j,h_j)}{s_j}.
+                                \tag{III.10}
+                                \]
+                            </p>
+
+                            <div class="result published">
+                                <p>
+                                    <strong id="result-iii-10">Proposition III.10 (the cone as a metric group).</strong>
+                                    This cone is a complete topological group with a <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metric</a>, with
+                                    multiplication and inversion given by
+                                    <span class="math math-inline">\([g_j][h_j]=[g_jh_j]\)</span> and
+                                    <span class="math math-inline">\([g_j]^{-1}=[g_j^{-1}]\)</span>.
+                                    The original metric group need not be complete.
+                                    <span class="source">
+                                    Calegari–Zhuang <a href="references.html#ref-cz">[CZ]</a>, §3.2, Proposition 3.3,
+                                    supplies the group construction in the verbal-metric setting.
+                                    For the general formulation and completeness reference, see
+                                    <a href="references.html#ref-kln">[KLN]</a>, §2, “Asymptotic cones”, Lemma 2.6
+                                    and the preceding paragraph.
+                                    </span>
+                                </p>
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    The metric identities <a class="equation-reference" href="basic-facts.html#eq-product">(II.2)</a> give
+                                    <span class="math math-inline">\(d(gh,g'h')\le d(g,g')+d(h,h')\)</span>
+                                    and <span class="math math-inline">\(d(g^{-1},h^{-1})=d(g,h)\)</span>.
+                                    Thus products and inverses preserve admissibility and equivalence.
+                                    The group axioms and bi-invariance pass to the quotient; the same estimates
+                                    prove continuity of multiplication and inversion.
+                                </p>
+                                <p>
+                                    For completeness, take a Cauchy sequence in the cone and pass to a subsequence
+                                    <span class="math math-inline">\((x^k)\)</span> with
+                                    <span class="math math-inline">\(d_{\omega}(x^k,x^{k+1})&lt;2^{-k}\)</span>.
+                                    Choose admissible representatives <span class="math math-inline">\((x^k_j)_j\)</span>.
+                                    For each <span class="math math-inline">\(k\)</span>, the set
+                                    <span class="math math-inline">\(A_k=\{j:d(x^k_j,x^{k+1}_j)/s_j&lt;2^{1-k}\}\)</span>
+                                    belongs to <span class="math math-inline">\(\omega\)</span>.
+                                    Put <span class="math math-inline">\(E_1=\mathbb N\)</span> and
+                                    <span class="math math-inline">\(E_k=\{j\ge k\}\cap\bigcap_{r&lt;k}A_r\)</span>
+                                    for <span class="math math-inline">\(k\ge2\)</span>.
+                                    These sets decrease and belong to the ultrafilter. Let
+                                    <span class="math math-inline">\(k(j)=\max\{k:j\in E_k\}\)</span> and
+                                    <span class="math math-inline">\(y_j=x^{k(j)}_j\)</span>.
+                                    The maximum exists because <span class="math math-inline">\(k\le j\)</span>.
+                                    The sum of the successive bounds is at most two, so
+                                    <span class="math math-inline">\((y_j)\)</span> is admissible.
+                                    On <span class="math math-inline">\(E_k\)</span>, its scaled distance from
+                                    <span class="math math-inline">\(x^k_j\)</span> is at most
+                                    <span class="math math-inline">\(\sum_{r\ge k}2^{1-r}=2^{2-k}\)</span>.
+                                    Hence <span class="math math-inline">\(x^k\to[y_j]\)</span>.
+                                    The original Cauchy sequence has the same limit.
+                                </p>
+                                <div class="verification">AI-written proof exposition.<br>Lean verified: no<br>Human verified: no</div>
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="cone-flexibility">
+                        <summary>Independence of finite rank</summary>
+                        <div class="entry-body">
+                            <div class="result ai">
+                                <p>
+                                    <strong id="result-iii-11">Lemma III.11 (bounded defects disappear).</strong>
+                                    Let <span class="math math-inline">\(f\colon G\to H\)</span> be a Lipschitz
+                                    <a href="definitions.html#alphabetical-quasi-definitions">quasi-homomorphism</a> between groups with <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metrics</a>. Then
+                                    <span class="math math-inline">\(f_{\omega}([g_j])=[f(g_j)]\)</span>
+                                    is a Lipschitz group homomorphism between their cones with the same
+                                    <span class="math math-inline">\(\omega\)</span> and
+                                    <span class="math math-inline">\(s\)</span>.
+                                    Maps at uniformly <a href="definitions.html#alphabetical-bounded-distance">bounded distance</a> induce the same cone map.
+                                    If <span class="math math-inline">\(f\)</span> is a bijection and both it and
+                                    its inverse are Lipschitz quasi-homomorphisms, the induced map is a
+                                    <a href="definitions.html#alphabetical-bi-lipschitz-map">bi-Lipschitz group isomorphism</a>.
+                                </p>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    If the <a href="definitions.html#alphabetical-lipschitz-map">Lipschitz constant</a> is <span class="math math-inline">\(L\)</span>, then
+                                    <span class="math math-inline">\(\|f(g)\|\le L\|g\|+\|f(1)\|\)</span>.
+                                    This proves admissibility of image sequences. Dividing the Lipschitz inequality
+                                    by <span class="math math-inline">\(s_j\)</span> and taking the ultralimit
+                                    proves well-definedness and the same Lipschitz bound on the cone.
+                                    If <span class="math math-inline">\(D\)</span> bounds the <a href="definitions.html#alphabetical-quasi-definitions">multiplicative defect</a>,
+                                </p>
+                                <p class="math math-display" id="eq-cone-defect">
+                                    \[
+                                    d_{\omega}([f(g_jh_j)],[f(g_j)f(h_j)])
+                                    \le \lim_{\omega}\frac{D}{s_j}=0.
+                                    \tag{III.11}
+                                    \]
+                                </p>
+                                <p>
+                                    Equation <a class="equation-reference" href="#eq-cone-defect">(III.11)</a> shows that the induced map preserves products. The constant sequence
+                                    <span class="math math-inline">\((f(1))\)</span> represents the identity.
+                                    The same division proves the bounded-distance assertion. In the bijective case,
+                                    the map induced by <span class="math math-inline">\(f^{-1}\)</span> is an exact
+                                    inverse and is Lipschitz, proving the last assertion.
+                                </p>
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="rank-independence">
+                        <summary>Bi-Lipschitz isomorphism of free-group cones</summary>
+                        <div class="entry-body">
+                            <div class="result ai" id="cone-rank-independence">
+                                <p>
+                                    <strong id="result-iii-12">Corollary III.12 (bi-Lipschitz isomorphism of free-group cones).</strong>
+                                    Assuming the quasi-algebraic flexibility theorem in
+                                    <a href="maps-between-ranks.html#flexibility">quasi-algebraic flexibility</a>, for every pair of finite ranks
+                                    <span class="math math-inline">\(m,n\ge2\)</span>, every <a href="definitions.html#alphabetical-ultrafilter">nonprincipal ultrafilter</a>
+                                    <span class="math math-inline">\(\omega\)</span>, and every <a href="definitions.html#alphabetical-scaling-sequence">scaling sequence</a>
+                                    <span class="math math-inline">\(s_j\to\infty\)</span>, there is a <a href="definitions.html#alphabetical-bi-lipschitz-map">bi-Lipschitz
+                                    group isomorphism</a>
+                                </p>
+                                <p class="math math-display" id="eq-cone-isomorphism">
+                                    \[
+                                    \operatorname{Cone}_{\omega}(F_m,d_{\mathrm c};s)
+                                    \cong
+                                    \operatorname{Cone}_{\omega}(F_n,d_{\mathrm c};s).
+                                    \tag{III.12}
+                                    \]
+                                </p>
+                                <p class="source">
+                                    AI-written corollary of the proposed rank-change theorem
+                                    <a href="references.html#ref-r">[R]</a>. Its verification status depends on that theorem;
+                                    it is not asserted here as a published result.
+                                </p>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    Choose the bijection supplied by the flexibility theorem. Apply the preceding
+                                    lemma to it and its inverse. This gives <a class="equation-reference" href="#eq-cone-isomorphism">(III.12)</a>: their induced maps are mutually inverse group
+                                    homomorphisms with the original Lipschitz bounds.
+                                </p>
+                            </details>
+
+                            <p>
+                                Here “isomorphism” includes the group operation, as well as the bi-Lipschitz
+                                comparison of distances. The two cones use the <em>same</em> ultrafilter and <a href="definitions.html#alphabetical-scaling-sequence">scaling
+                                sequence</a>. This corollary does not establish independence of either parameter,
+                                and the available bounds may depend on the ranks. No extension to infinite rank
+                                is claimed by this argument.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="cone-torsion">
+                        <summary>Torsion</summary>
+                        <div class="entry-body">
+                            <div class="result preprint">
+                                <p>
+                                    <strong id="result-iii-13">Theorem III.13 (Kędra–Libman–Nie).</strong> The <a href="definitions.html#alphabetical-asymptotic-cone">asymptotic cone</a> of a
+                                    nonabelian free group with its <a href="definitions.html#alphabetical-cancellation">basis cancellation metric</a>, using scaling <span class="math math-inline">\(n\)</span>, has nonidentity elements of order two for
+                                    every <a href="definitions.html#alphabetical-ultrafilter">nonprincipal ultrafilter</a>. <span class="source">Public preprint: <a href="references.html#ref-kln">[KLN]</a>, Theorem 1.1.</span>
+                                </p>
+
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    <strong>Proof outline.</strong> The construction supplies elements <span class="math math-inline">\(f_n\in F_2\)</span> with <span class="math math-inline">\(\|f_n\|=\Theta(n)\)</span> and <span class="math math-inline">\(\|f_n^2\|=o(n)\)</span>. Thus their cone class is nontrivial but its
+                                    square is trivial. The high-rank construction and the transfer to rank two are the
+                                    substantive steps; see <a href="references.html#ref-kln">[KLN]</a>, Theorems 1.2 and 3.1, Lemma 4.1
+                                    and §5. There is no conflict with <a href="stable-length.html#result-iii-1">III.1</a>: <span class="math math-inline">\(f_n\)</span> varies with <span class="math math-inline">\(n\)</span>,
+                                    whereas <a href="definitions.html#alphabetical-stable-length">stable length</a> fixes one element before taking powers.
+                                </p>
+
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="cone-directions">
+                        <summary>Stable length and real characters</summary>
+                        <div class="entry-body">
+                            <div class="result ai">
+                                <p>
+                                    <strong id="result-iii-14">Proposition III.14 (<a href="definitions.html#alphabetical-one-parameter-subgroup">one-parameter subgroups</a> from powers).</strong>
+                                    For any fixed <span class="math math-inline">\(g\in G\)</span>, the map
+                                    <span class="math math-inline">\(\iota_g(t)=[g^{\lfloor ts_j\rfloor}]\)</span>
+                                    is a homomorphism from <span class="math math-inline">\((\mathbb R,+)\)</span>
+                                    to the cone, and
+                                </p>
+                                <p class="math math-display" id="eq-power-direction">
+                                    \[
+                                    d_{\omega}(\iota_g(t),\iota_g(u))
+                                    =|t-u|\,\tau(g),
+                                    \qquad
+                                    \tau(g)=\lim_{k\to\infty}\frac{\|g^k\|}{k}.
+                                    \tag{III.13}
+                                    \]
+                                </p>
+                                <p>
+                                    Consequently, every nontrivial element of a free group with the <a href="definitions.html#alphabetical-cancellation">cancellation
+                                    norm</a> determines an embedded real one-parameter subgroup, by the positive
+                                    stable-length result in <a href="stable-length.html#spectral-gap">stable length</a>.
+                                    This is an elementary deduction; compare the power-direction construction in
+                                    <a href="references.html#ref-cz">[CZ]</a>, §§3.3–3.4.
+                                </p>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    The inequality <span class="math math-inline">\(\|g^k\|\le |k|\|g\|\)</span>
+                                    proves admissibility. The integers
+                                    <span class="math math-inline">\(\lfloor ts_j\rfloor+\lfloor us_j\rfloor\)</span>
+                                    and <span class="math math-inline">\(\lfloor(t+u)s_j\rfloor\)</span>
+                                    differ by at most one. The product error therefore has norm at most
+                                    <span class="math math-inline">\(\|g\|\)</span>, which disappears after scaling.
+                                    If <span class="math math-inline">\(t\ne u\)</span>, put
+                                    <span class="math math-inline">\(k_j=|\lfloor ts_j\rfloor-\lfloor us_j\rfloor|\)</span>.
+                                    Then <span class="math math-inline">\(k_j\to\infty\)</span> and
+                                    <span class="math math-inline">\(k_j/s_j\to|t-u|\)</span>. Hence
+                                    <span class="math math-inline">\(\|g^{k_j}\|/s_j\to\tau(g)|t-u|\)</span>.
+                                    Together with <a class="equation-reference" href="#eq-cone-distance">(III.10)</a>, this proves <a class="equation-reference" href="#eq-power-direction">(III.13)</a>. The case <span class="math math-inline">\(t=u\)</span> is immediate.
+                                </p>
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="cone-characters">
+                        <summary>Real characters from quasimorphisms</summary>
+                        <div class="entry-body">
+                            <div class="result ai">
+                                <p>
+                                    <strong id="result-iii-15">Corollary III.15 (quasimorphisms give <a href="definitions.html#alphabetical-real-character">real characters</a>).</strong>
+                                    A real-valued <a href="definitions.html#alphabetical-quasimorphism">quasimorphism</a> <span class="math math-inline">\(q\)</span> that
+                                    is Lipschitz for the <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metric</a> induces a Lipschitz homomorphism
+                                </p>
+                                <p class="math math-display" id="eq-cone-character">
+                                    \[
+                                    Q_{\omega}\colon \operatorname{Cone}_{\omega}(G,d;s)\longrightarrow\mathbb R,
+                                    \qquad Q_{\omega}([g_j])=\lim_{\omega}\frac{q(g_j)}{s_j}.
+                                    \tag{III.14}
+                                    \]
+                                </p>
+                                <p>
+                                    If <span class="math math-inline">\(q\)</span> is homogeneous, then
+                                    <span class="math math-inline">\(Q_{\omega}(\iota_g(t))=tq(g)\)</span>.
+                                    Every <a href="definitions.html#alphabetical-torsion">torsion element</a> of the cone lies in the kernel of every such character.
+                                    <span class="source">
+                                    AI-written specialization and extension to general scaling of the
+                                    bounded-defect argument; compare <a href="references.html#ref-k">[K]</a>,
+                                    Proposition 1.13(2), for the sublinear-defect formulation.
+                                    </span>
+                                </p>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+                            </div>
+
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    In <a class="equation-reference" href="#eq-cone-character">(III.14)</a>, Lipschitz continuity makes the rescaled values bounded and their ultralimit
+                                    independent of the representative. The <a href="definitions.html#alphabetical-quasimorphism">quasimorphism</a> defect divided by
+                                    <span class="math math-inline">\(s_j\)</span> tends to zero, so the limit is
+                                    additive. Homogeneity gives the displayed evaluation on powers. Finally,
+                                    if <span class="math math-inline">\(x^r=1\)</span> with
+                                    <span class="math math-inline">\(r\ge1\)</span>, then
+                                    <span class="math math-inline">\(rQ_{\omega}(x)=Q_{\omega}(x^r)=0\)</span>,
+                                    and therefore <span class="math math-inline">\(Q_{\omega}(x)=0\)</span>.
+                                </p>
+                            </details>
+
+                            <p>
+                                The KLN <a href="definitions.html#alphabetical-torsion">torsion</a> elements thus cannot belong to any of the nontrivial subgroups
+                                <span class="math math-inline">\(\iota_g(\mathbb R)\)</span> and cannot be detected
+                                by <a href="definitions.html#alphabetical-real-character">real characters</a>. Fixed-element <a href="definitions.html#alphabetical-stable-length">stable length</a> and varying-sequence torsion
+                                describe different features of the same cone.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details class="entry" id="directional-cones">
+                        <summary>Directional cones</summary>
+                        <div class="entry-body">
+                            <p>
+                                Kędra–Libman’s <em><a href="definitions.html#alphabetical-directional-cone">directional asymptotic cone</a></em> is a separate construction
+                                avoiding ultrafilters. It is a contractible group with a complete <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metric</a>
+                                and is separable when the original group is countable. There is a canonical
+                                Lipschitz homomorphism to the corresponding ultralimit cone; see
+                                <a href="references.html#ref-dac">[KL2]</a>, §§6 and 9.
+                                These properties should not be transferred to the ordinary cone without a further
+                                argument. In particular, the existence of that comparison homomorphism alone gives
+                                neither injectivity nor surjectivity.
+                            </p>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+
+            <footer>
+                <p>Related topics: <a href="stable-length.html">Stable length</a> · <a href="maps-between-ranks.html">Maps between ranks</a>.</p>
+                <p><a href="#content">Back to top</a> · <button type="button" id="close-proofs">Close proofs</button> · <button type="button" id="print">Print this page</button></p>
+                <p class="source" id="math-status">Mathematics uses MathJax. An internet connection is needed on first loading.</p>
+            </footer>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Basic facts — Cancellation geometry</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="assets/mathjax-config.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+        <script defer src="assets/site.js"></script>
+
+        <style>
+            /* The expandable fact lists are local to this page. */
+            .fact-list { list-style: none; padding: 0; }
+            .fact-list > li { margin: 7px 0; }
+            .fact-body {
+                margin: 10px 0 18px 18px;
+                padding: 3px 0 8px;
+                border-top: 1px solid var(--line);
+                border-bottom: 1px solid var(--line);
+            }
+        </style>
+    </head>
+    <body>
+        <a class="skip-link" href="#content">Skip to content</a>
+        <aside class="sidebar">
+            <a class="logo" href="home.html" aria-label="Cancellation geometry home">
+            <img src="assets/cayley-graph.svg" width="140" height="140" alt="A subgraph of the cancellation Cayley graph of F₂">
+            </a>
+            <nav aria-label="Topics">
+                <ul>
+                    <li><a href="home.html">Home</a>
+                    </li>
+                    <li><a href="definitions.html">Definitions</a>
+                    </li>
+                    <li><a href="basic-facts.html" aria-current="page">Basic facts</a>
+                        <ul class="page-sections">
+                            <li><a href="#formulas">Metric identities and commutator bound</a></li>
+                            <li><a href="#bounded-perturbations">Bounded perturbations of quasi-homomorphisms</a></li>
+                            <li><a href="#norm-identification">Cancellation length and normal word length</a></li>
+                            <li><a href="#lipschitz">Lipschitz bound for quasi-homomorphisms</a></li>
+                            <li><a href="#homomorphism-bound">Lipschitz bound for homomorphisms</a></li>
+                            <li><a href="#free-factor-isometry">Isometric inclusion of basis-generated free factors</a></li>
+                            <li><a href="#composition-defect">Defect of a composition</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="stable-length.html">Stable length</a>
+                    </li>
+                    <li><a href="maps-between-ranks.html">Maps between ranks</a>
+                    </li>
+                    <li><a href="quasi-automorphisms.html">Quasi-automorphisms</a>
+                    </li>
+                    <li><a href="asymptotic-cones.html">Asymptotic cones</a>
+                    </li>
+                    <li><a href="embeddings.html">Embeddings</a>
+                    </li>
+                    <li><a href="open-problems.html">Open problems</a>
+                    </li>
+                    <li><a href="references.html">References</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="content">
+            <h1 id="basic-facts">Basic facts</h1>
+            <ul class="fact-list">
+                <li>
+                    <details id="formulas" class="fact">
+                        <summary>Metric identities and commutator bound</summary>
+                        <div class="fact-body">
+                            <div class="statement">
+                                <div id="product-estimates">
+                                    <p><strong id="result-ii-1">Proposition II.1.</strong> Let \(G\) be a group with a <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metric</a> \(d\), and put \(\|g\|=d(1,g)\). For all \(u,v,u',v',L,R\in G\),</p>
+                                    <p class="math math-display" id="eq-product">\[d(uv,u'v')\le d(u,u')+d(v,v'),\qquad d(u^{-1},v^{-1})=d(u,v).\tag{II.2}\]</p>
+                                    <p class="math math-display" id="eq-commutator-bound">\[d(LuR,LvR)=d(u,v),\qquad \|[u,v]\|\le2\min\{\|u\|,\|v\|\}.\tag{II.3}\]</p>
+                                    <p>Here \([u,v]=uvu^{-1}v^{-1}\).</p>
+                                </div>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+                            </div>
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    For <a class="equation-reference" href="#eq-product">(II.2)</a>, insert <span class="math math-inline">\(u'v\)</span> between <span class="math math-inline">\(uv\)</span> and <span class="math math-inline">\(u'v'\)</span> and
+                                    apply the triangle inequality and translation invariance. Inversion follows from
+                                    symmetry and conjugation invariance of the norm. Write <span class="math math-inline">\([u,v]=(uvu^{-1})v^{-1}\)</span> to obtain <span class="math math-inline">\(2\|v\|\)</span>; the other bound follows by the alternative grouping.
+                                </p>
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="bounded-perturbations" class="fact">
+                        <summary>Bounded perturbations of quasi-homomorphisms</summary>
+                        <div class="fact-body">
+                            <div class="statement">
+                                <p>Let \(G\) be a group and \(H\) a group with a <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metric</a>. Let \(q\colon G\to H\) be a <a href="definitions.html#alphabetical-quasi-definitions">quasi-homomorphism</a> of defect \(D_q\). If \(p\colon G\to H\) satisfies \(d_H(p(x),q(x))\le A\) for all \(x\in G\), then \(p\) is a quasi-homomorphism and</p>
+                                <p class="math math-display">\[D_p\le D_q+3A.\]</p>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+                            </div>
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>For \(x,y\in G\), insert \(q(xy)\) and \(q(x)q(y)\) between \(p(xy)\) and \(p(x)p(y)\). The triangle inequality and <a href="#eq-product">(II.2)</a> give</p>
+                                <p class="math math-display">\[d_H(p(xy),p(x)p(y))\le A+D_q+2A.\]</p>
+                                <p>Take the supremum over \(x,y\).</p>
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="norm-identification" class="fact">
+                        <summary>Cancellation length and normal word length</summary>
+                        <div class="fact-body">
+                            <div class="statement">
+                                <p><strong id="result-ii-2">Theorem II.2.</strong> Let \(S\) be a set, and let \(w\) be a word in \(S^{\pm1}\). Equip \(F(S)\) with the <a href="definitions.html#alphabetical-normal-word-norm">normal word norm</a> associated with \(S\). Then</p>
+                                <p class="math math-display" id="eq-cancellation-norm">\[\ell_{\mathrm c}(w)=\|[w]\|.\tag{II.4}\]</p>
+                                <p>Consequently, <a href="definitions.html#alphabetical-cancellation">cancellation length</a> depends only on the represented element and defines a <a href="definitions.html#alphabetical-conjugation-invariant-norm">conjugation-invariant norm</a> on \(F(S)\).</p>
+                                <p class="source">Published: <a href="references.html#ref-bgkm">[BGKM]</a>, Proposition 2.A and corrected Proposition 2.E′ (arXiv v3, §6). The correction applies to the general statement of Proposition 2.E; the free-group assertion used here is covered by the corrected statement.</p>
+                            
+                            </div>
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    Deleting one letter replaces a product <span class="math math-inline">\(usu'\)</span>
+                                    by <span class="math math-inline">\(uu'\)</span>; their quotient is conjugate to
+                                    <span class="math math-inline">\(s\)</span>. Thus a deletion scheme of size <span class="math math-inline">\(k\)</span> produces a factorization by <span class="math math-inline">\(k\)</span> normal letters, so <span class="math math-inline">\(\|[w]\|\le\ell_{\mathrm{c}}(w)\)</span>.
+                                </p>
+                                
+                                <p>
+                                    For the converse first note that inserting or removing an adjacent inverse pair does
+                                    not change the minimum deletion count. One inequality follows by keeping and
+                                    cancelling the inserted pair. For the reverse inequality, use a <a href="definitions.html#alphabetical-noncrossing-pairing">noncrossing pairing</a>
+                                    of the undeleted letters witnessing free triviality. If both inserted positions
+                                    survive, remove their pairing edges and reconnect their former partners when
+                                    necessary; the inverse labels match and noncrossing is preserved. If one inserted
+                                    position is deleted, delete instead the old position paired to the other one. If both
+                                    are deleted, remove both deletions. This gives a scheme on the shorter word of no
+                                    greater cost.
+                                </p>
+                                
+                                <p>
+                                    A shortest normal factorization <span class="math math-inline">\(g=\prod_{i=1}^k u_i
+                                    s_i u_i^{-1}\)</span> has a word representative trivialized by deleting the displayed
+                                    <span class="math math-inline">\(s_i\)</span>. Any other representative is related by
+                                    insertion and removal of adjacent inverse pairs. Hence <span class="math math-inline">\(\ell_{\mathrm{c}}(w)\le k=\|g\|\)</span>.
+                                </p>
+                                
+                                <div class="verification">AI-written proof exposition.<br>Lean verified: no<br>Human verified: no</div>
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="lipschitz" class="fact">
+                        <summary>Lipschitz bound for quasi-homomorphisms</summary>
+                        <div class="fact-body">
+                            <div class="statement">
+                                <p><strong id="result-ii-3">Proposition II.3.</strong> Equip \(F(S)\) with its <a href="definitions.html#alphabetical-cancellation">basis cancellation metric</a>. Let \(H\) be a group with a <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metric</a>, and let \(q\colon F(S)\to H\) be a <a href="definitions.html#alphabetical-quasi-definitions">quasi-homomorphism</a> of defect \(D\). Suppose that</p>
+                                <p class="math math-display">\[B=\sup_{s\in S^{\pm1}}\|q(s)\|&lt;\infty.\]</p>
+                                <p>Then \(q\) is \((B+5D)\)-Lipschitz. If \(q(g^{-1})=q(g)^{-1}\) for every \(g\in F(S)\), then \(q\) is \((B+3D)\)-Lipschitz.</p>
+                                <p class="source">AI exposition from <a href="references.html#ref-q">[Q]</a>, preliminary Lipschitz lemmas, and <a href="references.html#ref-r">[R]</a>, defect-to-Lipschitz lemma.</p>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+                            </div>
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>
+                                    The defect bound <a class="equation-reference" href="definitions.html#eq-defect">(II.1)</a> applied to <span class="math math-inline">\((1,1)\)</span> gives <span class="math math-inline">\(\|q(1)\|\le D\)</span>, and applied to <span class="math math-inline">\((u,u^{-1})\)</span> gives <span class="math math-inline">\(d(q(u^{-1}),q(u)^{-1})\le2D\)</span>. Applying it twice more to <span class="math math-inline">\(usu^{-1}\)</span> shows
+                                    <span class="math math-display" id="eq-conjugate-image">
+                                    \[
+                                    \|q(usu^{-1})\|\le B+4D.
+                                    \tag{II.5}
+                                    \]
+                                    </span>
+                                    Consequently, <a class="equation-reference" href="#eq-conjugate-image">(II.5)</a> gives <span class="math math-inline">\(d(q(gc),q(g))\le B+5D\)</span> for every normal letter <span class="math math-inline">\(c\)</span>. Factor <span class="math math-inline">\(g^{-1}h\)</span> into <span class="math math-inline">\(d_{\mathrm{c}}(g,h)\)</span> normal letters and sum these bounds along
+                                    the resulting path. If inverse preservation is exact, the <span class="math math-inline">\(2D\)</span> inverse error vanishes, giving <span class="math math-inline">\(B+3D\)</span>. No bound on the conjugating words is used.
+                                </p>
+                                
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="homomorphism-bound" class="fact">
+                        <summary>Lipschitz bound for homomorphisms</summary>
+                        <div class="fact-body">
+                            <div class="statement">
+                                <p>Equip \(F(S)\) with its <a href="definitions.html#alphabetical-cancellation">basis cancellation metric</a>. Let \(H\) be a group with a <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metric</a>, and let \(q\colon F(S)\to H\) be a homomorphism. If \(B=\sup_{s\in S}\|q(s)\|&lt;\infty\), then \(q\) is \(B\)-Lipschitz.</p>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+                            </div>
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>For \(u\in F(S)\) and \(s\in S^{\pm1}\), conjugation invariance gives \(\|q(usu^{-1})\|=\|q(s)\|\le B\). A normal factorization of \(g^{-1}h\) of minimal length therefore gives</p>
+                                <p class="math math-display">\[d_H(q(g),q(h))=\|q(g^{-1}h)\|\le B\|g^{-1}h\|.\]</p>
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="free-factor-isometry" class="fact">
+                        <summary>Isometric inclusion of basis-generated free factors</summary>
+                        <div class="fact-body">
+                            <div class="statement">
+                                <p>Let \(A\subseteq S\). Equip \(F(A)\) and \(F(S)\) with the cancellation metrics associated with \(A\) and \(S\), respectively. The canonical inclusion \(i\colon F(A)\to F(S)\) is isometric.</p>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+                            </div>
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>Let \(r\colon F(S)\to F(A)\) fix the generators in \(A\) and send the generators in \(S\setminus A\) to \(1\). The <a href="#homomorphism-bound">homomorphism bound</a> makes both \(i\) and \(r\) 1-Lipschitz. Since \(r\circ i=\operatorname{id}_{F(A)}\), for \(g,h\in F(A)\),</p>
+                                <p class="math math-display">\[d_{F(A)}(g,h)\le d_{F(S)}(i(g),i(h))\le d_{F(A)}(g,h).\]</p>
+                            </details>
+                        </div>
+                    </details>
+                </li>
+                <li>
+                    <details id="composition-defect" class="fact">
+                        <summary>Defect of a composition</summary>
+                        <div class="fact-body">
+                            <div class="statement">
+                                <p>Let \(G\) be a group, and let \(H\) and \(K\) be groups with <a href="definitions.html#alphabetical-bi-invariant-metric">bi-invariant metrics</a>. Let \(q\colon G\to H\) and \(p\colon H\to K\) be <a href="definitions.html#alphabetical-quasi-definitions">quasi-homomorphisms</a> of defects \(D_q\) and \(D_p\). If \(p\) is Lipschitz, then \(p\circ q\) is a quasi-homomorphism and</p>
+                                <p class="math math-display" id="eq-composition-defect">\[D_{p\circ q}\le D_p+\operatorname{Lip}(p)D_q.\tag{II.6}\]</p>
+                                <div class="verification">Lean verified: no<br>Human verified: no</div>
+                            </div>
+                            <details class="proof">
+                                <summary>Proof</summary>
+                                <p>For \(x,y\in G\), insert \(p(q(x)q(y))\) between \(p(q(xy))\) and \(p(q(x))p(q(y))\). Thus</p>
+                                <p class="math math-display">\[d_K(p(q(xy)),p(q(x))p(q(y)))\le\operatorname{Lip}(p)D_q+D_p.\]</p>
+                                <p>Taking the supremum gives <a href="#eq-composition-defect">(II.6)</a>.</p>
+                            </details>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+        </main>
+
+    </body>
+</html>
