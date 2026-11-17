@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio dial</title>
+<style>
+* { box-sizing: border-box }
+body { margin: 0; background: #f8f6ef; color: #192f32; font: 16px/1.5 "DM Sans", Arial, sans-serif }
+main { max-width: 1000px; padding: 40px clamp(20px,5vw,64px) 56px; margin: auto }
+header { border-top: 4px solid; padding-top: 20px }
+h1 { font: normal clamp(48px,8vw,82px)/1.1 Georgia,serif; letter-spacing: -.055em; margin: 0 0 20px }
+.dial { height: 15px; border-bottom: 1px solid #788581; background: linear-gradient(90deg,transparent 28%,#b34625 28%,#b34625 calc(28% + 4px),transparent calc(28% + 4px)),repeating-linear-gradient(90deg,#84918c 0 1px,transparent 1px 12px) bottom/100% 7px no-repeat }
+.grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px 55px; margin-top: 34px }
+h2 { font: bold 13px/1.4 "DM Sans",Arial,sans-serif; text-transform: uppercase; letter-spacing: .12em; color: #883b22; margin: 0 0 8px }
+ul { padding: 0; margin: 0; list-style: none }
+li { border-bottom: 1px solid #d4d7ce }
+a { display:block; position:relative; padding: 9px 20px 10px 0; color:inherit; text-decoration:none }
+a::after { content:'↗'; position:absolute; top:11px; right:1px; color:#716f60 }
+a:hover strong,a:focus-visible strong { text-decoration: underline; color: #883b22 }
+a:focus-visible { outline:2px solid #883b22; outline-offset:3px }
+strong { font: normal 22px/1.3 Georgia,serif }
+small,span { display:block; color:#495957 }
+small { font:12px/1.45 "IBM Plex Mono",monospace; overflow-wrap:anywhere }
+span { font-size:14px; margin:2px 0 4px }
+@media(max-width:650px) { .grid { grid-template-columns: 1fr } main { padding-top:22px } }
+</style>
+</head>
+<body><main>
+<header><h1>Radio dial</h1><div class="dial" aria-hidden="true"></div></header>
+<div class="grid">
+<section><h2>ABC Australia</h2><ul>
+<li><a href="https://www.abc.net.au/listen/live/classic"><strong>ABC Classic</strong><small>abc.net.au/listen/live/classic</small></a></li>
+<li><a href="https://www.abc.net.au/listen/live/classic2"><strong>ABC Classic 2</strong><small>abc.net.au/listen/live/classic2</small></a></li>
+<li><a href="https://www.abc.net.au/listen/live/jazz"><strong>ABC Jazz</strong><small>abc.net.au/listen/live/jazz</small></a></li>
+</ul></section>
+<section><h2>UK radio</h2><ul>
+<li><a href="https://www.bbc.co.uk/sounds/play/live:bbc_radio_one"><strong>BBC Radio 1</strong><small>bbc.co.uk/sounds/play/live:bbc_radio_one</small></a></li>
+<li><a href="https://www.bbc.co.uk/sounds/play/live:bbc_radio_two"><strong>BBC Radio 2</strong><small>bbc.co.uk/sounds/play/live:bbc_radio_two</small></a></li>
+<li><a href="https://www.bbc.co.uk/sounds/play/live:bbc_radio_three"><strong>BBC Radio 3</strong><small>bbc.co.uk/sounds/play/live:bbc_radio_three</small></a></li>
+<li><a href="https://www.bbc.co.uk/sounds/play/live:bbc_radio_fourfm"><strong>BBC Radio 4</strong><small>bbc.co.uk/sounds/play/live:bbc_radio_fourfm</small></a></li>
+<li><a href="https://www.globalplayer.com/live/classicfm/"><strong>Classic FM</strong><small>globalplayer.com/live/classicfm/</small></a></li>
+</ul></section>
+<section><h2>SomaFM</h2><ul>
+<li><a href="https://somafm.com/secretagent/"><strong>Secret Agent</strong><small>somafm.com/secretagent/</small></a></li>
+<li><a href="https://somafm.com/sonicuniverse/"><strong>Sonic Universe</strong><small>somafm.com/sonicuniverse/</small></a></li>
+</ul></section>
+<section><h2>More music</h2><ul>
+<li><a href="https://www.radioswissjazz.ch/en/webplayer"><strong>Radio Swiss Jazz</strong><span>Swing, jazz and blues without presenters.</span><small>radioswissjazz.ch/en/webplayer</small></a></li>
+<li><a href="https://www.yourclassical.org/playlist/peaceful-piano-stream"><strong>Peaceful Piano</strong><span>Quiet classical piano for reading.</span><small>yourclassical.org/playlist/peaceful-piano-stream</small></a></li>
+<li><a href="https://www.yourclassical.org/playlist/pixelplot"><strong>Pixel &amp; Plot</strong><span>Orchestral scores from film, television and games.</span><small>yourclassical.org/playlist/pixelplot</small></a></li>
+</ul></section>
+</div>
+</main></body></html>
+
